@@ -308,40 +308,42 @@
     </div>
 </div>
 
-        <section class="poetry-section" id="ditooh" style="background-color: #0a0a0a; color: #eaeaea; padding: 6rem 0;">
+    <section class="poetry-section" id="ditooh" style="background-color: #0a0a0a; color: #eaeaea; padding: 6rem 0;">
         <div class="container">
             
-            <div style="text-align: left; margin-bottom: 4rem;">
+            <div style="text-align: center; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                 <h3 class="sans" style="color: #666; letter-spacing: 3px; font-size: 0.9rem;">LA VOZ INTERNA</h3>
                 <h2 style="color: #fff; border: none; margin-top: 0.5rem; font-size: 2.5rem;">Yo soy Ditooh</h2>
                 
-                <p class="serif italic" style="font-size: 1.3rem; color: #bbb; margin: 1.5rem 0 1.5rem auto; max-width: 600px;">
+                <p style="font-size: 1.1rem; color: #ddd; margin-top: 1.5rem; line-height: 1.6;">
+                    Ditooh es el seudónimo que protege y libera mi voz interna. Si Aldoh estructura la realidad, Ditooh la siente.
+                </p>
+    
+                <p class="serif italic" style="font-size: 1.3rem; color: #bbb; margin: 2rem auto;">
                     “Escribo cuando hablar no alcanza.”
                 </p>
     
-                <div style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 2rem; font-family: 'Inter', sans-serif; font-size: 0.9rem;">
+                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; font-family: 'Inter', sans-serif; font-size: 0.9rem;">
                     <a href="https://substack.com/@asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Substack</a>
                     <a href="https://www.instagram.com/ditooh.m4ldito" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Instagram</a>
                     <a href="https://www.wattpad.com/user/asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Wattpad</a>
                 </div>
             </div>
     
-            <div class="masonry-layout">
-                
-                <article class="cloud-card">
-                    <h3 class="serif" style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem;">Capítulo uno: Número no registrado</h3>
-                    <div class="text-content">
-                        <p>Doce dígitos aparecían en la pantalla de mi celular.
+            <article class="cloud-card featured-card">
+                <h3 class="serif" style="color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">Capítulo uno: Número no registrado</h3>
+                <div class="text-content">
+                    <p>Doce dígitos aparecían en la pantalla de mi celular.
 Un número no registrado.
 
 Últimamente recibía muchas llamadas así. Las elecciones presidenciales estaban cerca y era sabido que las encuestas se hacían por teléfono. Dudé en contestar, pero mi situación no me permitía rechazar ninguna llamada.
 
-Llevaba casi tres meses buscando un lugar donde pudiera liberar mis prácticas profesionales. Estudié ingeniería industrial. Mandé mi CV a demasiados lugares como para contarlos, y aunque encontrar trabajo no es imposible, lograr que te liberen las prácticas hace que las empresas se pongan difíciles....</p>
-                        
-                        <details>
-                            <summary>Leer completo</summary>
-                            <p style="margin-top: 1rem;">
-                                Estaba en la estación Tasqueña, en la Ciudad de México. Viajaba con mi hermana rumbo a Cuernavaca a visitar a mi tía Lidu. Dicen que ahí se encuentra el mejor clima del país. Estábamos por averiguarlo.
+Llevaba casi tres meses buscando un lugar donde pudiera liberar mis prácticas profesionales. Estudié ingeniería industrial. Mandé mi CV a demasiados lugares como para contarlos, y aunque encontrar trabajo no es imposible, lograr que te liberen las prácticas hace que las empresas se pongan difíciles...</p>
+                    
+                    <details>
+                        <summary>Leer completo</summary>
+                        <p style="margin-top: 1rem;">
+                            Estaba en la estación Tasqueña, en la Ciudad de México. Viajaba con mi hermana rumbo a Cuernavaca a visitar a mi tía Lidu. Dicen que ahí se encuentra el mejor clima del país. Estábamos por averiguarlo.
 
 —Hola, Aldoh. Soy Gael, de Recursos Humanos en Eaton. ¿Cómo estás?
 
@@ -371,11 +373,14 @@ Había olvidado que seguía al teléfono.
 
 —Claro. Aún no estás contratado, pero eres el candidato seleccionado.
 Felicidades.
-                            </p>
-                        </details>
-                    </div>
-                </article>
+
+                        </p>
+                    </details>
+                </div>
+            </article>
     
+            <div class="masonry-columns">
+                
                 <article class="cloud-card">
                     <h3 class="serif" style="color: var(--accent-clay); font-size: 1.2rem; margin-bottom: 1rem;">Poema I – Coincidencia</h3>
                     <div class="text-content">
@@ -480,22 +485,16 @@ Pero dime,
         </div>
         
         <style>
-            /* Masonry Layout: El secreto para que no queden huecos */
-            .masonry-layout {
-                column-count: 2; /* Divide en 2 columnas (puedes cambiar a 3 si quieres) */
-                column-gap: 2rem;
-            }
-            
+            /* Estilos generales de las tarjetas nube */
             .cloud-card {
                 background: #141414;
                 border: 1px solid #333;
                 padding: 2.5rem;
                 border-radius: 8px;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                margin-bottom: 2rem; /* Espacio inferior vital para Masonry */
-                break-inside: avoid; /* Evita que una tarjeta se corte entre columnas */
-                text-align: right; /* Alineación a la derecha solicitada */
                 transition: transform 0.4s ease, border-color 0.3s ease;
+                margin-bottom: 2rem;
+                break-inside: avoid; /* Evita cortes en columnas */
             }
     
             .cloud-card:hover {
@@ -503,16 +502,30 @@ Pero dime,
                 border-color: var(--accent-clay);
             }
     
+            /* Estilo ESPECIAL para el Capítulo Uno (Centrado y Ancho) */
+            .featured-card {
+                max-width: 800px; /* Ancho ideal de lectura */
+                margin: 0 auto 4rem auto; /* Centrado horizontal y margen abajo */
+                padding: 3rem; /* Un poco más de aire */
+                border-left: 4px solid var(--accent-clay); /* Detalle visual extra */
+            }
+    
+            /* Columnas para los poemas */
+            .masonry-columns {
+                column-count: 2; /* 2 Columnas para los poemas */
+                column-gap: 2rem;
+            }
+    
             .text-content {
                 font-family: 'Lora', serif;
                 font-style: italic;
                 color: #bbb;
-                line-height: 1.6;
+                line-height: 1.8;
                 white-space: pre-line;
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
     
-            /* Estilo del botón 'Leer completo' */
+            /* Botón Leer más */
             details summary {
                 cursor: pointer;
                 color: var(--accent-clay);
@@ -520,26 +533,19 @@ Pero dime,
                 font-size: 0.8rem;
                 text-transform: uppercase;
                 letter-spacing: 1px;
-                list-style: none; /* Oculta la flecha por defecto en algunos navegadores */
-                margin-top: 1rem;
-                text-align: right;
+                list-style: none;
+                margin-top: 1.5rem;
+                text-align: center; /* Botón centrado */
+                padding-top: 1rem;
+                border-top: 1px solid #333;
             }
             
-            details summary:hover {
-                text-decoration: underline;
-            }
+            details summary:hover { text-decoration: underline; }
     
-            /* Ajuste para móviles: 1 sola columna */
+            /* Móvil */
             @media (max-width: 768px) {
-                .masonry-layout {
-                    column-count: 1;
-                }
-                .cloud-card {
-                    text-align: left; /* En móvil suele leerse mejor a la izquierda, pero puedes dejarlo right si prefieres */
-                }
-                .masonry-layout .cloud-card {
-                    text-align: right; /* Fuerza derecha también en móvil si es tu deseo */
-                }
+                .masonry-columns { column-count: 1; }
+                .featured-card { padding: 1.5rem; }
             }
         </style>
     </section>
@@ -584,6 +590,7 @@ Pero dime,
 
 </body>
 </html>
+
 
 
 
