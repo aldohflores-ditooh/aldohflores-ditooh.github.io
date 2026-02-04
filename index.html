@@ -82,110 +82,117 @@
         }
 
         /* Quitar el azul y subrayado de TODOS los enlaces por defecto */
-        a { 
-            text-decoration: none; 
-            color: inherit; 
-            transition: all 0.3s ease;
-        }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
         /* =========================================
            TIPOGRAFÍA
            ========================================= */
         h1, h2, h3, h4 { font-weight: 600; line-height: 1.3; margin-bottom: 1.5rem; letter-spacing: -0.02em; color: var(--text-primary); }
-        h1 { font-size: clamp(2.2rem, 5vw, 4rem); }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
         h2 { font-size: 1.8rem; border-left: 4px solid var(--accent-clay); padding-left: 1rem; margin-top: 3rem; }
         h3 { font-family: 'Inter', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 1rem; }
         
         p { margin-bottom: 1.8rem; color: var(--text-secondary); max-width: 100%; }
-
-        /* =========================================
-           NAVEGACIÓN (CORRECCIÓN DE LINKS "AZULES")
-           ========================================= */
-        nav { 
-            position: fixed; top: 0; left: 0; width: 100%; 
-            padding: 1.2rem 2rem; 
-            display: flex; justify-content: space-between; align-items: center; 
-            z-index: 100; background: rgba(253, 251, 247, 0.98); backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .nav-brand { 
-            font-family: 'Inter', sans-serif; 
-            font-weight: 700; 
-            font-size: 0.85rem; 
-            letter-spacing: 1px; 
-            text-transform: uppercase; 
-            color: var(--text-primary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.2rem;
-        }
-
-        .nav-links a { 
-            font-family: 'Inter', sans-serif; 
-            font-size: 0.7rem; 
-            font-weight: 500;
-            color: var(--text-secondary); 
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-links a:hover { 
-            color: var(--accent-clay); 
-        }
-
+        strong { color: var(--text-primary); font-weight: 600; }
+        
+        .sans { font-family: 'Inter', sans-serif; }
+        .italic { font-style: italic; }
+        
         /* =========================================
            COMPONENTES Y ESTRUCTURA
            ========================================= */
         .container { 
             max-width: 900px; 
             margin: 0 auto; 
-            padding: 0 2rem; 
+            padding: 0 2rem; /* Margen base PC */
             position: relative; 
         }
+        
+        .full-width { width: 100%; background: var(--bg-white); padding: 4rem 0; border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); }
 
-        header.hero { min-height: 100vh; display: flex; align-items: center; padding-top: 6rem; }
+        /* =========================================
+           NAVEGACIÓN (ARREGLADA)
+           ========================================= */
+        nav { 
+            position: fixed; top: 0; left: 0; width: 100%; 
+            padding: 1rem 2rem; 
+            display: flex; justify-content: space-between; align-items: center; 
+            z-index: 100; background: rgba(253, 251, 247, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-brand { 
+            font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.9rem; 
+            letter-spacing: 1px; text-transform: uppercase; color: var(--text-primary);
+        }
+
+        .nav-links a { 
+            margin-left: 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; 
+            font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;
+        }
+        .nav-links a:hover { color: var(--accent-clay); }
+
+        /* =========================================
+           HERO SECTION (LA ESTRUCTURA RECUPERADA)
+           ========================================= */
+        header.hero { min-height: 100vh; display: flex; align-items: center; padding: 6rem 0 3rem 0; }
+        
+        /* ESTA FUE LA LÍNEA QUE FALTABA Y ROMPIÓ TODO: */
+        .hero-layout { display: grid; grid-template-columns: 1fr 0.8fr; gap: 4rem; align-items: center; }
+        
+        .hero-img-container img {
+            width: 100%; border-radius: 2px; filter: grayscale(100%) contrast(1.1);
+            transition: all 0.8s ease; box-shadow: 15px 15px 0 var(--line-color);
+        }
+        .hero-img-container img:hover { filter: grayscale(0%) contrast(1); box-shadow: 15px 15px 0 var(--accent-clay); }
         
         .hero-quote { 
             font-size: 1.25rem; font-style: italic; color: var(--text-secondary); 
-            margin-top: 2rem; border-left: 3px solid var(--accent-ink); padding-left: 1.5rem; 
-        }
-
-        .narrative-block { padding: 4rem 0; }
-        
-        .drop-cap::first-letter { 
-            float: left; font-size: 3.8rem; line-height: 0.8; 
-            font-weight: 700; margin-right: 0.8rem; color: var(--accent-clay); 
+            margin-top: 2rem; border-left: 3px solid var(--accent-ink); padding-left: 1.5rem; line-height: 1.6; 
         }
 
         /* =========================================
-           RESPONSIVE (MANTENIENDO LO QUE FUNCIONA)
+           SECCIONES NARRATIVAS
+           ========================================= */
+        .narrative-block { padding: 4rem 0; }
+        
+        .drop-cap::first-letter { 
+            float: left; font-size: 3.8rem; line-height: 0.75; font-weight: 700; 
+            padding-right: 0.8rem; margin-top: 0.2rem; color: var(--accent-clay); 
+        }
+
+        /* GRID DE DATOS & POESÍA & FOOTER */
+        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .data-card { background: var(--bg-paper); border: 1px solid var(--line-color); padding: 1.5rem; border-radius: 4px; transition: all 0.3s; }
+        .data-card:hover { transform: translateY(-3px); border-color: var(--accent-clay); }
+        .poetry-section { background-color: #0a0a0a !important; color: #f0f0f0; padding: 5rem 0; }
+        footer { padding: 3rem 1.5rem; text-align: center; font-family: 'Inter', sans-serif; font-size: 0.85rem; background: var(--bg-white); border-top: 1px solid var(--line-color); }
+
+        /* =========================================
+           RESPONSIVE (EL ARREGLO FINAL PARA MÓVIL)
            ========================================= */
         @media (max-width: 768px) {
+            /* 1. Márgenes laterales elegantes (la sangría que querías) */
             .container { padding: 0 2rem; } 
             
-            nav {
-                padding: 1rem 1.5rem;
-                flex-direction: column; /* Apila nombre y links si no caben */
-                gap: 0.8rem;
-            }
+            /* 2. Arreglo del menú en móvil */
+            nav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+            .nav-brand { width: 100%; text-align: center; }
+            .nav-links { display: flex; gap: 1rem; justify-content: center; width: 100%; }
+            .nav-links a { margin: 0; font-size: 0.7rem; }
 
-            .nav-links {
-                gap: 0.8rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .nav-links a {
-                font-size: 0.65rem;
-            }
-
-            h1 { font-size: 2.2rem; }
-            header.hero { padding-top: 8rem; }
-            .hero-quote { font-size: 1.15rem; }
-            .drop-cap::first-letter { font-size: 3.2rem; }
+            /* 3. Estructura del Hero (apilar imagen y texto) */
+            header.hero { padding-top: 8rem; align-items: flex-start; }
+            .hero-layout { grid-template-columns: 1fr; gap: 2.5rem; text-align: left; }
+            .hero-img-container { order: -1; max-width: 90%; margin: 0 auto 1rem auto; }
+            .hero-img-container img { box-shadow: 8px 8px 0 var(--line-color); }
+            
+            /* 4. Tipografía móvil */
+            h1 { font-size: 2.3rem; line-height: 1.2; }
+            h2 { font-size: 1.6rem; margin-top: 2.5rem; }
+            .hero-quote { font-size: 1.15rem; padding-left: 1.2rem; border-left-width: 4px; margin-right: 1rem; }
+            .drop-cap::first-letter { font-size: 3.2rem; margin-top: 0.3rem; padding-right: 0.6rem; }
+            .narrative-block { padding: 3rem 0; }
         }
     </style>
 </head>
@@ -765,6 +772,7 @@ Pero dime,
 
 </body>
 </html>
+
 
 
 
