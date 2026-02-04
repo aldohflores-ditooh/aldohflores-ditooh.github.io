@@ -74,7 +74,7 @@
             font-family: 'Lora', serif;
             background-color: var(--bg-paper);
             color: var(--text-primary);
-            line-height: 1.8;
+            line-height: 1.8; /* Buena altura de línea para lectura */
             font-size: 18px;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
@@ -96,12 +96,13 @@
         .small-caps { font-variant: small-caps; letter-spacing: 1px; }
 
         /* =========================================
-           COMPONENTES Y ESTRUCTURA
+           COMPONENTES Y ESTRUCTURA (AQUÍ ESTÁ LA CLAVE)
            ========================================= */
         .container { 
             max-width: 900px; 
             margin: 0 auto; 
-            padding: 0 1.5rem; /* Padding estándar para escritorio */
+            /* Padding base para escritorio */
+            padding: 0 2rem; 
             position: relative; 
         }
         
@@ -117,7 +118,7 @@
            NAVEGACIÓN
            ========================================= */
         nav { 
-            position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 1.5rem; 
+            position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 2rem; 
             display: flex; justify-content: space-between; align-items: center; 
             z-index: 100; background: rgba(253, 251, 247, 0.95); backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -144,21 +145,22 @@
             color: var(--text-secondary); 
             margin-top: 2rem; 
             border-left: 2px solid var(--accent-ink); 
-            padding-left: 1.2rem; 
+            padding-left: 1.5rem; /* Más aire a la izquierda de la cita */
+            margin-right: 1rem;   /* Margen derecho para que no pegue */
             line-height: 1.6; 
         }
 
         /* =========================================
-           SECCIONES NARRATIVAS (SOLUCIÓN DROP CAP)
+           SECCIONES NARRATIVAS
            ========================================= */
         .narrative-block { padding: 4rem 0; }
         
         .drop-cap::first-letter { 
             float: left; 
             font-size: 3.8rem; 
-            line-height: 0.75; /* Ajustado para mejor alineación */
+            line-height: 0.8; 
             font-weight: 700; 
-            padding-right: 0.5rem; /* Usamos padding en vez de margin para evitar colapso */
+            margin-right: 0.8rem; /* Espacio entre la letra N y el texto */
             margin-top: 0.2rem;
             color: var(--accent-clay); 
         }
@@ -186,8 +188,8 @@
         @media (max-width: 768px) {
             body { font-size: 17px; }
             
-            /* Ajuste crítico de márgenes laterales */
-            .container { padding: 0 1rem; } 
+            /* AQUÍ ESTÁ EL CAMBIO: Aumenté el padding a 2rem (bastante espacio) */
+            .container { padding: 0 2rem; } 
             
             .hero-layout { grid-template-columns: 1fr; gap: 2rem; text-align: left; }
             .hero-img-container { order: -1; max-width: 100%; margin: 0 auto 1.5rem auto; }
@@ -196,12 +198,10 @@
             h1 { font-size: 2.1rem; line-height: 1.2; }
             h2 { font-size: 1.6rem; margin-top: 2.5rem; }
             
-            /* Cita más compacta */
             .hero-quote { font-size: 1.1rem; padding-left: 1rem; margin-top: 1.5rem; border-left-width: 3px; }
             
             .nav-links { display: none; }
             
-            /* Drop Cap móvil ajustado */
             .drop-cap::first-letter { font-size: 3rem; line-height: 0.8; margin-top: 0.3rem; }
             
             .narrative-block { padding: 2.5rem 0; }
@@ -784,6 +784,7 @@ Pero dime,
 
 </body>
 </html>
+
 
 
 
