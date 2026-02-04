@@ -1,0 +1,45 @@
+Aldoh Saúl Flores García (Ditooh)
+Ingeniero Industrial especializado en optimización de procesos, metrología y manufactura avanzada (CAD/CAM). Desarrolla una identidad creativa paralela bajo el seudónimo "Ditooh", enfocada en poesía y narrativa existencial.
+
+Datos Clave
+Próximo hito: MBA en Australia (2027).
+
+Educación: TES Ecatepec (CAD/CAM), IT Superior de Huetamo (Lean Manufacturing).
+
+Experiencia: 3C Metrology, Eaton.
+
+Filosofía: "Pugno" (Lucha con sentido, avance con intención).
+
+Web: https://aldohflores-ditooh.github.io/
+
+2. Configurar el "Open Graph Image"
+Para que cuando compartas tu link aparezca una imagen profesional y no un cuadro vacío:
+
+Acción: Elige una de tus fotos (la que más te guste, preferiblemente en blanco y negro para seguir el estilo).
+
+Renombrar: Cámbiale el nombre a preview.jpg.
+
+Subir: Súbela a una carpeta llamada img dentro de tu repositorio de GitHub.
+
+Resultado: Automáticamente, la línea <meta property="og:image" ...> que pusimos en el head empezará a funcionar.
+
+3. Prueba de "Salud Técnica"
+Una vez que hayas guardado los cambios en tu index.html con el nuevo <head> que te pasé:
+
+Acción: Ve a la herramienta gratuita Rich Results Test de Google.
+
+Prueba: Pega tu URL.
+
+Qué buscar: Debería decir que detectó un objeto de tipo "Person". Esto confirma que Google ya sabe exactamente quién eres y qué haces en 3C Metrology.
+
+4. Actualización de Redes Sociales
+Ahora que tu link es "inteligente" y tiene una descripción clara:
+
+Acción: Actualiza tu biografía de Instagram y LinkedIn con el enlace https://aldohflores-ditooh.github.io/.
+
+Observación: Verás que ahora, al pegarlo en un post de LinkedIn, el "preview" se verá mucho más sofisticado.
+
+5. El "Archivo Vivo"
+Finalmente, la otra IA sugirió "Contenido actualizable".
+
+Mi sugerencia: No necesitas un blog complejo. Cada vez que escribas algo nuevo en Substack o Wattpad, simplemente añade el título y el link en la sección de Ditooh en tu HTML. Con eso es suficiente para mantener la página "fresca" para los motores de búsqueda.
