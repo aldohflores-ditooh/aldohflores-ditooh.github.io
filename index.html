@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Aldoh Saúl Flores García | Manifiesto de Identidad</title>
-    <meta name="description" content="Sitio oficial y manifiesto de vida de Aldoh Saúl Flores García. Ingeniero Industrial, Poeta (Ditooh) y Estratega. Un archivo vivo de coherencia, fe y movimiento.">
-    <meta name="keywords" content="Aldoh Saúl Flores García, Aldoh Flores, Ditooh, Ingeniero Industrial, Poesía, Teología, 3C Metrology, Inroads México, ENTP-A">
+    <meta name="description" content="Sitio oficial y manifiesto de vida de Aldoh Saúl Flores García. Ingeniero Industrial, Poeta (Ditooh) y Estratega. Un archivo vivo de coherencia y Pugno.">
+    <meta name="keywords" content="Aldoh Saúl Flores García, Aldoh Flores, Ditooh, Ingeniero Industrial, Poesía, Eaton, 3C Metrology, Inroads México, ENTP-A, Australia MBA, CAD/CAM, Metrología">
     <meta name="author" content="Aldoh Saúl Flores García">
     
+    <meta property="og:title" content="Aldoh Saúl | Ingeniero & Escritor">
+    <meta property="og:description" content="Explora la dualidad entre la estrategia industrial y la sensibilidad poética de Aldoh Saúl.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aldohflores-ditooh.github.io/">
+    <meta property="og:image" content="https://aldohflores-ditooh.github.io/img/preview.jpg">
+
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23b85d38%22>A</text></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,44 +28,45 @@
       "name": "Aldoh Saúl Flores García",
       "alternateName": ["Aldoh Flores", "Ditooh"],
       "url": "https://aldohflores-ditooh.github.io/",
-      "image": "https://aldohflores-ditooh.github.io/aldoh-saul-flores-garcia.jpg",
-      "jobTitle": ["Ingeniero Industrial", "Escritor", "Poeta", "Teologo"],
+      "jobTitle": ["Ingeniero Industrial", "Escritor", "Analista de Procesos"],
       "worksFor": {
         "@type": "Organization",
         "name": "3C Metrology"
       },
-      "alumniOf": {
-        "@type": "Organization",
-        "name": "Inroads México"
-      },
-      "knowsAbout": ["Ingeniería Industrial", "Teología", "Filosofía", "Poesía", "Estrategia"],
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "Tecnológico de Estudios Superiores de Ecatepec"},
+        {"@type": "CollegeOrUniversity", "name": "Instituto Tecnológico Superior de Huetamo"},
+        {"@type": "Organization", "name": "Inroads México"}
+      ],
+      "knowsAbout": ["Toyota Production System", "Lean Manufacturing", "CAD/CAM", "Metrología", "Poesía", "Estrategia"],
       "sameAs": [
         "https://www.linkedin.com/in/a-saul-flores-garcia",
-        "https://www.instagram.com/asaulflores",
-        "https://www.instagram.com/ditooh.m4ldito"
+        "https://www.instagram.com/ditooh.m4ldito",
+        "https://substack.com/@asaulflores",
+        "https://www.wattpad.com/user/asaulflores"
       ],
-      "description": "Busco la arquitectura lógica de la realidad a través de la ingeniería, y la esencia del ser a través de la palabra."
+      "description": "Ingeniero Industrial enfocado en la mejora de procesos y metrología, explorando la condición humana a través de la poesía bajo el seudónimo Ditooh."
     }
     </script>
 
     <style>
         /* VARIABLES DE DISEÑO */
         :root {
-            --bg-paper: #fdfbf7; /* Color papel suave para lectura */
+            --bg-paper: #fdfbf7; 
             --bg-white: #ffffff;
             --text-primary: #111111;
             --text-secondary: #4a4a4a;
-            --accent-clay: #b85d38; /* Terracota para acentos humanos */
-            --accent-ink: #2c3e50;  /* Azul tinta para lo profesional */
+            --accent-clay: #b85d38; 
+            --accent-ink: #2c3e50;  
             --line-color: #e5e5e5;
         }
 
-        /* RESET */
+        /* RESET & BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         
         body {
-            font-family: 'Lora', serif; /* Fuente principal es narrativa */
+            font-family: 'Lora', serif;
             background-color: var(--bg-paper);
             color: var(--text-primary);
             line-height: 1.8;
@@ -80,69 +87,46 @@
         .italic { font-style: italic; }
         .small-caps { font-variant: small-caps; letter-spacing: 1px; }
 
-        /* CONTENEDORES */
+        /* COMPONENTES */
         .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; position: relative; }
         .full-width { width: 100%; background: var(--bg-white); padding: 5rem 0; border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); }
 
-        /* NAVEGACIÓN DISCRETA */
-        nav { position: fixed; top: 0; left: 0; width: 100%; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; mix-blend-mode: multiply; background: rgba(253, 251, 247, 0.9); backdrop-filter: blur(5px); }
+        /* NAVEGACIÓN */
+        nav { 
+            position: fixed; top: 0; left: 0; width: 100%; padding: 1.5rem 2rem; 
+            display: flex; justify-content: space-between; align-items: center; 
+            z-index: 100; background: rgba(253, 251, 247, 0.9); backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
         .nav-brand { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-decoration: none; color: var(--text-primary); text-transform: uppercase; }
         .nav-links a { margin-left: 1.5rem; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--text-secondary); transition: color 0.3s; }
         .nav-links a:hover { color: var(--accent-clay); }
 
-        /* HERO - MANIFIESTO */
-        header.hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 4rem;
-        }
+        /* HERO */
+        header.hero { min-height: 100vh; display: flex; align-items: center; padding-top: 4rem; }
         .hero-layout { display: grid; grid-template-columns: 1fr 0.8fr; gap: 4rem; align-items: center; }
-        .hero-img-container { position: relative; }
         .hero-img-container img {
-            width: 100%;
-            border-radius: 2px;
-            filter: grayscale(100%) contrast(1.1);
-            transition: filter 0.8s ease;
-            box-shadow: 20px 20px 0 var(--line-color);
+            width: 100%; border-radius: 2px; filter: grayscale(100%) contrast(1.1);
+            transition: all 0.8s ease; box-shadow: 20px 20px 0 var(--line-color);
         }
-        .hero-img-container img:hover { filter: grayscale(0%) contrast(1); }
+        .hero-img-container img:hover { filter: grayscale(0%) contrast(1); box-shadow: 20px 20px 0 var(--accent-clay); }
         
-        .hero-quote {
-            font-size: 1.4rem;
-            font-style: italic;
-            color: var(--text-secondary);
-            margin-top: 2rem;
-            border-left: 2px solid var(--accent-ink);
-            padding-left: 1.5rem;
-        }
+        .hero-quote { font-size: 1.4rem; font-style: italic; color: var(--text-secondary); margin-top: 2rem; border-left: 2px solid var(--accent-ink); padding-left: 1.5rem; }
 
         /* SECCIONES NARRATIVAS */
         .narrative-block { padding: 6rem 0; }
-        .drop-cap::first-letter {
-            float: left;
-            font-size: 4rem;
-            line-height: 0.8;
-            font-weight: 700;
-            margin-right: 0.8rem;
-            color: var(--accent-clay);
-        }
+        .drop-cap::first-letter { float: left; font-size: 4rem; line-height: 0.8; font-weight: 700; margin-right: 0.8rem; color: var(--accent-clay); }
 
-        /* GRID DE DATOS (NO TABLAS) */
+        /* GRID DE DATOS */
         .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .data-card { background: var(--bg-paper); border: 1px solid var(--line-color); padding: 1.5rem; border-radius: 4px; transition: transform 0.3s; }
+        .data-card { background: var(--bg-paper); border: 1px solid var(--line-color); padding: 1.5rem; border-radius: 4px; transition: all 0.3s; }
         .data-card:hover { transform: translateY(-5px); border-color: var(--accent-clay); }
         
-        /* POESÍA / DITOOH */
-        .poetry-section { background-color: #1a1a1a; color: #f0f0f0; padding: 6rem 0; text-align: center; }
-        .poetry-section h2, .poetry-section p, .poetry-section strong { color: #f0f0f0; border-color: #f0f0f0; }
-        .poem-snippet { font-style: italic; font-size: 1.3rem; margin: 3rem auto; max-width: 600px; opacity: 0.9; }
+        /* POESÍA (OVERRIDE PARA MODO OSCURO) */
+        .poetry-section { background-color: #0a0a0a !important; color: #f0f0f0; }
 
         /* FOOTER */
         footer { padding: 4rem 2rem; text-align: center; font-family: 'Inter', sans-serif; font-size: 0.9rem; background: var(--bg-white); border-top: 1px solid var(--line-color); }
-        .social-links { margin: 2rem 0; }
-        .social-links a { display: inline-block; margin: 0 1rem; color: var(--text-primary); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; }
-        .social-links a:hover { border-bottom: 1px solid var(--accent-clay); }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
@@ -729,6 +713,7 @@ Pero dime,
 
 </body>
 </html>
+
 
 
 
