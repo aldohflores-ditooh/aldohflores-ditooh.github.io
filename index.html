@@ -88,6 +88,62 @@
         .italic { font-style: italic; }
         .small-caps { font-variant: small-caps; letter-spacing: 1px; }
 
+      
+                /* Mejora de contenedores para móviles */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Reducimos el padding en móviles para ganar espacio */
+}
+
+/* Ajuste específico para la letra capitular (Drop Cap) */
+.drop-cap::first-letter {
+    float: left;
+    font-size: 3.5rem; /* Un poco más pequeña en móvil */
+    line-height: 0.7;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    margin-top: 0.2rem;
+    color: var(--accent-clay);
+}
+
+/* Evitar que los párrafos se compriman demasiado */
+p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    max-width: 100%; /* Permitimos que ocupe todo el ancho disponible */
+    text-align: left; /* Alineación limpia */
+    word-wrap: break-word; /* Evita que palabras largas rompan el layout */
+}
+
+/* MEDIA QUERY CRÍTICA: Aquí es donde arreglamos el móvil */
+@media (max-width: 768px) {
+    header.hero {
+        padding-top: 6rem; /* Más espacio arriba para que el menú no tape el nombre */
+    }
+    
+    .hero-layout {
+        display: flex;
+        flex-direction: column; /* Apilamos imagen y texto */
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 2.2rem; /* Título más manejable */
+        line-height: 1.2;
+    }
+
+    .hero-quote {
+        font-size: 1.1rem; /* La cita ya no será tan gigante */
+        margin: 1.5rem 0;
+        padding-left: 1rem;
+    }
+
+    body {
+        font-size: 17px; /* Bajamos un punto el tamaño de fuente global para móviles */
+    }
+}
+        
         /* COMPONENTES */
         .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; position: relative; }
         .full-width { width: 100%; background: var(--bg-white); padding: 5rem 0; border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); }
@@ -714,6 +770,7 @@ Pero dime,
 
 </body>
 </html>
+
 
 
 
