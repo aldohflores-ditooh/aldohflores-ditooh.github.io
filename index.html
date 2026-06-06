@@ -9,7 +9,6 @@
     <meta name="keywords" content="Aldoh Saúl Flores García, Aldoh Flores, Ditooh, Ingeniero Industrial, Poesía, Eaton, 3C Metrology, Inroads México, ENTP-A, Australia MBA, CAD/CAM, Metrología">
     <meta name="author" content="Aldoh Saúl Flores García">
     <meta name="google-site-verification" content="lLRzIAUuTcE8cKI24Daq5eSskIz8YuSeyp-j7Kfdic0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta property="og:title" content="Aldoh Saúl | Ingeniero & Escritor">
     <meta property="og:description" content="Explora la dualidad entre la estrategia industrial y la sensibilidad poética de Aldoh Saúl.">
@@ -33,14 +32,14 @@
       "jobTitle": ["Ingeniero Industrial", "Escritor", "Analista de Procesos"],
       "worksFor": {
         "@type": "Organization",
-        "name": "3C Metrology"
+        "name": "Eaton"
       },
       "alumniOf": [
         {"@type": "CollegeOrUniversity", "name": "Tecnológico de Estudios Superiores de Ecatepec"},
         {"@type": "CollegeOrUniversity", "name": "Instituto Tecnológico Superior de Huetamo"},
         {"@type": "Organization", "name": "Inroads México"}
       ],
-      "knowsAbout": ["Toyota Production System", "Lean Manufacturing", "CAD/CAM", "Metrología", "Poesía", "Estrategia"],
+      "knowsAbout": ["Toyota Production System", "Lean Manufacturing", "CAD/CAM", "Metrología", "Poesía", "Estrategia", "Teología"],
       "sameAs": [
         "https://www.linkedin.com/in/a-saul-flores-garcia",
         "https://www.instagram.com/ditooh.m4ldito",
@@ -51,7 +50,7 @@
     }
     </script>
     
-<style>
+    <style>
         /* =========================================
            VARIABLES DE DISEÑO
            ========================================= */
@@ -81,7 +80,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Quitar el azul y subrayado de TODOS los enlaces por defecto */
         a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
         /* =========================================
@@ -104,14 +102,14 @@
         .container { 
             max-width: 900px; 
             margin: 0 auto; 
-            padding: 0 2rem; /* Margen base PC */
+            padding: 0 2rem;
             position: relative; 
         }
         
         .full-width { width: 100%; background: var(--bg-white); padding: 4rem 0; border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); }
 
         /* =========================================
-           NAVEGACIÓN (ARREGLADA)
+           NAVEGACIÓN
            ========================================= */
         nav { 
             position: fixed; top: 0; left: 0; width: 100%; 
@@ -133,11 +131,9 @@
         .nav-links a:hover { color: var(--accent-clay); }
 
         /* =========================================
-           HERO SECTION (LA ESTRUCTURA RECUPERADA)
+           HERO SECTION
            ========================================= */
         header.hero { min-height: 100vh; display: flex; align-items: center; padding: 6rem 0 3rem 0; }
-        
-        /* ESTA FUE LA LÍNEA QUE FALTABA Y ROMPIÓ TODO: */
         .hero-layout { display: grid; grid-template-columns: 1fr 0.8fr; gap: 4rem; align-items: center; }
         
         .hero-img-container img {
@@ -161,7 +157,9 @@
             padding-right: 0.8rem; margin-top: 0.2rem; color: var(--accent-clay); 
         }
 
-        /* GRID DE DATOS & POESÍA & FOOTER */
+        /* =========================================
+           GRID DE DATOS & POESÍA & FOOTER
+           ========================================= */
         .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
         .data-card { background: var(--bg-paper); border: 1px solid var(--line-color); padding: 1.5rem; border-radius: 4px; transition: all 0.3s; }
         .data-card:hover { transform: translateY(-3px); border-color: var(--accent-clay); }
@@ -169,46 +167,46 @@
         footer { padding: 3rem 1.5rem; text-align: center; font-family: 'Inter', sans-serif; font-size: 0.85rem; background: var(--bg-white); border-top: 1px solid var(--line-color); }
 
         /* =========================================
-           RESPONSIVE (EL ARREGLO FINAL PARA MÓVIL)
+           RESPONSIVE
            ========================================= */
         @media (max-width: 768px) {
-            /* 1. Márgenes laterales elegantes (la sangría que querías) */
             .container { padding: 0 2rem; } 
             
-            /* 2. Arreglo del menú en móvil */
             nav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 1rem; justify-content: center; }
             .nav-brand { width: 100%; text-align: center; }
-            .nav-links { display: flex; gap: 1rem; justify-content: center; width: 100%; }
+            .nav-links { display: flex; gap: 1rem; justify-content: center; width: 100%; flex-wrap: wrap; }
             .nav-links a { margin: 0; font-size: 0.7rem; }
 
-            /* 3. Estructura del Hero (apilar imagen y texto) */
             header.hero { padding-top: 8rem; align-items: flex-start; }
             .hero-layout { grid-template-columns: 1fr; gap: 2.5rem; text-align: left; }
             .hero-img-container { order: -1; max-width: 90%; margin: 0 auto 1rem auto; }
             .hero-img-container img { box-shadow: 8px 8px 0 var(--line-color); }
             
-            /* 4. Tipografía móvil */
             h1 { font-size: 2.3rem; line-height: 1.2; }
             h2 { font-size: 1.6rem; margin-top: 2.5rem; }
             .hero-quote { font-size: 1.15rem; padding-left: 1.2rem; border-left-width: 4px; margin-right: 1rem; }
             .drop-cap::first-letter { font-size: 3.2rem; margin-top: 0.3rem; padding-right: 0.6rem; }
             .narrative-block { padding: 3rem 0; }
+            #futuro > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVEGACIÓN -->
     <nav>
         <a href="#" class="nav-brand">Aldoh S. Flores</a>
         <div class="nav-links">
             <a href="#raices">Raíces</a>
             <a href="#evolucion">Evolución</a>
             <a href="#profesional">Ingeniería</a>
+            <a href="#teologia">Teología</a>
             <a href="#ditooh">Ditooh</a>
             <a href="#futuro">Futuro</a>
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <header class="hero container">
         <div class="hero-layout">
             <div class="hero-text">
