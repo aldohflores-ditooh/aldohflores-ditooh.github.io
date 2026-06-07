@@ -98,4 +98,985 @@
         
         /* =========================================
            COMPONENTES Y ESTRUCTURA
+           ========================================= */
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 0 2rem;
+            position: relative; 
+        }
 
+        .full-width { width: 100%; background: var(--bg-white); padding: 4rem 0; border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); }
+
+        /* =========================================
+           NAVEGACIÓN
+           ========================================= */
+        nav { 
+            position: fixed; top: 0; left: 0; width: 100%; 
+            padding: 1rem 2rem; 
+            display: flex; justify-content: space-between; align-items: center; 
+            z-index: 100; background: rgba(253, 251, 247, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-brand { 
+            font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.9rem; 
+            letter-spacing: 1px; text-transform: uppercase; color: var(--text-primary);
+        }
+
+        .nav-links a { 
+            margin-left: 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; 
+            font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;
+        }
+        .nav-links a:hover { color: var(--accent-clay); }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        header.hero {
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            padding: 7rem 0 4rem;
+        }
+
+        .hero-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.82fr);
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text,
+        .hero-img-container {
+            animation: heroReveal 0.9s ease both;
+        }
+
+        .hero-img-container {
+            animation-delay: 0.15s;
+        }
+
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+            color: var(--accent-clay);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .hero-kicker::before {
+            content: "";
+            width: 2.6rem;
+            height: 1px;
+            background: var(--accent-clay);
+        }
+
+        .hero-title {
+            max-width: 12ch;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-title span {
+            color: var(--accent-clay);
+        }
+
+        .hero-thesis {
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.35rem, 2vw, 1.85rem);
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        .hero-lede {
+            max-width: 38rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .hero-principles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 2rem 0 2.2rem;
+        }
+
+        .hero-principles span {
+            border: 1px solid var(--line-color);
+            background: rgba(255,255,255,0.72);
+            padding: 0.55rem 0.8rem;
+            color: var(--accent-ink);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+        }
+
+        .hero-principles span:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-clay);
+            color: var(--accent-clay);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            align-items: center;
+        }
+
+        .hero-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 2.8rem;
+            border: 1px solid var(--text-primary);
+            padding: 0 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero-link.primary {
+            background: var(--text-primary);
+            color: var(--bg-paper);
+        }
+
+        .hero-link:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-clay);
+            color: var(--accent-clay);
+        }
+
+        .hero-link.primary:hover {
+            background: var(--accent-clay);
+            color: #fff;
+        }
+
+        .hero-img-container {
+            position: relative;
+        }
+
+        .hero-img-container::before {
+            content: "Profesional durante el día. Artista durante la noche.";
+            position: absolute;
+            right: -1.2rem;
+            bottom: 1.2rem;
+            z-index: 2;
+            max-width: 13rem;
+            background: #111111;
+            color: #fdfbf7;
+            padding: 0.9rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1.45;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border-left: 3px solid var(--accent-clay);
+        }
+        
+        .hero-img-container img {
+            width: 100%;
+            max-height: 68vh;
+            height: auto;
+            display: block;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 2px;
+            filter: grayscale(100%) contrast(1.1);
+            transition: filter 0.8s ease, box-shadow 0.8s ease, transform 0.8s ease;
+            box-shadow: 15px 15px 0 var(--line-color);
+        }
+
+        .hero-img-container img:hover {
+            filter: grayscale(0%) contrast(1);
+            transform: translateY(-4px);
+            box-shadow: 15px 15px 0 var(--accent-clay);
+        }
+
+        .hero-quote { 
+            font-size: 1.25rem; font-style: italic; color: var(--text-secondary); 
+            margin-top: 2rem; border-left: 3px solid var(--accent-ink); padding-left: 1.5rem; line-height: 1.6; 
+        }
+
+        @keyframes heroReveal {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =========================================
+           SECCIONES NARRATIVAS
+           ========================================= */
+        .narrative-block { padding: 4rem 0; }
+        
+        .drop-cap::first-letter { 
+            float: left; font-size: 3.8rem; line-height: 0.75; font-weight: 700; 
+            padding-right: 0.8rem; margin-top: 0.2rem; color: var(--accent-clay); 
+        }
+
+        /* =========================================
+           GRID DE DATOS & POESÍA & FOOTER
+           ========================================= */
+        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .data-card { background: var(--bg-paper); border: 1px solid var(--line-color); padding: 1.5rem; border-radius: 4px; transition: all 0.3s; }
+        .data-card:hover { transform: translateY(-3px); border-color: var(--accent-clay); }
+        .poetry-section { background-color: #0a0a0a !important; color: #f0f0f0; padding: 5rem 0; }
+        footer { padding: 3rem 1.5rem; text-align: center; font-family: 'Inter', sans-serif; font-size: 0.85rem; background: var(--bg-white); border-top: 1px solid var(--line-color); }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 768px) {
+            .container { padding: 0 2rem; } 
+            
+            nav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+            .nav-brand { width: 100%; text-align: center; }
+            .nav-links { display: flex; gap: 1rem; justify-content: center; width: 100%; flex-wrap: wrap; }
+            .nav-links a { margin: 0; font-size: 0.7rem; }
+
+            header.hero { min-height: 82vh; padding-top: 6.4rem; padding-bottom: 2rem; align-items: flex-start; }
+            .hero-layout { grid-template-columns: 1fr; gap: 1.35rem; text-align: left; }
+            .hero-img-container { order: -1; max-width: 62%; margin: 0 auto 0.4rem auto; }
+            .hero-img-container::before { right: -0.7rem; bottom: 0.7rem; max-width: 11rem; font-size: 0.66rem; }
+            .hero-img-container img { max-height: 245px; box-shadow: 8px 8px 0 var(--line-color); }
+            .hero-title { max-width: 12ch; margin-bottom: 0.85rem; }
+            .hero-principles { gap: 0.45rem; margin: 1rem 0 1.2rem; }
+            .hero-principles span { font-size: 0.68rem; padding: 0.45rem 0.62rem; }
+            .hero-thesis { margin-bottom: 0.75rem; }
+            .hero-lede { font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+            .hero-actions { align-items: stretch; }
+            .hero-link { justify-content: center; width: 100%; min-height: 2.55rem; }
+            
+            h1 { font-size: 2.3rem; line-height: 1.2; }
+            h2 { font-size: 1.6rem; margin-top: 2.5rem; }
+            .hero-quote { font-size: 1.15rem; padding-left: 1.2rem; border-left-width: 4px; margin-right: 1rem; }
+            .drop-cap::first-letter { font-size: 3.2rem; margin-top: 0.3rem; padding-right: 0.6rem; }
+            .narrative-block { padding: 3rem 0; }
+            #futuro > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <a href="#inicio" class="nav-brand">Aldoh S. Flores</a>
+        <div class="nav-links">
+            <a href="#raices">Raíces</a>
+            <a href="#evolucion">Evolución</a>
+            <a href="#profesional">Ingeniería</a>
+            <a href="#teologia">Teología</a>
+            <a href="#ditooh">Ditooh</a>
+            <a href="#futuro">Futuro</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero container" id="inicio">
+        <div class="hero-layout">
+            <div class="hero-text">
+                <span class="sans hero-kicker">Identidad Digital V2.0</span>
+                <h1 class="hero-title">Aldo<span>h</span> Saúl Flores García</h1>
+                <p class="hero-thesis">Entender para mejorar.</p>
+                <p class="hero-lede">
+                    Intento comprender cómo funcionan las cosas para ayudarlas a funcionar mejor: procesos, personas, ideas y, a veces, a mí mismo.
+                </p>
+                <div class="hero-principles" aria-label="Sistemas que busco comprender y mejorar">
+                    <span>Procesos</span>
+                    <span>Personas</span>
+                    <span>Ideas</span>
+                    <span>Espíritu</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="#raices" class="hero-link primary">Entrar al manifiesto</a>
+                    <a href="#profesional" class="hero-link">Ver impacto</a>
+                </div>
+            </div>
+            <div class="hero-img-container">
+                <img src="aldoh-saul-flores-garcia.jpg" alt="Aldoh Saúl Flores García" width="1200" height="1600" fetchpriority="high" decoding="async">
+            </div>
+        </div>
+    </header>
+
+    <section class="container narrative-block">
+        <h3 class="sans">Umbral</h3>
+        <p class="drop-cap">
+            No soy una definición cerrada, sino una declaración de presencia. Este espacio no es un currículum, es un archivo vivo de mi construcción consciente. Aquí convergen la razón técnica y la inquietud existencial, el cálculo y el verso.
+        </p>
+        <p>
+            Me defino por la integración. Rechazo la idea de que debemos elegir entre ser analíticos o emocionales. Soy <strong>Ingeniero</strong> porque amo los sistemas que funcionan, y soy <strong>Poeta</strong> (Ditooh) porque necesito nombrar lo que siento.
+        </p>
+    </section>
+
+    <div class="full-width" id="raices">
+        <div class="container">
+            <h3 class="sans">El Origen</h3>
+            <h2>Raíces y Valores</h2>
+            <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
+                <div>
+                    <p>
+                        Broté un jueves de julio de 2001 en "tierra de coyotes": <strong>Coyuca de Catalán</strong>, Guerrero. Mi infancia se divide entre la libertad de <strong>Los Brasiles</strong>, jugando con mis primos, y la formación de mis padres. Aunque la CDMX es mi base operativa actual.
+                    </p>
+                    <p>
+                        De mi madre heredé la constancia y una sensibilidad profunda; de mi padre, la disciplina del taller y el pensamiento crítico del profesor. Como <strong>hermano mayor</strong>, aprendí temprano que la responsabilidad no es una carga, sino un privilegio de servicio.
+                    </p>
+                </div>
+                <div>
+                    <p><strong>La Fe como Búsqueda:</strong></p>
+                    <p class="italic" style="font-size: 0.95rem;">
+                        No vivo la fe como un dogma cómodo, sino como una investigación constante. Tras alejarme, regresé como el <strong>hijo pródigo</strong>, encontrando en Dios un sentido de orden y propósito que la razón por sí sola no alcanzaba a explicar. Hoy, mi fe es el puente entre lo que calculo como ingeniero y lo que siento como hombre. Si Dios existe, existe todo. Mi teología es racional: creer es también un acto de inteligencia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container narrative-block" id="evolucion">
+        <h3 class="sans">Trayectoria Vital</h3>
+        <h2>La Alquimia del Carácter</h2>
+        <p>
+            Durante años, mi identidad se refugió en el arquetipo del <strong>Truhán</strong>. Entre los 15 y los 23, el humor fue mi escudo y la risa mi forma de no rendirme ante el dolor. Sin embargo, la vida me exigió una transición forzosa.
+        </p>
+        <p>
+            Pero la vida exige verdad. Una fuerte caída académica me obligó a reconstruirme. De las cenizas de la reprobación nació "Pugno". Cambié de universidad, pero me traje conmigo que el más cocho sobrevivé. Entendí que <strong>el liderazgo sin estructura se quiebra</strong>.
+        </p>
+        <div class="data-grid">
+            <div class="data-card">
+                <span class="sans small-caps" style="color: var(--accent-clay);">Personalidad</span>
+                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>ENTP-A</strong> (El Innovador)</p>
+                <p style="font-size: 0.9rem; margin:0;">Eneagrama 7w8</p>
+            </div>
+            <div class="data-card">
+                <span class="sans small-caps" style="color: var(--accent-clay);">Motor</span>
+                <p style="margin-top: 0.5rem; margin-bottom: 0;">Guerrero del Cambio</p>
+                <p style="font-size: 0.9rem; margin:0;">Me frustra la estática y la mediocridad.</p>
+            </div>
+            <div class="data-card">
+                <span class="sans small-caps" style="color: var(--accent-clay);">Anclas</span>
+                <p style="margin-top: 0.5rem; margin-bottom: 0;">Deporte & Disciplina</p>
+                <p style="font-size: 0.9rem; margin:0;">Basquetbol, Atletismo, Ajedrez.</p>
+            </div>
+        </div>
+    </section>
+
+   <div class="full-width" id="profesional" style="background: #f4f6f7;">
+    <div class="container">
+        <h3 class="sans" style="color: var(--accent-ink);">El Ingeniero</h3>
+        <h2>Formación y Trayectoria</h2>
+        <p>
+            Mi construcción como ingeniero no fue lineal, fue acumulativa. Comencé con el orden de los números y terminé diseñando procesos industriales.
+        </p>
+        
+        <div style="margin-top: 3rem; border-left: 2px solid var(--accent-clay); padding-left: 1.5rem;">
+            <div style="margin-bottom: 2rem;">
+                <h4 class="sans" style="margin-bottom: 0.2rem;">Tecnológico de Estudios Superiores de Ecatepec</h4>
+                <p class="italic" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Especialidad en CAD/CAM</p>
+                <p style="font-size: 0.95rem;">
+                    Donde el <strong>Pugno</strong> tomó forma. Aquí me especialicé en Diseño y Manufactura Asistida por Computadora, consolidando la técnica que hoy me define.
+                </p>
+            </div>
+            
+            <div style="margin-bottom: 2rem;">
+                <h4 class="sans" style="margin-bottom: 0.2rem;">Instituto Tecnológico Superior de Huetamo</h4>
+                <p class="italic" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Fundamentos Industriales</p>
+                <p style="font-size: 0.95rem;">
+                    Mis cimientos. Aprendí la filosofía del <strong>Toyota Production System</strong> y <strong>Lean Manufacturing</strong>. Entendí que la eficiencia no es suerte, es método.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h4 class="sans" style="margin-bottom: 0.2rem;">Colegio de Bachilleres Plantel 5 (Guerrero)</h4>
+                <p class="italic" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Capacitación: Auxiliar Contable</p>
+                <p style="font-size: 0.95rem;">
+                    El inicio del orden. La contabilidad me enseñó que cada recurso cuenta y debe ser registrado.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="sans" style="color: var(--accent-ink); margin-top: 4rem;">Experiencia Real</h3>
+        <div class="data-grid">
+
+             <!-- TARJETA 1: EATON (ACTUALIDAD) -->
+            <div class="data-card">
+                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Actualidad</span>
+                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>Eaton</strong></p>
+                <p style="font-size: 0.85rem; margin:0;">
+                    <strong>Ingeniero Analista de Procesos.</strong> Un regreso con propósito. Tras mi etapa inicial como practicante, vuelvo para demostrar la evolución de mi perfil, fusionando el rigor analítico con la ejecución estratégica.
+                </p>
+            </div>
+            
+            <!-- TARJETA 2: 3C METROLOGY (EVOLUCIÓN) -->
+            <div class="data-card">
+                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Expansión</span>
+                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>3C Metrology</strong></p>
+                <p style="font-size: 0.85rem; margin:0;">
+                    <strong>Técnico Comercial.</strong> El rol que potenció mi extroversión. Aprendí a conectar con el cliente, demostrando que la comunicación, planear y trabajar en equipo son tan vitales como el cálculo.
+                </p>
+            </div>
+
+            <!-- TARJETA 3: INROADS (FORMACIÓN) -->
+            <div class="data-card">
+                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Formación de Élite</span>
+                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>Inroads México</strong></p>
+                <p style="font-size: 0.85rem; margin:0;">
+                    Formo parte de esta ONG que impulsa talento. Aquí pulí mi liderazgo y visión corporativa.
+                </p>
+            </div>
+
+            <!-- TARJETA 4: IISE (LIDERAZGO) -->
+            <div class="data-card">
+                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Liderazgo Fundacional</span>
+                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>IISE - Capítulo 621 ITSH</strong></p>
+                <p style="font-size: 0.85rem; margin:0;">
+                    <strong>Vicepresidente Fundador.</strong> Miembro del Institute of Industrial and Systems Engineers. Aquí descubrí y forjé mis dotes de liderazgo, sentando las bases para la gestión de equipos y la organización estratégica.
+                </p>
+            </div>
+
+        </div>
+        
+        <div style="margin-top: 2rem; text-align: right;">
+            <a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--accent-ink); text-decoration: none; border-bottom: 1px solid var(--accent-ink);">
+                Ver trayectoria completa en LinkedIn →
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!-- SECCIÓN: TEOLOGÍA -->
+<section id="teologia" class="narrative-block container" style="border-top: 1px solid var(--line-color);">
+    <h3 class="sans" style="color: var(--accent-ink);">El Teólogo</h3>
+    <h2>Aprender a pensar a Dios</h2>
+    
+    <p class="drop-cap">
+        Mi identidad teológica no comenzó al terminar un diplomado; el rigor académico solo le puso nombre y estructura a algo que ya existía. Nació mucho antes: en los sábados de catecismo, en mi paso por el preseminario, y en el instante preciso en que comencé a preguntarme quién es Dios cuando nadie me ve.
+    </p>
+    
+    <p>
+        Durante años viví mi fe principalmente desde la práctica, formado dentro de la Iglesia Católica. Sin embargo, con el tiempo descubrí que creer no era suficiente para mí. <strong>Necesitaba comprender.</strong> Esa necesidad me llevó a estudiar teología de manera formal y a descubrir que la fe cristiana no teme a la razón; por el contrario, la invita a caminar junto a ella.
+    </p>
+
+    <!-- CITA DESTACADA -->
+    <div style="margin: 3.5rem 0; padding: 2.5rem; background: var(--bg-white); border-left: 4px solid var(--accent-clay); box-shadow: 10px 10px 0 var(--line-color);">
+        <p style="font-size: 1.15rem; font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7;">
+            "No entiendo la teología como un ejercicio de erudición, sino como una búsqueda de sentido. Creo que Dios puede ser amado con el corazón, pero también con la inteligencia."
+        </p>
+        <p style="font-size: 1.15rem; font-style: italic; color: var(--text-secondary); margin-bottom: 0; line-height: 1.7;">
+            "La teología me enseñó que buscar a Dios con honestidad intelectual también es una forma de amarlo. Las preguntas sinceras pueden ser una forma de oración."
+        </p>
+    </div>
+
+    <p>
+        Mi interés se ha dirigido hacia la relación entre fe y razón, la filosofía clásica, la historia de la Iglesia, la interpretación bíblica y la Doctrina Social. Pero más allá de los conceptos teóricos, la verdadera revelación ha sido entender que toda reflexión teológica debe conducir a una vida más auténtica. La fe no se reduce a normas, sino que implica una relación viva y una responsabilidad concreta hacia los demás.
+    </p>
+
+    <h3 class="sans" style="color: var(--accent-ink); margin-top: 4rem; margin-bottom: 1.5rem;">Un Viaje de Regreso</h3>
+    
+    <p>
+        No estudio teología para convertirme en un experto en Dios. La estudio porque cada vez que intento comprenderlo, descubro algo más sobre quién soy yo. Entre páginas de filosofía, documentos eclesiales, la lectura viva de la Biblia (alimentada por espacios como RUAJ y Hakuna) y largas conversaciones, he llegado a una convicción sencilla: <strong>si Dios existe, existe todo.</strong>
+    </p>
+
+    <p>
+        Considero que el aprendizaje teológico es un camino permanente, porque comprender el misterio supera toda una vida. Y si conocer a Dios es el fin último del ser humano, entonces cada pregunta sincera, cada acto de servicio y cada búsqueda honesta de la verdad son también, inevitablemente, parte del camino de regreso hacia Él.
+    </p>
+</section> 
+
+    
+    <section class="poetry-section" id="ditooh" style="background-color: #0a0a0a; color: #eaeaea; padding: 6rem 0;">
+        <div class="container">
+            
+            <div style="text-align: center; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h3 class="sans" style="color: #666; letter-spacing: 3px; font-size: 0.9rem;">LA VOZ INTERNA</h3>
+                <h2 style="color: #fff; border: none; margin-top: 0.5rem; font-size: 2.5rem;">Yo soy Ditooh</h2>
+                
+                <p style="font-size: 1.1rem; color: #ddd; margin-top: 1.5rem; line-height: 1.6;">
+                    Ditooh es el seudónimo que protege y libera mi voz interna. Si Aldoh estructura la realidad, Ditooh la siente.
+                </p>
+    
+                <p class="serif italic" style="font-size: 1.3rem; color: #bbb; margin: 2rem auto;">
+                    “Escribo cuando hablar no alcanza.”
+                </p>
+    
+                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; font-family: 'Inter', sans-serif; font-size: 0.9rem;">
+                    <a href="https://substack.com/@asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Substack</a>
+                    <a href="https://www.instagram.com/ditooh.m4ldito" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Instagram</a>
+                    <a href="https://www.wattpad.com/user/asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Wattpad</a>
+                </div>
+            </div>
+
+            <article class="cloud-card featured-card">
+                <h3 class="serif" style="color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">Capítulo uno: Número no registrado</h3>
+                <div class="text-content">
+                    <p>Doce dígitos aparecían en la pantalla de mi celular.
+Un número no registrado.
+
+Últimamente recibía muchas llamadas así. Las elecciones presidenciales estaban cerca y era sabido que las encuestas se hacían por teléfono. Dudé en contestar, pero mi situación no me permitía rechazar ninguna llamada.
+
+Llevaba casi tres meses buscando un lugar donde pudiera liberar mis prácticas profesionales. Estudié ingeniería industrial. Mandé mi CV a demasiados lugares como para contarlos, y aunque encontrar trabajo no es imposible, lograr que te liberen las prácticas hace que las empresas se pongan difíciles...</p>
+                    
+                    <details>
+                        <summary>Leer completo</summary>
+                        <p style="margin-top: 1rem;">
+                            Estaba en la estación Tasqueña, en la Ciudad de México. Viajaba con mi hermana rumbo a Cuernavaca a visitar a mi tía Lidu. Dicen que ahí se encuentra el mejor clima del país. Estábamos por averiguarlo.
+
+—Hola, Aldoh. Soy Gael, de Recursos Humanos en Eaton. ¿Cómo estás?
+
+Reconocí su voz de inmediato. Era la cuarta vez que hablaba con él en la semana. Tenía un acento peculiar: una mezcla entre poblano y chilango formal.
+
+—El motivo de mi llamada es para darte los resultados del proceso de selección para la vacante de Opex. En Eaton nos gusta mantener informados a todos los participantes.
+
+Me puse tenso. Quería gritarle que soltara la maldita sopa de una vez. ¿Por qué lo hacen con tanta intriga?
+
+—Después de un análisis profundo entre varios candidatos, hemos decidido tomar una decisión, eligiendo a quien mejor representaba las habilidades necesarias para el puesto.
+
+Ahí lo supe. Iba a pasar otra vez.
+
+Al menos esta vez tuvieron la amabilidad de llamarme. Antes solo me ghosteaban o, si me iba bien, recibía un correo automatizado con la leyenda: “Desafortunadamente no logramos conectar tu perfil. No pierdas el ánimo.”
+
+—Queremos felicitarte por el arduo esfuerzo demostrado durante las entrevistas y, aunque lamentablemente…
+
+Lo sabía.
+
+Mi cabeza se llenó del ruido de la central. Mis ojos se clavaron en el número 17 impreso en mi boleto. Las dificultades que enfrenta un recién graduado para conseguir su primer trabajo han sido analizadas durante años: falta de experiencia, desconocimiento de nuevas tecnologías, requisitos altos para puestos básicos.
+
+—Aldoh, ¿sigues ahí?
+
+Había olvidado que seguía al teléfono.
+
+—Sí, Gael, aquí sigo. ¿Podrías repetirlo?
+
+—Claro. Aún no estás contratado, pero eres el candidato seleccionado.
+Felicidades.
+
+                        </p>
+                    </details>
+                </div>
+            </article>
+    
+            <div class="masonry-columns">
+                
+                <article class="cloud-card">
+                    <h3 class="serif" style="color: var(--accent-clay); font-size: 1.2rem; margin-bottom: 1rem;">Poema I – Coincidencia</h3>
+                    <div class="text-content">
+Justo cuando mi vida parecía en calma…
+llegaste.
+
+No hiciste ruido,
+ni falta te hizo.
+
+Solo una mirada
+y el mundo volvió a desacomodarse.
+
+No sé qué es lo que tienes,
+pero sé que no quiero perder
+la oportunidad de descubrirlo.
+                    </div>
+                </article>
+    
+                <article class="cloud-card">
+                    <h3 class="serif" style="color: var(--accent-clay); font-size: 1.2rem; margin-bottom: 1rem;">Poema II – Difícil de Amar</h3>
+                    <div class="text-content">
+Soy un romántico empalagoso
+Y lo digo muy gozoso,
+Poemas, flores y mucha lealtad,
+Tiempo de calidad.
+
+Y ella siempre termina arta,
+Atosigada, no puede con la atención,
+Maltratos, engaños, evasión,
+Ocultó mi carta,
+Entre sus dibujos,
+Entre sus colores,
+Entre sus olvidos,
+Ahí estaban mis flores,
+
+No tengo miedo de decir que te quiero,
+Eres mi emblema,
+Sobresiento, Sobreamo,
+Yo soy un problema.
+
+Besos sin destino,
+Viajes al mar,
+¿Acaso no tengo tino?
+¿O esto es difícil de amar?
+                    </div>
+                </article>
+
+                <article class="cloud-card">
+                    <h3 class="serif" style="color: var(--accent-clay); font-size: 1.2rem; margin-bottom: 1rem;">Poema III – Fuego que no se apaga</h3>
+                    <div class="text-content">
+La piel arde.
+El corazón delira.
+Mi mente:
+una guerra perdida
+en un universo que sangra palabras
+que no termino de leer.
+
+Algo dentro de mí
+no deja derramarse
+sobre este bello atardecer.
+Y me da miedo
+tener miedo.
+
+¿Podré seguir estando sobrio
+cuando el abismo me llama por mi nombre?
+
+No sé qué duele más:
+si la sed que me consume,
+o el miedo de no poder vivir sin ella.
+
+Me pasa de todo.
+Y no puedo con nada.
+
+Y sí,
+soy poeta…
+aunque duela decirlo.
+Amo las letras.
+Y ellas,
+parecen no amarme de vuelta.
+
+El incienso arde
+y lloro al recordarme,
+como si yo mismo
+hubiera nacido para quemarme.
+
+Deliro.
+El fuego me habita.
+Y jura que moriré.
+
+Lo que no sabe,
+es que estoy por nacer.
+
+Hay voces en mi garganta
+que no logro entender.
+
+Pero dime,
+¿realmente quiero comprender?
+                    </div>
+                </article>
+    
+            </div>
+        </div>
+        
+        <style>
+            /* Estilos generales de las tarjetas nube */
+            .cloud-card {
+                background: #141414;
+                border: 1px solid #333;
+                padding: 2.5rem;
+                border-radius: 8px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                transition: transform 0.4s ease, border-color 0.3s ease;
+                margin-bottom: 2rem;
+                break-inside: avoid; /* Evita cortes en columnas */
+            }
+    
+            .cloud-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--accent-clay);
+            }
+    
+            /* Estilo ESPECIAL para el Capítulo Uno (Centrado y Ancho) */
+            .featured-card {
+                max-width: 800px; /* Ancho ideal de lectura */
+                margin: 0 auto 4rem auto; /* Centrado horizontal y margen abajo */
+                padding: 3rem; /* Un poco más de aire */
+                border-left: 4px solid var(--accent-clay); /* Detalle visual extra */
+            }
+    
+            /* Columnas para los poemas */
+            .masonry-columns {
+                column-count: 2; /* 2 Columnas para los poemas */
+                column-gap: 2rem;
+            }
+    
+            .text-content {
+                font-family: 'Lora', serif;
+                font-style: italic;
+                color: #bbb;
+                line-height: 1.8;
+                white-space: pre-line;
+                font-size: 1rem;
+            }
+    
+            /* Botón Leer más */
+            details summary {
+                cursor: pointer;
+                color: var(--accent-clay);
+                font-family: 'Inter', sans-serif;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                list-style: none;
+                margin-top: 1.5rem;
+                text-align: center; /* Botón centrado */
+                padding-top: 1rem;
+                border-top: 1px solid #333;
+            }
+            
+            details summary:hover { text-decoration: underline; }
+    
+            /* Móvil */
+            @media (max-width: 768px) {
+                .masonry-columns { column-count: 1; }
+                .featured-card { padding: 1.5rem; }
+            }
+        </style>
+    </section>
+
+    <section class="container narrative-block" id="futuro" style="padding-bottom: 6rem;">
+    <h3 class="sans" style="color: var(--accent-clay);">Visión 2037</h3>
+    <h2>La Conquista de la Libertad</h2>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        
+        <div>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                Si el presente es disciplina, el futuro es libertad. Mi regreso a la industria replanteó mis tiempos, pero magnificó mi destino. He decidido aplazar mi gran proyecto una década para construir primero una carrera profesional impecable y sin fisuras. 
+            </p>
+            <p>
+                No llegaré a <strong>Australia</strong> a ver qué sucede ni a improvisar; llegaré convertido en mi mejor versión, dominando el inglés como una segunda piel. Aunque el plan definitivo para estudiar mi <strong>maestría (MBA)</strong> y aprender a surfear está fijado para 2037, sé que esa no será la primera vez que pise Brisbane. Estaré ahí en los <strong>Juegos Olímpicos de 2032</strong>, viendo a la selección francesa colgarse la medalla de oro con Wembanyama como MVP.
+            </p>
+            <p class="italic" style="color: #666; border-left: 3px solid var(--accent-clay); padding-left: 1rem; margin-top: 2rem;">
+                "Ser libre es poder elegir a voluntad, sin presión externa. Es correr sin parar sobre un campo abierto."
+            </p>
+        </div>
+
+        <div style="background: #f4f6f7; padding: 2rem; border-radius: 8px; border: 1px solid #e0e0e0;">
+            <h4 class="sans" style="margin-bottom: 1.5rem; color: var(--accent-ink);">Objetivos Estratégicos</h4>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 600;">Consolidación Profesional</span>
+                    <span style="color: var(--accent-clay);">Foco Actual</span>
+                </div>
+                <div style="height: 6px; background: #ddd; border-radius: 3px;">
+                    <div style="height: 100%; width: 60%; background: var(--accent-ink); border-radius: 3px;"></div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 600;">Idioma (Inglés C1)</span>
+                    <span style="color: var(--accent-clay);">Prioridad Alta</span>
+                </div>
+                <div style="height: 6px; background: #ddd; border-radius: 3px;">
+                    <div style="height: 100%; width: 45%; background: var(--accent-ink); border-radius: 3px;"></div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 600;">Brisbane 2032, MBA & Surf</span>
+                    <span style="color: var(--accent-clay);">Proyección</span>
+                </div>
+                <div style="height: 6px; background: #ddd; border-radius: 3px;">
+                    <div style="height: 100%; width: 20%; background: var(--accent-ink); border-radius: 3px;"></div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; text-align: center; border-top: 1px solid #ddd; padding-top: 1.5rem;">
+                <p class="sans small-caps" style="margin-bottom: 0;">Horizonte Temporal</p>
+                <span style="font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 700; color: var(--accent-clay);">2032 – 2037</span>
+            </div>
+        </div>
+
+    </div>
+    
+    <style>
+        @media (max-width: 768px) {
+            #futuro > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
+        }
+    </style>
+</section>
+    
+    <section id="proposito-ikigai" style="background-color: #fff; padding: 8rem 0; border-top: 1px solid #f0f0f0; position: relative;">
+        <div class="container" style="max-width: 750px;">
+            
+            <div style="margin-bottom: 4rem; text-align: left;">
+                <p class="serif italic" style="font-size: 1.2rem; color: #888; line-height: 1.6;">
+                    El propósito no es una meta que se alcanza de golpe, sino una brújula que se calibra caminando, fallando y corrigiendo en cada paso.
+                </p>
+            </div>
+    
+            <div style="margin-bottom: 5rem;">
+                <h3 class="sans" style="font-size: 0.8rem; letter-spacing: 3px; color: var(--accent-clay); margin-bottom: 2rem;">REVELACIÓN</h3>
+                <h2 style="font-size: 2rem; line-height: 1.3; margin-bottom: 2rem; border: none;">Mi propósito no es definitivo, es una voluntad viva.</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--accent-ink);">
+                    Camino para <strong>conectar</strong>: ideas que parecen distantes, personas que buscan rumbo y procesos que necesitan fluidez. Lo hago desde la <strong>justicia</strong> y la <strong>estrategia</strong>, pero siempre con el <strong>alma</strong> puesta en la ejecución. Mi labor es crear orden donde el caos impera y devolver el sentido donde solo queda ruido.
+                </p>
+            </div>
+
+                        </p>
+        </div>
+
+        <div style="background: #f4f6f7; padding: 2rem; border-radius: 8px; border: 1px solid #e0e0e0;">
+            <h4 class="sans" style="margin-bottom: 1.5rem; color: var(--accent-ink);">Objetivos Estratégicos</h4>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 600;">Consolidación Profesional</span>
+                    <span style="color: var(--accent-clay);">Foco Actual</span>
+                </div>
+                <div style="height: 6px; background: #ddd; border-radius: 3px;">
+                    <div style="height: 100%; width: 60%; background: var(--accent-ink); border-radius: 3px;"></div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 600;">Idioma (Inglés C1)</span>
+                    <span style="color: var(--accent-clay);">Prioridad Alta</span>
+                </div>
+                <div style="height: 6px; background: #ddd; border-radius: 3px;">
+                    <div style="height: 100%; width: 45%; background: var(--accent-ink); border-radius: 3px;"></div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 600;">Brisbane 2032, MBA & Surf</span>
+                    <span style="color: var(--accent-clay);">Proyección</span>
+                </div>
+                <div style="height: 6px; background: #ddd; border-radius: 3px;">
+                    <div style="height: 100%; width: 20%; background: var(--accent-ink); border-radius: 3px;"></div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; text-align: center; border-top: 1px solid #ddd; padding-top: 1.5rem;">
+                <p class="sans small-caps" style="margin-bottom: 0;">Horizonte Temporal</p>
+                <span style="font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 700; color: var(--accent-clay);">2032 – 2037</span>
+            </div>
+        </div>
+
+    </div>
+    
+    <style>
+        @media (max-width: 768px) {
+            #futuro > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
+        }
+    </style>
+</section>
+    
+    <section id="proposito-ikigai" style="background-color: #fff; padding: 8rem 0; border-top: 1px solid #f0f0f0; position: relative;">
+        <div class="container" style="max-width: 750px;">
+            
+            <div style="margin-bottom: 4rem; text-align: left;">
+                <p class="serif italic" style="font-size: 1.2rem; color: #888; line-height: 1.6;">
+                    El propósito no es una meta que se alcanza de golpe, sino una brújula que se calibra caminando, fallando y corrigiendo en cada paso.
+                </p>
+            </div>
+    
+            <div style="margin-bottom: 5rem;">
+                <h3 class="sans" style="font-size: 0.8rem; letter-spacing: 3px; color: var(--accent-clay); margin-bottom: 2rem;">REVELACIÓN</h3>
+                <h2 style="font-size: 2rem; line-height: 1.3; margin-bottom: 2rem; border: none;">Mi propósito no es definitivo, es una voluntad viva.</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--accent-ink);">
+                    Camino para <strong>conectar</strong>: ideas que parecen distantes, personas que buscan rumbo y procesos que necesitan fluidez. Lo hago desde la <strong>justicia</strong> y la <strong>estrategia</strong>, pero siempre con el <strong>alma</strong> puesta en la ejecución. Mi labor es crear orden donde el caos impera y devolver el sentido donde solo queda ruido.
+                </p>
+            </div>
+    
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; text-align: left; margin-bottom: 5rem;">
+                <div>
+                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-bottom: 1rem; letter-spacing: 1px;">LO QUE ME MUEVE</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        Amo el pensamiento profundo y la libertad que otorga la escritura. Me muevo por una espiritualidad inquieta y la necesidad constante de movimiento, tanto físico como intelectual.
+                    </p>
+                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-top: 2rem; margin-bottom: 1rem; letter-spacing: 1px;">EL VALOR QUE APORTO</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        Desde la ingeniería y la mejora de procesos, ofrezco una visión de conjunto que prioriza la eficiencia sin ignorar la estrategia humana.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-bottom: 1rem; letter-spacing: 1px;">MI FORTALEZA</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        Soy capaz de ver el todo donde otros ven piezas sueltas. Mi habilidad reside en liderar a través de la comunicación clara y la priorización lógica.
+                    </p>
+                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-top: 2rem; margin-bottom: 1rem; letter-spacing: 1px;">LA NECESIDAD</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        Creo firmemente que el mundo necesita personas con principios innegociables y cambios que, aunque audaces, posean una estructura sólida para perdurar.
+                    </p>
+                </div>
+            </div>
+    
+            <div style="padding-top: 3rem; border-top: 1px solid #eee; text-align: center;">
+                <p class="serif" style="font-size: 1rem; color: #555; max-width: 550px; margin: 0 auto; line-height: 1.7;">
+                    Este mapa no está terminado. Se ajusta con el tiempo, con los aciertos y, sobre todo, con las heridas. Pero hoy, con la mirada puesta en el horizonte, este es el rumbo que elijo seguir.
+                </p>
+                <div style="margin-top: 3rem; font-weight: 800; color: #eee; font-size: 3rem; user-select: none;">
+                    PUGNO
+                </div>
+            </div>
+    
+        </div>
+    </section>
+    
+<footer style="background-color: #fdfbf7; padding: 4rem 0; border-top: 1px solid #e0e0e0; margin-top: 4rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem;">
+                
+                <div>
+                    <h4 class="sans" style="font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-clay); margin-bottom: 1.5rem;">MANIFESTO</h4>
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: var(--accent-ink);">
+                        "Organizo el caos para encontrar la estructura; escribo versos para no olvidar el alma."
+                    </p>
+                    <p style="font-size: 0.85rem; color: #888; margin-top: 1rem;">
+                        Agradecido con el linaje que me dio nombre y la fe que me dio rumbo. 
+                    </p>
+                </div>
+    
+                <div>
+                    <h4 class="sans" style="font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-clay); margin-bottom: 1.5rem;">MAPA</h4>
+                    <ul style="list-style: none; padding: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 2;">
+                        <li><a href="#raices">Raíces</a></li>
+                        <li><a href="#profesional">Ingeniería</a></li>
+                        <li><a href="#ditooh">Poesía (Ditooh)</a></li>
+                        <li><a href="#futuro">Australia 2037</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h4 class="sans" style="font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-clay); margin-bottom: 1.5rem;">CONEXIÓN</h4>
+                    <ul style="list-style: none; padding: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 2;">
+                        <li><a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/ditooh.m4ldito" target="_blank">Instagram</a></li>
+                        <li><a href="mailto:aldohflores@gmail.com">Contacto Directo</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 3rem 0;">
+    
+            <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #aaa; letter-spacing: 1px;">
+                <span>© Aldoh Saul Flores — Ciudad de México</span>
+                <span>ESTE SITIO EVOLUCIONA CONFORME YO EVOLUCIONO</span>
+                <span style="color: var(--accent-clay); font-weight: 700;">H</span>
+            </div>
+        </div>
+    
+        <style>
+            @media (max-width: 768px) {
+                footer .container > div:first-child {
+                    grid-template-columns: 1fr !important;
+                    text-align: center;
+                }
+                footer ul { text-align: center; }
+                footer .container > div:last-child {
+                    flex-direction: column;
+                    gap: 1rem;
+                    text-align: center;
+                }
+            }
+        </style>
+    </footer>
+
+</body>
+</html>
