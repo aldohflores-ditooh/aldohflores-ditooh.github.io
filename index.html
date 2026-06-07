@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -14,13 +14,16 @@
     <meta property="og:description" content="Explora la dualidad entre la estrategia industrial y la sensibilidad poética de Aldoh Saúl.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aldohflores-ditooh.github.io/">
-    <meta property="og:image" content="https://aldohflores-ditooh.github.io/img/preview.jpg">
+    <meta property="og:image" content="https://aldohflores-ditooh.github.io/img/aldoh-saul-flores-garcia.jpg">
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23b85d38%22>A</text></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <script type="application/ld+json">
     {
@@ -49,147 +52,6 @@
       "description": "Ingeniero Industrial enfocado en la mejora de procesos y metrología, explorando la condición humana a través de la poesía bajo el seudónimo Ditooh."
     }
     </script>
-    
-    <style>
-        /* =========================================
-           VARIABLES DE DISEÑO
-           ========================================= */
-        :root {
-            --bg-paper: #fdfbf7; 
-            --bg-white: #ffffff;
-            --text-primary: #111111;
-            --text-secondary: #4a4a4a;
-            --accent-clay: #b85d38; 
-            --accent-ink: #2c3e50;  
-            --line-color: #e5e5e5;
-        }
-
-        /* =========================================
-           RESET & BASE
-           ========================================= */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: 'Lora', serif;
-            background-color: var(--bg-paper);
-            color: var(--text-primary);
-            line-height: 1.8;
-            font-size: 18px;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-
-        /* =========================================
-           TIPOGRAFÍA
-           ========================================= */
-        h1, h2, h3, h4 { font-weight: 600; line-height: 1.3; margin-bottom: 1.5rem; letter-spacing: -0.02em; color: var(--text-primary); }
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-        h2 { font-size: 1.8rem; border-left: 4px solid var(--accent-clay); padding-left: 1rem; margin-top: 3rem; }
-        h3 { font-family: 'Inter', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 1rem; }
-        
-        p { margin-bottom: 1.8rem; color: var(--text-secondary); max-width: 100%; }
-        strong { color: var(--text-primary); font-weight: 600; }
-        
-        .sans { font-family: 'Inter', sans-serif; }
-        .italic { font-style: italic; }
-        
-        /* =========================================
-           COMPONENTES Y ESTRUCTURA
-           ========================================= */
-        .container { 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 0 2rem;
-            position: relative; 
-        }
-        
-        .full-width { width: 100%; background: var(--bg-white); padding: 4rem 0; border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); }
-
-        /* =========================================
-           NAVEGACIÓN
-           ========================================= */
-        nav { 
-            position: fixed; top: 0; left: 0; width: 100%; 
-            padding: 1rem 2rem; 
-            display: flex; justify-content: space-between; align-items: center; 
-            z-index: 100; background: rgba(253, 251, 247, 0.95); backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .nav-brand { 
-            font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.9rem; 
-            letter-spacing: 1px; text-transform: uppercase; color: var(--text-primary);
-        }
-
-        .nav-links a { 
-            margin-left: 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; 
-            font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;
-        }
-        .nav-links a:hover { color: var(--accent-clay); }
-
-        /* =========================================
-           HERO SECTION
-           ========================================= */
-        header.hero { min-height: 100vh; display: flex; align-items: center; padding: 6rem 0 3rem 0; }
-        .hero-layout { display: grid; grid-template-columns: 1fr 0.8fr; gap: 4rem; align-items: center; }
-        
-        .hero-img-container img {
-            width: 100%; border-radius: 2px; filter: grayscale(100%) contrast(1.1);
-            transition: all 0.8s ease; box-shadow: 15px 15px 0 var(--line-color);
-        }
-        .hero-img-container img:hover { filter: grayscale(0%) contrast(1); box-shadow: 15px 15px 0 var(--accent-clay); }
-        
-        .hero-quote { 
-            font-size: 1.25rem; font-style: italic; color: var(--text-secondary); 
-            margin-top: 2rem; border-left: 3px solid var(--accent-ink); padding-left: 1.5rem; line-height: 1.6; 
-        }
-
-        /* =========================================
-           SECCIONES NARRATIVAS
-           ========================================= */
-        .narrative-block { padding: 4rem 0; }
-        
-        .drop-cap::first-letter { 
-            float: left; font-size: 3.8rem; line-height: 0.75; font-weight: 700; 
-            padding-right: 0.8rem; margin-top: 0.2rem; color: var(--accent-clay); 
-        }
-
-        /* =========================================
-           GRID DE DATOS & POESÍA & FOOTER
-           ========================================= */
-        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .data-card { background: var(--bg-paper); border: 1px solid var(--line-color); padding: 1.5rem; border-radius: 4px; transition: all 0.3s; }
-        .data-card:hover { transform: translateY(-3px); border-color: var(--accent-clay); }
-        .poetry-section { background-color: #0a0a0a !important; color: #f0f0f0; padding: 5rem 0; }
-        footer { padding: 3rem 1.5rem; text-align: center; font-family: 'Inter', sans-serif; font-size: 0.85rem; background: var(--bg-white); border-top: 1px solid var(--line-color); }
-
-        /* =========================================
-           RESPONSIVE
-           ========================================= */
-        @media (max-width: 768px) {
-            .container { padding: 0 2rem; } 
-            
-            nav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-            .nav-brand { width: 100%; text-align: center; }
-            .nav-links { display: flex; gap: 1rem; justify-content: center; width: 100%; flex-wrap: wrap; }
-            .nav-links a { margin: 0; font-size: 0.7rem; }
-
-            header.hero { padding-top: 8rem; align-items: flex-start; }
-            .hero-layout { grid-template-columns: 1fr; gap: 2.5rem; text-align: left; }
-            .hero-img-container { order: -1; max-width: 90%; margin: 0 auto 1rem auto; }
-            .hero-img-container img { box-shadow: 8px 8px 0 var(--line-color); }
-            
-            h1 { font-size: 2.3rem; line-height: 1.2; }
-            h2 { font-size: 1.6rem; margin-top: 2.5rem; }
-            .hero-quote { font-size: 1.15rem; padding-left: 1.2rem; border-left-width: 4px; margin-right: 1rem; }
-            .drop-cap::first-letter { font-size: 3.2rem; margin-top: 0.3rem; padding-right: 0.6rem; }
-            .narrative-block { padding: 3rem 0; }
-            #futuro > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
-        }
-    </style>
 </head>
 <body>
 
@@ -220,7 +82,7 @@
                 </div>
             </div>
             <div class="hero-img-container">
-                <img src="aldoh-saul-flores-garcia.jpg" alt="Aldoh Saúl Flores García">
+                <img src="img/aldoh-saul-flores-garcia.jpg" alt="Aldoh Saúl Flores García" width="1200" height="1600" fetchpriority="high" decoding="async">
             </div>
         </div>
     </header>
@@ -362,7 +224,7 @@
         </div>
         
         <div style="margin-top: 2rem; text-align: right;">
-            <a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--accent-ink); text-decoration: none; border-bottom: 1px solid var(--accent-ink);">
+            <a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--accent-ink); text-decoration: none; border-bottom: 1px solid var(--accent-ink);" rel="noopener noreferrer">
                 Ver trayectoria completa en LinkedIn →
             </a>
         </div>
@@ -424,9 +286,9 @@
                 </p>
     
                 <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; font-family: 'Inter', sans-serif; font-size: 0.9rem;">
-                    <a href="https://substack.com/@asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Substack</a>
-                    <a href="https://www.instagram.com/ditooh.m4ldito" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Instagram</a>
-                    <a href="https://www.wattpad.com/user/asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Wattpad</a>
+                    <a href="https://substack.com/@asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;" rel="noopener noreferrer">Substack</a>
+                    <a href="https://www.instagram.com/ditooh.m4ldito" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.wattpad.com/user/asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;" rel="noopener noreferrer">Wattpad</a>
                 </div>
             </div>
     
@@ -583,71 +445,6 @@ Pero dime,
     
             </div>
         </div>
-        
-        <style>
-            /* Estilos generales de las tarjetas nube */
-            .cloud-card {
-                background: #141414;
-                border: 1px solid #333;
-                padding: 2.5rem;
-                border-radius: 8px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                transition: transform 0.4s ease, border-color 0.3s ease;
-                margin-bottom: 2rem;
-                break-inside: avoid; /* Evita cortes en columnas */
-            }
-    
-            .cloud-card:hover {
-                transform: translateY(-5px);
-                border-color: var(--accent-clay);
-            }
-    
-            /* Estilo ESPECIAL para el Capítulo Uno (Centrado y Ancho) */
-            .featured-card {
-                max-width: 800px; /* Ancho ideal de lectura */
-                margin: 0 auto 4rem auto; /* Centrado horizontal y margen abajo */
-                padding: 3rem; /* Un poco más de aire */
-                border-left: 4px solid var(--accent-clay); /* Detalle visual extra */
-            }
-    
-            /* Columnas para los poemas */
-            .masonry-columns {
-                column-count: 2; /* 2 Columnas para los poemas */
-                column-gap: 2rem;
-            }
-    
-            .text-content {
-                font-family: 'Lora', serif;
-                font-style: italic;
-                color: #bbb;
-                line-height: 1.8;
-                white-space: pre-line;
-                font-size: 1rem;
-            }
-    
-            /* Botón Leer más */
-            details summary {
-                cursor: pointer;
-                color: var(--accent-clay);
-                font-family: 'Inter', sans-serif;
-                font-size: 0.8rem;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                list-style: none;
-                margin-top: 1.5rem;
-                text-align: center; /* Botón centrado */
-                padding-top: 1rem;
-                border-top: 1px solid #333;
-            }
-            
-            details summary:hover { text-decoration: underline; }
-    
-            /* Móvil */
-            @media (max-width: 768px) {
-                .masonry-columns { column-count: 1; }
-                .featured-card { padding: 1.5rem; }
-            }
-        </style>
     </section>
     
        <section class="container narrative-block" id="futuro" style="padding-bottom: 6rem;">
@@ -708,12 +505,6 @@ Pero dime,
         </div>
 
     </div>
-    
-    <style>
-        @media (max-width: 768px) {
-            #futuro > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
-        }
-    </style>
 </section>
     
     <section id="proposito-ikigai" style="background-color: #fff; padding: 8rem 0; border-top: 1px solid #f0f0f0; position: relative;">
@@ -795,8 +586,8 @@ Pero dime,
                 <div>
                     <h4 class="sans" style="font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-clay); margin-bottom: 1.5rem;">CONEXIÓN</h4>
                     <ul style="list-style: none; padding: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 2;">
-                        <li><a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://www.instagram.com/ditooh.m4ldito" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/ditooh.m4ldito" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                         <li><a href="mailto:aldohflores@gmail.com">Contacto Directo</a></li>
                     </ul>
                 </div>
@@ -810,22 +601,9 @@ Pero dime,
                 <span style="color: var(--accent-clay); font-weight: 700;">H</span>
             </div>
         </div>
-    
-        <style>
-            @media (max-width: 768px) {
-                footer .container > div:first-child {
-                    grid-template-columns: 1fr !important;
-                    text-align: center;
-                }
-                footer ul { text-align: center; }
-                footer .container > div:last-child {
-                    flex-direction: column;
-                    gap: 1rem;
-                    text-align: center;
-                }
-            }
-        </style>
     </footer>
 
 </body>
 </html>
+
+
