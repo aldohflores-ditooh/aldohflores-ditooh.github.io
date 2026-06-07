@@ -99,24 +99,52 @@
     </div>
 </nav>
 
-<!-- HERO: El "Manifiesto" inicial. 
-     Diseño minimalista: Centrado para obligar al usuario a leer el mensaje principal. -->
-<header class="hero" style="min-height: 90vh; display: flex; align-items: center; justify-content: center; padding-top: 4rem;">
-    <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<!-- HERO: Diseño interactivo y minimalista -->
+<section id="hero" style="min-height: 80vh; display: flex; align-items: center; padding: 4rem 2rem;">
+    <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
         
-        <!-- Nombre: El protagonista absoluto -->
-        <h1 style="margin-bottom: 1.5rem;">Aldoh Saúl Flores García</h1>
-        
-        <!-- Frase de Apertura: Sin bordes laterales para ser más contundente y limpia -->
-        <p class="hero-quote" style="font-size: 1.4rem; font-style: italic; color: var(--text-secondary); max-width: 650px; border-left: none; padding-left: 0; line-height: 1.5;">
-            "Mi vida es una obsesión con la mejora: de procesos, de personas y de mí mismo."
-        </p>
+        <!-- Texto: La declaración -->
+        <div class="hero-text">
+            <h1 style="font-size: clamp(3rem, 6vw, 4.5rem); margin-bottom: 2rem; line-height: 1.1;">Aldoh Saúl<br>Flores García</h1>
+            
+            <p class="hero-manifesto" style="font-size: 1.5rem; font-style: italic; color: var(--text-secondary); margin-bottom: 3rem; line-height: 1.6;">
+                "Mi vida es una obsesión con la mejora."
+            </p>
 
-        <!-- CTA (Call to Action): El puente hacia el impacto profesional -->
-        <a href="#impacto" style="margin-top: 3rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-clay); border: 1px solid var(--accent-clay); padding: 0.8rem 1.5rem; border-radius: 2px; transition: all 0.3s ease;">
-            Ver impacto profesional ↓
-        </a>
+            <a href="#impacto" class="btn-primary" style="display: inline-block; padding: 1rem 2rem; border: 1px solid var(--accent-clay); color: var(--accent-clay); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; cursor: pointer; transition: all 0.4s ease;">
+                Explorar impacto profesional ↓
+            </a>
+        </div>
+
+        <!-- Imagen: El elemento interactivo -->
+        <div class="hero-photo" style="overflow: hidden;">
+            <img src="aldoh-saul-flores-garcia.jpg" alt="Aldoh Saúl Flores García" 
+                 style="width: 100%; height: auto; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(100%); cursor: pointer;">
+        </div>
     </div>
+</section>
+
+<!-- ESTILOS ESPECÍFICOS PARA LA INTERACCIÓN -->
+<style>
+    /* Efecto de la foto: De gris a color y un ligero zoom */
+    .hero-photo img:hover {
+        filter: grayscale(0%);
+        transform: scale(1.03);
+    }
+
+    /* Estilo del botón */
+    .btn-primary:hover {
+        background-color: var(--accent-clay);
+        color: white;
+    }
+
+    /* Responsive: En móvil, apilamos la imagen y el texto */
+    @media (max-width: 768px) {
+        #hero .container { grid-template-columns: 1fr; text-align: center; }
+        #hero .hero-text { order: 2; }
+        #hero .hero-photo { order: 1; max-width: 300px; margin: 0 auto; }
+    }
+</style>
 </header>
 
     <!-- SECCIÓN IMPACTO: Aquí demostramos que la mejora no es teoría, es resultado -->
