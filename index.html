@@ -4,59 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- SEO & Metadata: Definimos quién eres para los buscadores -->
     <title>Aldoh Saúl Flores García | Manifiesto de Identidad</title>
     <meta name="description" content="Sitio oficial y manifiesto de vida de Aldoh Saúl Flores García. Ingeniero Industrial, Poeta (Ditooh) y Estratega. Un archivo vivo de coherencia y Pugno.">
-    <meta name="keywords" content="Aldoh Saúl Flores García, Aldoh Flores, Ditooh, Ingeniero Industrial, Poesía, Eaton, 3C Metrology, Inroads México, ENTP-A, Australia MBA, CAD/CAM, Metrología">
     <meta name="author" content="Aldoh Saúl Flores García">
-    <meta name="google-site-verification" content="lLRzIAUuTcE8cKI24Daq5eSskIz8YuSeyp-j7Kfdic0" />
     
+    <!-- Open Graph: Cómo se ve tu link en redes sociales -->
     <meta property="og:title" content="Aldoh Saúl | Ingeniero & Escritor">
     <meta property="og:description" content="Explora la dualidad entre la estrategia industrial y la sensibilidad poética de Aldoh Saúl.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aldohflores-ditooh.github.io/">
-    <meta property="og:image" content="https://aldohflores-ditooh.github.io/img/preview.jpg">
-
+    
+    <!-- Favicon: Un toque minimalista -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23b85d38%22>A</text></svg>">
 
+    <!-- Tipografía: Inter para sistemas (limpia), Lora para el alma (serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
+    <!-- JSON-LD: Datos estructurados para que Google entienda que eres una autoridad en tu campo -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Aldoh Saúl Flores García",
-      "alternateName": ["Aldoh Flores", "Ditooh"],
-      "url": "https://aldohflores-ditooh.github.io/",
       "jobTitle": ["Ingeniero Industrial", "Escritor", "Analista de Procesos"],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Eaton"
-      },
-      "alumniOf": [
-        {"@type": "CollegeOrUniversity", "name": "Tecnológico de Estudios Superiores de Ecatepec"},
-        {"@type": "CollegeOrUniversity", "name": "Instituto Tecnológico Superior de Huetamo"},
-        {"@type": "Organization", "name": "Inroads México"}
-      ],
-      "knowsAbout": ["Toyota Production System", "Lean Manufacturing", "CAD/CAM", "Metrología", "Poesía", "Estrategia", "Teología"],
-      "sameAs": [
-        "https://www.linkedin.com/in/a-saul-flores-garcia",
-        "https://www.instagram.com/ditooh.m4ldito",
-        "https://substack.com/@asaulflores",
-        "https://www.wattpad.com/user/asaulflores"
-      ],
-      "description": "Ingeniero Industrial enfocado en la mejora de procesos y metrología, explorando la condición humana a través de la poesía bajo el seudónimo Ditooh."
+      "worksFor": {"@type": "Organization", "name": "Eaton"},
+      "knowsAbout": ["Lean Manufacturing", "Poesía", "Estrategia", "Teología"]
     }
     </script>
     
     <style>
-        /* =========================================
-           VARIABLES DE DISEÑO
-           ========================================= */
+        /* ==========================================================
+           VARIABLES DE DISEÑO: La paleta de colores y espacios. 
+           Si decidimos cambiar el tono de 'arcilla' o 'tinta', se cambia aquí.
+           ========================================================== */
         :root {
             --bg-paper: #fdfbf7; 
-            --bg-white: #ffffff;
             --text-primary: #111111;
             --text-secondary: #4a4a4a;
             --accent-clay: #b85d38; 
@@ -64,11 +47,10 @@
             --line-color: #e5e5e5;
         }
 
-        /* =========================================
-           RESET & BASE
-           ========================================= */
+        /* Reset: Eliminamos los márgenes por defecto del navegador para tener control total */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        
+        html { scroll-behavior: smooth; } /* Hace que los clics en el menú se deslicen suavemente */
         
         body {
             font-family: 'Lora', serif;
@@ -76,762 +58,364 @@
             color: var(--text-primary);
             line-height: 1.8;
             font-size: 18px;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden; /* Evita barras de desplazamiento horizontales accidentales */
         }
 
+        /* Estilos globales para enlaces: Transiciones suaves para que la web se sienta "viva" */
         a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
-        /* =========================================
-           TIPOGRAFÍA
-           ========================================= */
-        h1, h2, h3, h4 { font-weight: 600; line-height: 1.3; margin-bottom: 1.5rem; letter-spacing: -0.02em; color: var(--text-primary); }
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        /* Tipografía: Escalado jerárquico. h1 es el manifiesto, h3 es contexto técnico */
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.2; }
         h2 { font-size: 1.8rem; border-left: 4px solid var(--accent-clay); padding-left: 1rem; margin-top: 3rem; }
-        h3 { font-family: 'Inter', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 1rem; }
         
-        p { margin-bottom: 1.8rem; color: var(--text-secondary); max-width: 100%; }
-        strong { color: var(--text-primary); font-weight: 600; }
+        /* Contenedor central: Mantiene la legibilidad evitando líneas de texto demasiado largas */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; position: relative; }
         
-        .sans { font-family: 'Inter', sans-serif; }
-        .italic { font-style: italic; }
-        
-        /* =========================================
-           COMPONENTES Y ESTRUCTURA
-           ========================================= */
-        .container { 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 0 2rem;
-            position: relative; 
-        }
-        
-        .full-width { width: 100%; background: var(--bg-white); padding: 4rem 0; border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); }
-
-        /* =========================================
-           NAVEGACIÓN
-           ========================================= */
+        /* Navegación: Fondo con desenfoque (blur) para dar sensación de profundidad y modernidad */
         nav { 
-            position: fixed; top: 0; left: 0; width: 100%; 
-            padding: 1rem 2rem; 
+            position: fixed; top: 0; width: 100%; padding: 1rem 2rem; 
             display: flex; justify-content: space-between; align-items: center; 
             z-index: 100; background: rgba(253, 251, 247, 0.95); backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .nav-brand { 
-            font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.9rem; 
-            letter-spacing: 1px; text-transform: uppercase; color: var(--text-primary);
-        }
-
-        .nav-links a { 
-            margin-left: 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; 
-            font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;
-        }
-        .nav-links a:hover { color: var(--accent-clay); }
-
-        /* =========================================
-           HERO SECTION
-           ========================================= */
-        header.hero { min-height: 100vh; display: flex; align-items: center; padding: 6rem 0 3rem 0; }
-        .hero-layout { display: grid; grid-template-columns: 1fr 0.8fr; gap: 4rem; align-items: center; }
-        
-        .hero-img-container img {
-            width: 100%; border-radius: 2px; filter: grayscale(100%) contrast(1.1);
-            transition: all 0.8s ease; box-shadow: 15px 15px 0 var(--line-color);
-        }
-        .hero-img-container img:hover { filter: grayscale(0%) contrast(1); box-shadow: 15px 15px 0 var(--accent-clay); }
-        
-        .hero-quote { 
-            font-size: 1.25rem; font-style: italic; color: var(--text-secondary); 
-            margin-top: 2rem; border-left: 3px solid var(--accent-ink); padding-left: 1.5rem; line-height: 1.6; 
-        }
-
-        /* =========================================
-           SECCIONES NARRATIVAS
-           ========================================= */
-        .narrative-block { padding: 4rem 0; }
-        
-        .drop-cap::first-letter { 
-            float: left; font-size: 3.8rem; line-height: 0.75; font-weight: 700; 
-            padding-right: 0.8rem; margin-top: 0.2rem; color: var(--accent-clay); 
-        }
-
-        /* =========================================
-           GRID DE DATOS & POESÍA & FOOTER
-           ========================================= */
-        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .data-card { background: var(--bg-paper); border: 1px solid var(--line-color); padding: 1.5rem; border-radius: 4px; transition: all 0.3s; }
-        .data-card:hover { transform: translateY(-3px); border-color: var(--accent-clay); }
-        .poetry-section { background-color: #0a0a0a !important; color: #f0f0f0; padding: 5rem 0; }
-        footer { padding: 3rem 1.5rem; text-align: center; font-family: 'Inter', sans-serif; font-size: 0.85rem; background: var(--bg-white); border-top: 1px solid var(--line-color); }
-
-        /* =========================================
-           RESPONSIVE
-           ========================================= */
+        /* Responsive: Ajustes para pantallas pequeñas. Esencial para que la experiencia sea igual de fluida en móvil */
         @media (max-width: 768px) {
-            .container { padding: 0 2rem; } 
-            
-            nav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-            .nav-brand { width: 100%; text-align: center; }
-            .nav-links { display: flex; gap: 1rem; justify-content: center; width: 100%; flex-wrap: wrap; }
-            .nav-links a { margin: 0; font-size: 0.7rem; }
-
-            header.hero { padding-top: 8rem; align-items: flex-start; }
-            .hero-layout { grid-template-columns: 1fr; gap: 2.5rem; text-align: left; }
-            .hero-img-container { order: -1; max-width: 90%; margin: 0 auto 1rem auto; }
-            .hero-img-container img { box-shadow: 8px 8px 0 var(--line-color); }
-            
-            h1 { font-size: 2.3rem; line-height: 1.2; }
-            h2 { font-size: 1.6rem; margin-top: 2.5rem; }
-            .hero-quote { font-size: 1.15rem; padding-left: 1.2rem; border-left-width: 4px; margin-right: 1rem; }
-            .drop-cap::first-letter { font-size: 3.2rem; margin-top: 0.3rem; padding-right: 0.6rem; }
-            .narrative-block { padding: 3rem 0; }
-            #futuro > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
+            .nav-links { display: none; } /* Ocultaremos el menú complejo en móvil para simplificar */
         }
     </style>
 </head>
 <body>
-
-    <!-- NAVEGACIÓN -->
-    <nav>
-        <a href="#" class="nav-brand">Aldoh S. Flores</a>
-        <div class="nav-links">
-            <a href="#raices">Raíces</a>
-            <a href="#evolucion">Evolución</a>
-            <a href="#profesional">Ingeniería</a>
-            <a href="#teologia">Teología</a>
-            <a href="#ditooh">Ditooh</a>
-            <a href="#futuro">Futuro</a>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header class="hero container">
-        <div class="hero-layout">
-            <div class="hero-text">
-                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 600;">Identidad Viva</span>
-                <h1>Aldo<span style="color: var(--accent-clay);">h</span> Saúl<br>Flores García</h1>
-                <p class="sans" style="font-size: 0.9rem; margin-top: 1rem; letter-spacing: 1px; font-weight: 600;">
-                    INGENIERO · ESCRITOR · POETA · TEÓLOGO
-                </p>
-                <div class="hero-quote">
-                   “Busco la arquitectura lógica de la realidad a través de la ingeniería, y la esencia del ser a través de la palabra.”
-                </div>
-            </div>
-            <div class="hero-img-container">
-                <img src="aldoh-saul-flores-garcia.jpg" alt="Aldoh Saúl Flores García">
-            </div>
-        </div>
-    </header>
-
-    <section class="container narrative-block">
-        <h3 class="sans">Umbral</h3>
-        <p class="drop-cap">
-            No soy una definición cerrada, sino una declaración de presencia. Este espacio no es un currículum, es un archivo vivo de mi construcción consciente. Aquí convergen la razón técnica y la inquietud existencial, el cálculo y el verso.
-        </p>
-        <p>
-            Me defino por la integración. Rechazo la idea de que debemos elegir entre ser analíticos o emocionales. Soy <strong>Ingeniero</strong> porque amo los sistemas que funcionan, y soy <strong>Poeta</strong> (Ditooh) porque necesito nombrar lo que siento.
-        </p>
-    </section>
-
-    <div class="full-width" id="raices">
-        <div class="container">
-            <h3 class="sans">El Origen</h3>
-            <h2>Raíces y Valores</h2>
-            <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
-                <div>
-                    <p>
-                        Broté un jueves de julio de 2001 en "tierra de coyotes": <strong>Coyuca de Catalán</strong>, Guerrero. Mi infancia se divide entre la libertad de <strong>Los Brasiles</strong>, jugando con mis primos, y la formación de mis padres. Aunque la CDMX es mi base operativa actual.
-                    </p>
-                    <p>
-                        De mi madre heredé la constancia y una sensibilidad profunda; de mi padre, la disciplina del taller y el pensamiento crítico del profesor. Como <strong>hermano mayor</strong>, aprendí temprano que la responsabilidad no es una carga, sino un privilegio de servicio.
-                    </p>
-                </div>
-                <div>
-                    <p><strong>La Fe como Búsqueda:</strong></p>
-                    <p class="italic" style="font-size: 0.95rem;">
-                        No vivo la fe como un dogma cómodo, sino como una investigación constante. Tras alejarme, regresé como el <strong>hijo pródigo</strong>, encontrando en Dios un sentido de orden y propósito que la razón por sí sola no alcanzaba a explicar. Hoy, mi fe es el puente entre lo que calculo como ingeniero y lo que siento como hombre. Si Dios existe, existe todo. Mi teología es racional: creer es también un acto de inteligencia.
-                    </p>
-                </div>
-            </div>
-        </div>
+<!-- Fin del Bloque 1 -->
+    
+<!-- NAV: Manteniendo consistencia con el Bloque 1 -->
+<nav>
+    <a href="#" class="nav-brand">Aldoh S. Flores</a>
+    <div class="nav-links">
+        <a href="#impacto">Impacto</a>
+        <a href="#historia">Historia</a>
+        <a href="#ditooh">Ditooh</a>
+        <a href="#futuro">Australia 2037</a>
     </div>
+</nav>
 
-    <section class="container narrative-block" id="evolucion">
-        <h3 class="sans">Trayectoria Vital</h3>
-        <h2>La Alquimia del Carácter</h2>
-        <p>
-            Durante años, mi identidad se refugió en el arquetipo del <strong>Truhán</strong>. Entre los 15 y los 23, el humor fue mi escudo y la risa mi forma de no rendirme ante el dolor. Sin embargo, la vida me exigió una transición forzosa.
+<!-- HERO: El "Manifiesto" inicial. 
+     Diseño minimalista: Centrado para obligar al usuario a leer el mensaje principal. -->
+<header class="hero" style="min-height: 90vh; display: flex; align-items: center; justify-content: center; padding-top: 4rem;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        
+        <!-- Nombre: El protagonista absoluto -->
+        <h1 style="margin-bottom: 1.5rem;">Aldoh Saúl Flores García</h1>
+        
+        <!-- Frase de Apertura: Sin bordes laterales para ser más contundente y limpia -->
+        <p class="hero-quote" style="font-size: 1.4rem; font-style: italic; color: var(--text-secondary); max-width: 650px; border-left: none; padding-left: 0; line-height: 1.5;">
+            "Mi vida es una obsesión con la mejora: de procesos, de personas y de mí mismo."
         </p>
-        <p>
-            Pero la vida exige verdad. Una fuerte caída académica me obligó a reconstruirme. De las cenizas de la reprobación nació "Pugno". Cambié de universidad, pero me traje conmigo que el más cocho sobrevivé. Entendí que <strong>el liderazgo sin estructura se quiebra</strong>.
-        </p>
-        <div class="data-grid">
-            <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay);">Personalidad</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>ENTP-A</strong> (El Innovador)</p>
-                <p style="font-size: 0.9rem; margin:0;">Eneagrama 7w8</p>
-            </div>
-            <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay);">Motor</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;">Guerrero del Cambio</p>
-                <p style="font-size: 0.9rem; margin:0;">Me frustra la estática y la mediocridad.</p>
-            </div>
-            <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay);">Anclas</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;">Deporte & Disciplina</p>
-                <p style="font-size: 0.9rem; margin:0;">Basquetbol, Atletismo, Ajedrez.</p>
-            </div>
-        </div>
-    </section>
 
-   <div class="full-width" id="profesional" style="background: #f4f6f7;">
+        <!-- CTA (Call to Action): El puente hacia el impacto profesional -->
+        <a href="#impacto" style="margin-top: 3rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-clay); border: 1px solid var(--accent-clay); padding: 0.8rem 1.5rem; border-radius: 2px; transition: all 0.3s ease;">
+            Ver impacto profesional ↓
+        </a>
+    </div>
+</header>
+
+    <!-- SECCIÓN IMPACTO: Aquí demostramos que la mejora no es teoría, es resultado -->
+<section id="impacto" class="container narrative-block" style="padding-top: 6rem; padding-bottom: 6rem;">
+    
+    <h2 style="margin-bottom: 3rem;">Impacto Profesional</h2>
+    <p style="margin-bottom: 3rem; color: var(--text-secondary); max-width: 600px;">
+        La mejora continua no es una metodología; es la forma en que entiendo el mundo. Estos son seis casos donde mi obsesión por optimizar sistemas generó valor real.
+    </p>
+
+    <!-- Contenedor del Acordeón -->
+    <div class="accordion-container">
+
+        <!-- HISTORIA 1: PRODUCTIVIDAD -->
+        <details class="impact-card" style="border-bottom: 1px solid var(--line-color); padding: 1.5rem 0;">
+            <summary style="cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                De 8,000 a 18,000 piezas por día (Eaton) <span>+</span>
+            </summary>
+            <div class="content" style="padding-top: 1rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                <p><strong>El reto:</strong> Un cuello de botella en Corte y Acabado que acumulaba tres meses de adeudo de producción.</p>
+                <p><strong>La acción:</strong> Análisis de tiempos reales, expansión de capacidad, estandarización bajo metodología ADKAR y capacitación operativa.</p>
+                <p><strong>Resultado:</strong> Productividad de 8k a 18k piezas/día, eliminando el adeudo y coordinando a 40 colaboradores.</p>
+                <blockquote style="font-style: italic; color: var(--accent-clay); margin: 1rem 0; border-left: 2px solid var(--accent-clay); padding-left: 1rem;">
+                    "Antes de mejorar un proceso, primero hay que entenderlo."
+                </blockquote>
+            </div>
+        </details>
+
+        <!-- HISTORIA 2: SMED -->
+        <details class="impact-card" style="border-bottom: 1px solid var(--line-color); padding: 1.5rem 0;">
+            <summary style="cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                Reducción >50% en tiempo de cambio de modelo (SMED) <span>+</span>
+            </summary>
+            <div class="content" style="padding-top: 1rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                <p><strong>El reto:</strong> Tiempos de preparación en CNC limitaban la disponibilidad de los equipos.</p>
+                <p><strong>La acción:</strong> Evento Kaizen aplicando metodología SMED: clasificación de actividades, eliminación de desperdicios y estandarización.</p>
+                <p><strong>Resultado:</strong> Reducción superior al 50% en setup, mayor disponibilidad de equipo y aumento de capacidad sin inversión en maquinaria.</p>
+                <blockquote style="font-style: italic; color: var(--accent-clay); margin: 1rem 0; border-left: 2px solid var(--accent-clay); padding-left: 1rem;">
+                    "La mejor inversión no es una máquina nueva, es aprovechar la que ya existe."
+                </blockquote>
+            </div>
+        </details>
+
+        <!-- HISTORIA 3: ESTANDARIZACIÓN -->
+        <details class="impact-card" style="border-bottom: 1px solid var(--line-color); padding: 1.5rem 0;">
+            <summary style="cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                Estandarización de más de 60 modelos de fabricación <span>+</span>
+            </summary>
+            <div class="content" style="padding-top: 1rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                <p><strong>El reto:</strong> Conocimiento disperso y dependencia de la experiencia individual de cada operador.</p>
+                <p><strong>La acción:</strong> Desarrollo de manuales técnicos para corte, ensamble, tapizado y tiempos estándar.</p>
+                <p><strong>Resultado:</strong> Consistencia operativa, reducción de variabilidad y base sólida para capacitación.</p>
+                <blockquote style="font-style: italic; color: var(--accent-clay); margin: 1rem 0; border-left: 2px solid var(--accent-clay); padding-left: 1rem;">
+                    "Un proceso no puede mejorar de forma sostenible si el conocimiento vive solo en las personas."
+                </blockquote>
+            </div>
+        </details>
+
+        <!-- HISTORIA 4: ADUANA -->
+        <details class="impact-card" style="border-bottom: 1px solid var(--line-color); padding: 1.5rem 0;">
+            <summary style="cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                Resolución crítica de exportación detenida <span>+</span>
+            </summary>
+            <div class="content" style="padding-top: 1rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                <p><strong>El reto:</strong> Lote detenido en aduana por etiquetado; nadie sabía usar el software necesario.</p>
+                <p><strong>La acción:</strong> Aprendizaje autodidacta del sistema en tiempo récord y generación de documentación técnica.</p>
+                <p><strong>Resultado:</strong> Liberación en menos de 48 horas, evitando retrasos en la cadena de suministro global.</p>
+                <blockquote style="font-style: italic; color: var(--accent-clay); margin: 1rem 0; border-left: 2px solid var(--accent-clay); padding-left: 1rem;">
+                    "La capacidad de aprender rápido es una ventaja competitiva."
+                </blockquote>
+            </div>
+        </details>
+
+        <!-- HISTORIA 5: LIDERAZGO -->
+        <details class="impact-card" style="border-bottom: 1px solid var(--line-color); padding: 1.5rem 0;">
+            <summary style="cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                Fundación del Capítulo 621 (Liderazgo estudiantil) <span>+</span>
+            </summary>
+            <div class="content" style="padding-top: 1rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                <p><strong>El reto:</strong> Brecha entre los conocimientos técnicos universitarios y la realidad industrial.</p>
+                <p><strong>La acción:</strong> Vicepresidencia fundadora; vinculación entre academia e industria mediante encuentros profesionales.</p>
+                <p><strong>Resultado:</strong> Creación de una comunidad activa de desarrollo profesional para estudiantes.</p>
+                <blockquote style="font-style: italic; color: var(--accent-clay); margin: 1rem 0; border-left: 2px solid var(--accent-clay); padding-left: 1rem;">
+                    "El talento crece más rápido cuando encuentra referentes que muestran lo posible."
+                </blockquote>
+            </div>
+        </details>
+
+        <!-- HISTORIA 6: CRECIMIENTO -->
+        <details class="impact-card" style="border-bottom: 1px solid var(--line-color); padding: 1.5rem 0;">
+            <summary style="cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                Transición: Becario a Analista Jr. OpEx <span>+</span>
+            </summary>
+            <div class="content" style="padding-top: 1rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                <p><strong>El reto:</strong> Aprender cómo se transforman los procesos en una organización global.</p>
+                <p><strong>La acción:</strong> Participación activa en proyectos de Lean, VSM y mejora continua como practicante.</p>
+                <p><strong>Resultado:</strong> Contratación directa como Analista Jr. de Excelencia Operacional.</p>
+                <blockquote style="font-style: italic; color: var(--accent-clay); margin: 1rem 0; border-left: 2px solid var(--accent-clay); padding-left: 1rem;">
+                    "Las oportunidades son el resultado acumulado del trabajo que nadie ve."
+                </blockquote>
+            </div>
+        </details>
+
+    </div>
+</section>
+
+<!-- SCRIPT para el efecto visual del acordeón -->
+<style>
+    /* Efecto de rotación para el signo "+" */
+    details[open] summary span { transform: rotate(45deg); transition: 0.3s; }
+    summary span { transition: 0.3s; font-size: 1.5rem; color: var(--accent-clay); }
+    /* Estilo al pasar el mouse por encima */
+    .impact-card:hover { border-bottom: 1px solid var(--accent-clay) !important; transition: 0.3s; }
+</style>
+
+    <!-- SECCIÓN HISTORIA: Tu origen, tu umbral. -->
+<section id="historia" class="container narrative-block" style="padding-top: 6rem; padding-bottom: 6rem;">
+    
+    <div style="max-width: 700px; margin: 0 auto;">
+        <!-- El H3 sirve para dar contexto técnico, como un capítulo -->
+        <h3 style="text-align: center; margin-bottom: 2rem;">El Umbral</h3>
+        
+        <!-- El estilo 'drop-cap' crea la letra capital que nos da un toque editorial/literario -->
+        <p class="drop-cap" style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary);">
+            Nací en el terreno donde la lógica técnica y la inquietud humana convergen. Desde mis inicios, entendí que el mundo —ya sea una línea de producción o un verso— necesita estructura para ser comprendido, pero necesita alma para ser vivido. 
+        </p>
+
+        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin-top: 1.5rem;">
+            Mi camino no es una línea recta. Es un esfuerzo constante por decodificar el caos. Durante años, creí que debía elegir entre la precisión del ingeniero y la sensibilidad del poeta. Hoy entiendo que esa dualidad es mi mayor ventaja: utilizo la ingeniería para ordenar mi realidad externa y la escritura para entender mi realidad interna.
+        </p>
+
+        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin-top: 1.5rem;">
+            Mi umbral no es un lugar geográfico, es una postura ante la vida: <strong>comprender para mejorar</strong>. Cada sistema que he analizado y cada poema que he escrito nacen de la misma raíz: la convicción de que todo, absolutamente todo, puede evolucionar si nos tomamos el tiempo de observar su funcionamiento profundo.
+        </p>
+
+        <!-- Bloque de cierre de sección -->
+        <blockquote style="margin-top: 3rem; font-size: 1.5rem; font-style: italic; color: var(--text-primary); text-align: center; border-left: none; padding: 0;">
+            "La mejora no es un destino. Es un ejercicio de fe y razón."
+        </blockquote>
+    </div>
+</section>
+
+    <!-- SECCIÓN DITOOH: El lado nocturno. 
+     Cambiamos el esquema de color para indicar una transición hacia lo artístico/humano -->
+<section id="ditooh" style="background-color: #0a0a0a; color: #f0f0f0; padding: 6rem 0;">
     <div class="container">
-        <h3 class="sans" style="color: var(--accent-ink);">El Ingeniero</h3>
-        <h2>Formación y Trayectoria</h2>
-        <p>
-            Mi construcción como ingeniero no fue lineal, fue acumulativa. Comencé con el orden de los números y terminé diseñando procesos industriales.
+        
+        <h2 style="color: #ffffff; border-left: 4px solid var(--accent-clay); padding-left: 1rem; margin-bottom: 3rem;">Ditooh</h2>
+        <p style="color: #cccccc; max-width: 600px; margin-bottom: 3rem;">
+            La poesía no es un escape de la realidad, es una forma de profundizar en ella. Aquí habita la parte de mí que no se mide en piezas por hora, sino en significados.
         </p>
-        
-        <div style="margin-top: 3rem; border-left: 2px solid var(--accent-clay); padding-left: 1.5rem;">
-            <div style="margin-bottom: 2rem;">
-                <h4 class="sans" style="margin-bottom: 0.2rem;">Tecnológico de Estudios Superiores de Ecatepec</h4>
-                <p class="italic" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Especialidad en CAD/CAM</p>
-                <p style="font-size: 0.95rem;">
-                    Donde el <strong>Pugno</strong> tomó forma. Aquí me especialicé en Diseño y Manufactura Asistida por Computadora, consolidando la técnica que hoy me define.
-                </p>
-            </div>
-            
-            <div style="margin-bottom: 2rem;">
-                <h4 class="sans" style="margin-bottom: 0.2rem;">Instituto Tecnológico Superior de Huetamo</h4>
-                <p class="italic" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Fundamentos Industriales</p>
-                <p style="font-size: 0.95rem;">
-                    Mis cimientos. Aprendí la filosofía del <strong>Toyota Production System</strong> y <strong>Lean Manufacturing</strong>. Entendí que la eficiencia no es suerte, es método.
-                </p>
-            </div>
 
-            <div style="margin-bottom: 2rem;">
-                <h4 class="sans" style="margin-bottom: 0.2rem;">Colegio de Bachilleres Plantel 5 (Guerrero)</h4>
-                <p class="italic" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Capacitación: Auxiliar Contable</p>
-                <p style="font-size: 0.95rem;">
-                    El inicio del orden. La contabilidad me enseñó que cada recurso cuenta y debe ser registrado.
-                </p>
-            </div>
-        </div>
+        <!-- Acordeón de Poemas: Cada 'details' es un poema que se revela -->
+        <div class="poetry-container">
 
-        <h3 class="sans" style="color: var(--accent-ink); margin-top: 4rem;">Experiencia Real</h3>
-        <div class="data-grid">
-            
-            <!-- TARJETA 1: EATON (ACTUALIDAD) -->
-            <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Actualidad</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>Eaton</strong></p>
-                <p style="font-size: 0.85rem; margin:0;">
-                    <strong>Ingeniero Analista de Procesos.</strong> Un regreso con propósito. Tras mi etapa inicial como practicante, vuelvo para demostrar la evolución de mi perfil, fusionando el rigor analítico con la ejecución estratégica.
-                </p>
-            </div>
-            
-            <!-- TARJETA 2: 3C METROLOGY (EVOLUCIÓN) -->
-            <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Expansión</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>3C Metrology</strong></p>
-                <p style="font-size: 0.85rem; margin:0;">
-                    <strong>Técnico Comercial.</strong> El rol que potenció mi extroversión. Aprendí a conectar con el cliente, demostrando que la comunicación, planear y trabajar en equipo son tan vitales como el cálculo.
-                </p>
-            </div>
+            <!-- POEMA 1 -->
+            <details class="poetry-card" style="border-bottom: 1px solid #333; padding: 2rem 0; cursor: pointer;">
+                <summary style="font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 1px; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    Título del Poema I <span>+</span>
+                </summary>
+                <div class="poetry-text" style="margin-top: 2rem; font-family: 'Lora', serif; font-style: italic; font-size: 1.1rem; text-align: center; line-height: 2; white-space: pre-line;">
+                    Escribe aquí el cuerpo de tu poema.<br>
+                    Deja que la estructura respire.<br>
+                    La poesía es el orden de las palabras,<br>
+                    pero el desorden del alma.
+                </div>
+            </details>
 
-            <!-- TARJETA 3: INROADS (FORMACIÓN) -->
-            <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Formación de Élite</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>Inroads México</strong></p>
-                <p style="font-size: 0.85rem; margin:0;">
-                    Formo parte de esta ONG que impulsa talento. Aquí pulí mi liderazgo y visión corporativa.
-                </p>
-            </div>
+            <!-- POEMA 2 -->
+            <details class="poetry-card" style="border-bottom: 1px solid #333; padding: 2rem 0; cursor: pointer;">
+                <summary style="font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 1px; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    Título del Poema II <span>+</span>
+                </summary>
+                <div class="poetry-text" style="margin-top: 2rem; font-family: 'Lora', serif; font-style: italic; font-size: 1.1rem; text-align: center; line-height: 2; white-space: pre-line;">
+                    El silencio también es ingeniería.<br>
+                    A veces, para arreglar un proceso,<br>
+                    hay que dejar de hablar.<br>
+                    Y empezar a sentir.
+                </div>
+            </details>
 
-            <!-- TARJETA 4: IISE (LIDERAZGO) -->
-            <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Liderazgo Fundacional</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>IISE - Capítulo 621 ITSH</strong></p>
-                <p style="font-size: 0.85rem; margin:0;">
-                    <strong>Vicepresidente Fundador.</strong> Miembro del Institute of Industrial and Systems Engineers. Aquí descubrí y forjé mis dotes de liderazgo, sentando las bases para la gestión de equipos y la organización estratégica.
-                </p>
-            </div>
-
-        </div>
-        
-        <div style="margin-top: 2rem; text-align: right;">
-            <a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--accent-ink); text-decoration: none; border-bottom: 1px solid var(--accent-ink);">
-                Ver trayectoria completa en LinkedIn →
-            </a>
         </div>
     </div>
-</div>
+</section>
 
-    <!-- SECCIÓN: TEOLOGÍA -->
-<section id="teologia" class="narrative-block container" style="border-top: 1px solid var(--line-color);">
-    <h3 class="sans" style="color: var(--accent-ink);">El Teólogo</h3>
-    <h2>Aprender a pensar a Dios</h2>
+<!-- SCRIPT DE ESTILO PARA EL MODO NOCTURNO -->
+<style>
+    /* Efecto de rotación suave para el signo "+" en los poemas */
+    #ditooh details[open] summary span { transform: rotate(45deg); transition: 0.3s; }
+    #ditooh summary span { transition: 0.3s; font-size: 1.5rem; color: var(--accent-clay); }
     
-    <p class="drop-cap">
-        Mi identidad teológica no comenzó al terminar un diplomado; el rigor académico solo le puso nombre y estructura a algo que ya existía. Nació mucho antes: en los sábados de catecismo, en mi paso por el preseminario, y en el instante preciso en que comencé a preguntarme quién es Dios cuando nadie me ve.
-    </p>
-    
-    <p>
-        Durante años viví mi fe principalmente desde la práctica, formado dentro de la Iglesia Católica. Sin embargo, con el tiempo descubrí que creer no era suficiente para mí. <strong>Necesitaba comprender.</strong> Esa necesidad me llevó a estudiar teología de manera formal y a descubrir que la fe cristiana no teme a la razón; por el contrario, la invita a caminar junto a ella.
-    </p>
+    /* Hover effect: un sutil cambio de color para invitar a la interacción */
+    .poetry-card:hover summary { color: var(--accent-clay); transition: 0.3s; }
+</style>
 
-    <!-- CITA DESTACADA -->
-    <div style="margin: 3.5rem 0; padding: 2.5rem; background: var(--bg-white); border-left: 4px solid var(--accent-clay); box-shadow: 10px 10px 0 var(--line-color);">
-        <p style="font-size: 1.15rem; font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7;">
-            "No entiendo la teología como un ejercicio de erudición, sino como una búsqueda de sentido. Creo que Dios puede ser amado con el corazón, pero también con la inteligencia."
+    
+<!-- SECCIÓN TEOLOGÍA: El sistema operativo de la existencia -->
+<section id="teologia" class="full-width" style="background-color: var(--bg-paper); padding: 6rem 0;">
+    <div class="container">
+        
+        <h2 style="margin-bottom: 3rem;">Teología: El Orden de lo Invisible</h2>
+        
+        <p style="margin-bottom: 4rem; color: var(--text-secondary); max-width: 600px;">
+            Si la ingeniería es el estudio de lo tangible, la teología es el estudio de la arquitectura que sostiene lo invisible. Para mí, la fe no es una contradicción a la lógica; es el sistema operativo más profundo que existe.
         </p>
-        <p style="font-size: 1.15rem; font-style: italic; color: var(--text-secondary); margin-bottom: 0; line-height: 1.7;">
-            "La teología me enseñó que buscar a Dios con honestidad intelectual también es una forma de amarlo. Las preguntas sinceras pueden ser una forma de oración."
+
+        <!-- Pilares de pensamiento -->
+        <div class="data-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            
+            <!-- Pilar 1 -->
+            <div class="data-card" style="padding: 2rem; border: 1px solid var(--line-color);">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-clay);">La Creación como Proceso</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary);">
+                    Veo en la perfección de los sistemas naturales una invitación a la mejora continua. Dios no es el enemigo de la eficiencia; es el diseño original que intento comprender.
+                </p>
+            </div>
+
+            <!-- Pilar 2 -->
+            <div class="data-card" style="padding: 2rem; border: 1px solid var(--line-color);">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-clay);">La Ética del Trabajo</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary);">
+                    El trabajo es un acto de servicio y una forma de participar en la evolución del mundo. Cada mejora en un proceso es, en esencia, un intento de dejar las cosas mejor de como las encontré.
+                </p>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 4rem; text-align: center;">
+            <blockquote style="font-style: italic; font-size: 1.2rem; color: var(--text-secondary);">
+                "No busco entender a Dios para explicar el mundo, <br>
+                busco entender el mundo para asombrarme de Dios."
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+    <!-- SECCIÓN VISIÓN FUTURA: Australia 2037 -->
+<section id="futuro" class="container narrative-block" style="padding-top: 6rem; padding-bottom: 6rem;">
+    
+    <h2 style="margin-bottom: 3rem; border-left: 4px solid var(--accent-clay); padding-left: 1rem;">Australia 2037: La Siguiente Frontera</h2>
+    
+    <div style="max-width: 800px; margin-bottom: 4rem;">
+        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">
+            Toda mejora requiere un horizonte. Australia 2037 representa el punto de fuga de mi identidad: un sistema complejo donde la estrategia, la cultura y la excelencia operativa deben integrarse bajo un estándar global.
         </p>
     </div>
 
-    <p>
-        Mi interés se ha dirigido hacia la relación entre fe y razón, la filosofía clásica, la historia de la Iglesia, la interpretación bíblica y la Doctrina Social. Pero más allá de los conceptos teóricos, la verdadera revelación ha sido entender que toda reflexión teológica debe conducir a una vida más auténtica. La fe no se reduce a normas, sino que implica una relación viva y una responsabilidad concreta hacia los demás.
-    </p>
-
-    <h3 class="sans" style="color: var(--accent-ink); margin-top: 4rem; margin-bottom: 1.5rem;">Un Viaje de Regreso</h3>
-    
-    <p>
-        No estudio teología para convertirme en un experto en Dios. La estudio porque cada vez que intento comprenderlo, descubro algo más sobre quién soy yo. Entre páginas de filosofía, documentos eclesiales, la lectura viva de la Biblia (alimentada por espacios como RUAJ y Hakuna) y largas conversaciones, he llegado a una convicción sencilla: <strong>si Dios existe, existe todo.</strong>
-    </p>
-
-    <p>
-        Considero que el aprendizaje teológico es un camino permanente, porque comprender el misterio supera toda una vida. Y si conocer a Dios es el fin último del ser humano, entonces cada pregunta sincera, cada acto de servicio y cada búsqueda honesta de la verdad son también, inevitablemente, parte del camino de regreso hacia Él.
-    </p>
-</section> 
-
-    
-    <section class="poetry-section" id="ditooh" style="background-color: #0a0a0a; color: #eaeaea; padding: 6rem 0;">
-        <div class="container">
-            
-            <div style="text-align: center; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <h3 class="sans" style="color: #666; letter-spacing: 3px; font-size: 0.9rem;">LA VOZ INTERNA</h3>
-                <h2 style="color: #fff; border: none; margin-top: 0.5rem; font-size: 2.5rem;">Yo soy Ditooh</h2>
-                
-                <p style="font-size: 1.1rem; color: #ddd; margin-top: 1.5rem; line-height: 1.6;">
-                    Ditooh es el seudónimo que protege y libera mi voz interna. Si Aldoh estructura la realidad, Ditooh la siente.
-                </p>
-    
-                <p class="serif italic" style="font-size: 1.3rem; color: #bbb; margin: 2rem auto;">
-                    “Escribo cuando hablar no alcanza.”
-                </p>
-    
-                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; font-family: 'Inter', sans-serif; font-size: 0.9rem;">
-                    <a href="https://substack.com/@asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Substack</a>
-                    <a href="https://www.instagram.com/ditooh.m4ldito" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Instagram</a>
-                    <a href="https://www.wattpad.com/user/asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Wattpad</a>
-                </div>
-            </div>
-    
-            <article class="cloud-card featured-card">
-                <h3 class="serif" style="color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">Capítulo uno: Número no registrado</h3>
-                <div class="text-content">
-                    <p>Doce dígitos aparecían en la pantalla de mi celular.
-Un número no registrado.
-
-Últimamente recibía muchas llamadas así. Las elecciones presidenciales estaban cerca y era sabido que las encuestas se hacían por teléfono. Dudé en contestar, pero mi situación no me permitía rechazar ninguna llamada.
-
-Llevaba casi tres meses buscando un lugar donde pudiera liberar mis prácticas profesionales. Estudié ingeniería industrial. Mandé mi CV a demasiados lugares como para contarlos, y aunque encontrar trabajo no es imposible, lograr que te liberen las prácticas hace que las empresas se pongan difíciles...</p>
-                    
-                    <details>
-                        <summary>Leer completo</summary>
-                        <p style="margin-top: 1rem;">
-                            Estaba en la estación Tasqueña, en la Ciudad de México. Viajaba con mi hermana rumbo a Cuernavaca a visitar a mi tía Lidu. Dicen que ahí se encuentra el mejor clima del país. Estábamos por averiguarlo.
-
-—Hola, Aldoh. Soy Gael, de Recursos Humanos en Eaton. ¿Cómo estás?
-
-Reconocí su voz de inmediato. Era la cuarta vez que hablaba con él en la semana. Tenía un acento peculiar: una mezcla entre poblano y chilango formal.
-
-—El motivo de mi llamada es para darte los resultados del proceso de selección para la vacante de Opex. En Eaton nos gusta mantener informados a todos los participantes.
-
-Me puse tenso. Quería gritarle que soltara la maldita sopa de una vez. ¿Por qué lo hacen con tanta intriga?
-
-—Después de un análisis profundo entre varios candidatos, hemos decidido tomar una decisión, eligiendo a quien mejor representaba las habilidades necesarias para el puesto.
-
-Ahí lo supe. Iba a pasar otra vez.
-
-Al menos esta vez tuvieron la amabilidad de llamarme. Antes solo me ghosteaban o, si me iba bien, recibía un correo automatizado con la leyenda: “Desafortunadamente no logramos conectar tu perfil. No pierdas el ánimo.”
-
-—Queremos felicitarte por el arduo esfuerzo demostrado durante las entrevistas y, aunque lamentablemente…
-
-Lo sabía.
-
-Mi cabeza se llenó del ruido de la central. Mis ojos se clavaron en el número 17 impreso en mi boleto. Las dificultades que enfrenta un recién graduado para conseguir su primer trabajo han sido analizadas durante años: falta de experiencia, desconocimiento de nuevas tecnologías, requisitos altos para puestos básicos.
-
-—Aldoh, ¿sigues ahí?
-
-Había olvidado que seguía al teléfono.
-
-—Sí, Gael, aquí sigo. ¿Podrías repetirlo?
-
-—Claro. Aún no estás contratado, pero eres el candidato seleccionado.
-Felicidades.
-
-                        </p>
-                    </details>
-                </div>
-            </article>
-    
-            <div class="masonry-columns">
-                
-                <article class="cloud-card">
-                    <h3 class="serif" style="color: var(--accent-clay); font-size: 1.2rem; margin-bottom: 1rem;">Poema I – Coincidencia</h3>
-                    <div class="text-content">
-Justo cuando mi vida parecía en calma…
-llegaste.
-
-No hiciste ruido,
-ni falta te hizo.
-
-Solo una mirada
-y el mundo volvió a desacomodarse.
-
-No sé qué es lo que tienes,
-pero sé que no quiero perder
-la oportunidad de descubrirlo.
-                    </div>
-                </article>
-    
-                <article class="cloud-card">
-                    <h3 class="serif" style="color: var(--accent-clay); font-size: 1.2rem; margin-bottom: 1rem;">Poema II – Difícil de Amar</h3>
-                    <div class="text-content">
-Soy un romántico empalagoso
-Y lo digo muy gozoso,
-Poemas, flores y mucha lealtad,
-Tiempo de calidad.
-
-Y ella siempre termina arta,
-Atosigada, no puede con la atención,
-Maltratos, engaños, evasión,
-Ocultó mi carta,
-Entre sus dibujos,
-Entre sus colores,
-Entre sus olvidos,
-Ahí estaban mis flores,
-
-No tengo miedo de decir que te quiero,
-Eres mi emblema,
-Sobresiento, Sobreamo,
-Yo soy un problema.
-
-Besos sin destino,
-Viajes al mar,
-¿Acaso no tengo tino?
-¿O esto es difícil de amar?
-                    </div>
-                </article>
-    
-                <article class="cloud-card">
-                    <h3 class="serif" style="color: var(--accent-clay); font-size: 1.2rem; margin-bottom: 1rem;">Poema III – Fuego que no se apaga</h3>
-                    <div class="text-content">
-La piel arde.
-El corazón delira.
-Mi mente:
-una guerra perdida
-en un universo que sangra palabras
-que no termino de leer.
-
-Algo dentro de mí
-no deja derramarse
-sobre este bello atardecer.
-Y me da miedo
-tener miedo.
-
-¿Podré seguir estando sobrio
-cuando el abismo me llama por mi nombre?
-
-No sé qué duele más:
-si la sed que me consume,
-o el miedo de no poder vivir sin ella.
-
-Me pasa de todo.
-Y no puedo con nada.
-
-Y sí,
-soy poeta…
-aunque duela decirlo.
-Amo las letras.
-Y ellas,
-parecen no amarme de vuelta.
-
-El incienso arde
-y lloro al recordarme,
-como si yo mismo
-hubiera nacido para quemarme.
-
-Deliro.
-El fuego me habita.
-Y jura que moriré.
-
-Lo que no sabe,
-es que estoy por nacer.
-
-Hay voces en mi garganta
-que no logro entender.
-
-Pero dime,
-¿realmente quiero comprender?
-                    </div>
-                </article>
-    
-            </div>
-        </div>
-        
-        <style>
-            /* Estilos generales de las tarjetas nube */
-            .cloud-card {
-                background: #141414;
-                border: 1px solid #333;
-                padding: 2.5rem;
-                border-radius: 8px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                transition: transform 0.4s ease, border-color 0.3s ease;
-                margin-bottom: 2rem;
-                break-inside: avoid; /* Evita cortes en columnas */
-            }
-    
-            .cloud-card:hover {
-                transform: translateY(-5px);
-                border-color: var(--accent-clay);
-            }
-    
-            /* Estilo ESPECIAL para el Capítulo Uno (Centrado y Ancho) */
-            .featured-card {
-                max-width: 800px; /* Ancho ideal de lectura */
-                margin: 0 auto 4rem auto; /* Centrado horizontal y margen abajo */
-                padding: 3rem; /* Un poco más de aire */
-                border-left: 4px solid var(--accent-clay); /* Detalle visual extra */
-            }
-    
-            /* Columnas para los poemas */
-            .masonry-columns {
-                column-count: 2; /* 2 Columnas para los poemas */
-                column-gap: 2rem;
-            }
-    
-            .text-content {
-                font-family: 'Lora', serif;
-                font-style: italic;
-                color: #bbb;
-                line-height: 1.8;
-                white-space: pre-line;
-                font-size: 1rem;
-            }
-    
-            /* Botón Leer más */
-            details summary {
-                cursor: pointer;
-                color: var(--accent-clay);
-                font-family: 'Inter', sans-serif;
-                font-size: 0.8rem;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                list-style: none;
-                margin-top: 1.5rem;
-                text-align: center; /* Botón centrado */
-                padding-top: 1rem;
-                border-top: 1px solid #333;
-            }
-            
-            details summary:hover { text-decoration: underline; }
-    
-            /* Móvil */
-            @media (max-width: 768px) {
-                .masonry-columns { column-count: 1; }
-                .featured-card { padding: 1.5rem; }
-            }
-        </style>
-    </section>
-    
-       <section class="container narrative-block" id="futuro" style="padding-bottom: 6rem;">
-    <h3 class="sans" style="color: var(--accent-clay);">Visión 2037</h3>
-    <h2>La Conquista de la Libertad</h2>
-    
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+    <!-- Roadmap de Ambición -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
         
         <div>
-            <p style="font-size: 1.1rem; line-height: 1.8;">
-                Si el presente es disciplina, el futuro es libertad. Mi regreso a la industria replanteó mis tiempos, pero magnificó mi destino. He decidido aplazar mi gran proyecto una década para construir primero una carrera profesional impecable y sin fisuras. 
-            </p>
-            <p>
-                No llegaré a <strong>Australia</strong> a ver qué sucede ni a improvisar; llegaré convertido en mi mejor versión, dominando el inglés como una segunda piel. Aunque el plan definitivo para estudiar mi <strong>maestría (MBA)</strong> y aprender a surfear está fijado para 2037, sé que esa no será la primera vez que pise Brisbane. Estaré ahí en los <strong>Juegos Olímpicos de 2032</strong>, viendo a la selección francesa colgarse la medalla de oro con Wembanyama como MVP.
-            </p>
-            <p class="italic" style="color: #666; border-left: 3px solid var(--accent-clay); padding-left: 1rem; margin-top: 2rem;">
-                "Ser libre es poder elegir a voluntad, sin presión externa. Es correr sin parar sobre un campo abierto."
-            </p>
+            <h3 style="font-size: 0.9rem; color: var(--accent-clay); text-transform: uppercase; letter-spacing: 2px;">01. Evolución de Sistemas</h3>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">Desafiar los límites de la manufactura y la estrategia industrial en entornos internacionales de alta complejidad.</p>
         </div>
 
-        <div style="background: #f4f6f7; padding: 2rem; border-radius: 8px; border: 1px solid #e0e0e0;">
-            <h4 class="sans" style="margin-bottom: 1.5rem; color: var(--accent-ink);">Objetivos Estratégicos</h4>
-            
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600;">Consolidación Profesional</span>
-                    <span style="color: var(--accent-clay);">Foco Actual</span>
-                </div>
-                <div style="height: 6px; background: #ddd; border-radius: 3px;">
-                    <div style="height: 100%; width: 60%; background: var(--accent-ink); border-radius: 3px;"></div>
-                </div>
-            </div>
+        <div>
+            <h3 style="font-size: 0.9rem; color: var(--accent-clay); text-transform: uppercase; letter-spacing: 2px;">02. Síntesis Cultural</h3>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">Fusionar la precisión técnica con la sensibilidad humana en un mercado global. Aprender para enseñar.</p>
+        </div>
 
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600;">Idioma (Inglés C1)</span>
-                    <span style="color: var(--accent-clay);">Prioridad Alta</span>
-                </div>
-                <div style="height: 6px; background: #ddd; border-radius: 3px;">
-                    <div style="height: 100%; width: 45%; background: var(--accent-ink); border-radius: 3px;"></div>
-                </div>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600;">Brisbane 2032, MBA & Surf</span>
-                    <span style="color: var(--accent-clay);">Proyección</span>
-                </div>
-                <div style="height: 6px; background: #ddd; border-radius: 3px;">
-                    <div style="height: 100%; width: 20%; background: var(--accent-ink); border-radius: 3px;"></div>
-                </div>
-            </div>
-
-            <div style="margin-top: 2rem; text-align: center; border-top: 1px solid #ddd; padding-top: 1.5rem;">
-                <p class="sans small-caps" style="margin-bottom: 0;">Horizonte Temporal</p>
-                <span style="font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 700; color: var(--accent-clay);">2032 – 2037</span>
-            </div>
+        <div>
+            <h3 style="font-size: 0.9rem; color: var(--accent-clay); text-transform: uppercase; letter-spacing: 2px;">03. El Legado</h3>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">Más que alcanzar una ubicación, busco convertir la mejora continua en una práctica de vida compartida y exportable.</p>
         </div>
 
     </div>
-    
-    <style>
-        @media (max-width: 768px) {
-            #futuro > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
-        }
-    </style>
+
+    <!-- Frase de cierre -->
+    <div style="margin-top: 5rem; text-align: center; border-top: 1px solid var(--line-color); padding-top: 3rem;">
+        <p style="font-style: italic; font-size: 1.1rem; color: var(--text-primary);">
+            "No voy a Australia a buscar una vida mejor, voy a construir el sistema que me permita ser mejor para los demás."
+        </p>
+    </div>
 </section>
     
-    <section id="proposito-ikigai" style="background-color: #fff; padding: 8rem 0; border-top: 1px solid #f0f0f0; position: relative;">
-        <div class="container" style="max-width: 750px;">
-            
-            <div style="margin-bottom: 4rem; text-align: left;">
-                <p class="serif italic" style="font-size: 1.2rem; color: #888; line-height: 1.6;">
-                    El propósito no es una meta que se alcanza de golpe, sino una brújula que se calibra caminando, fallando y corrigiendo en cada paso.
-                </p>
-            </div>
-    
-            <div style="margin-bottom: 5rem;">
-                <h3 class="sans" style="font-size: 0.8rem; letter-spacing: 3px; color: var(--accent-clay); margin-bottom: 2rem;">REVELACIÓN</h3>
-                <h2 style="font-size: 2rem; line-height: 1.3; margin-bottom: 2rem; border: none;">Mi propósito no es definitivo, es una voluntad viva.</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--accent-ink);">
-                    Camino para <strong>conectar</strong>: ideas que parecen distantes, personas que buscan rumbo y procesos que necesitan fluidez. Lo hago desde la <strong>justicia</strong> y la <strong>estrategia</strong>, pero siempre con el <strong>alma</strong> puesta en la ejecución. Mi labor es crear orden donde el caos impera y devolver el sentido donde solo queda ruido.
-                </p>
-            </div>
-    
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; text-align: left; margin-bottom: 5rem;">
-                <div>
-                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-bottom: 1rem; letter-spacing: 1px;">LO QUE ME MUEVE</h4>
-                    <p style="font-size: 0.95rem; line-height: 1.6;">
-                        Amo el pensamiento profundo y la libertad que otorga la escritura. Me muevo por una espiritualidad inquieta y la necesidad constante de movimiento, tanto físico como intelectual.
-                    </p>
-                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-top: 2rem; margin-bottom: 1rem; letter-spacing: 1px;">EL VALOR QUE APORTO</h4>
-                    <p style="font-size: 0.95rem; line-height: 1.6;">
-                        Desde la ingeniería y la mejora de procesos, ofrezco una visión de conjunto que prioriza la eficiencia sin ignorar la estrategia humana.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-bottom: 1rem; letter-spacing: 1px;">MI FORTALEZA</h4>
-                    <p style="font-size: 0.95rem; line-height: 1.6;">
-                        Soy capaz de ver el todo donde otros ven piezas sueltas. Mi habilidad reside en liderar a través de la comunicación clara y la priorización lógica.
-                    </p>
-                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-top: 2rem; margin-bottom: 1rem; letter-spacing: 1px;">LA NECESIDAD</h4>
-                    <p style="font-size: 0.95rem; line-height: 1.6;">
-                        Creo firmemente que el mundo necesita personas con principios innegociables y cambios que, aunque audaces, posean una estructura sólida para perdurar.
-                    </p>
-                </div>
-            </div>
-    
-            <div style="padding-top: 3rem; border-top: 1px solid #eee; text-align: center;">
-                <p class="serif" style="font-size: 1rem; color: #555; max-width: 550px; margin: 0 auto; line-height: 1.7;">
-                    Este mapa no está terminado. Se ajusta con el tiempo, con los aciertos y, sobre todo, con las heridas. Pero hoy, con la mirada puesta en el horizonte, este es el rumbo que elijo seguir.
-                </p>
-                <div style="margin-top: 3rem; font-weight: 800; color: #eee; font-size: 3rem; user-select: none;">
-                    PUGNO
-                </div>
-            </div>
-    
+    <!-- FOOTER: El cierre del sitio y la firma de tu filosofía -->
+<footer style="padding: 5rem 0 3rem 0; text-align: center; background-color: var(--bg-paper);">
+    <div class="container">
+        
+        <!-- La "H" destacada: Tu sello distintivo -->
+        <div style="font-family: 'Lora', serif; font-size: 4rem; color: var(--accent-clay); margin-bottom: 2rem; line-height: 1;">H</div>
+
+        <!-- El Manifiesto -->
+        <p style="font-family: 'Lora', serif; font-style: italic; font-size: 1.3rem; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+            "Organizo el caos para encontrar la estructura; escribo versos para no olvidar el alma."
+        </p>
+
+        <!-- Agradecimiento -->
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 4rem; font-weight: 300;">
+            Agradecido con el linaje que me dio nombre y la fe que me dio rumbo.
+        </p>
+
+        <!-- Copyright y Nota de Evolución -->
+        <div style="font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 2px; color: #999; text-transform: uppercase;">
+            <p style="margin-bottom: 0.5rem;">© Aldoh Saul Flores — Ciudad de México</p>
+            <p style="font-weight: 500; color: var(--text-primary);">ESTE SITIO EVOLUCIONA CONFORME YO EVOLUCIONO</p>
         </div>
-    </section>
-    
-<footer style="background-color: #fdfbf7; padding: 4rem 0; border-top: 1px solid #e0e0e0; margin-top: 4rem;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem;">
-                
-                <div>
-                    <h4 class="sans" style="font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-clay); margin-bottom: 1.5rem;">MANIFESTO</h4>
-                    <p style="font-size: 1.1rem; line-height: 1.6; color: var(--accent-ink);">
-                        "Organizo el caos para encontrar la estructura; escribo versos para no olvidar el alma."
-                    </p>
-                    <p style="font-size: 0.85rem; color: #888; margin-top: 1rem;">
-                        Agradecido con el linaje que me dio nombre y la fe que me dio rumbo. 
-                    </p>
-                </div>
-    
-                <div>
-                    <h4 class="sans" style="font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-clay); margin-bottom: 1.5rem;">MAPA</h4>
-                    <ul style="list-style: none; padding: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 2;">
-                        <li><a href="#raices">Raíces</a></li>
-                        <li><a href="#profesional">Ingeniería</a></li>
-                        <li><a href="#ditooh">Poesía (Ditooh)</a></li>
-                        <li><a href="#futuro">Australia 2037</a></li>
-                    </ul>
-                </div>
-    
-                <div>
-                    <h4 class="sans" style="font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-clay); margin-bottom: 1.5rem;">CONEXIÓN</h4>
-                    <ul style="list-style: none; padding: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 2;">
-                        <li><a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://www.instagram.com/ditooh.m4ldito" target="_blank">Instagram</a></li>
-                        <li><a href="mailto:aldohflores@gmail.com">Contacto Directo</a></li>
-                    </ul>
-                </div>
-            </div>
-    
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 3rem 0;">
-    
-            <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #aaa; letter-spacing: 1px;">
-                <span>© Aldoh Saul Flores — Ciudad de México</span>
-                <span>ESTE SITIO EVOLUCIONA CONFORME YO EVOLUCIONO</span>
-                <span style="color: var(--accent-clay); font-weight: 700;">H</span>
-            </div>
-        </div>
-    
-        <style>
-            @media (max-width: 768px) {
-                footer .container > div:first-child {
-                    grid-template-columns: 1fr !important;
-                    text-align: center;
-                }
-                footer ul { text-align: center; }
-                footer .container > div:last-child {
-                    flex-direction: column;
-                    gap: 1rem;
-                    text-align: center;
-                }
-            }
-        </style>
-    </footer>
-
-</body>
-</html>
-
-
-
+    </div>
+</footer>
 
 
 
