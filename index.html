@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -138,6 +138,7 @@
             display: flex;
             align-items: center;
             padding: 7rem 0 4rem;
+            position: relative;
         }
 
         .hero-layout {
@@ -309,9 +310,76 @@
             margin-top: 2rem; border-left: 3px solid var(--accent-ink); padding-left: 1.5rem; line-height: 1.6; 
         }
 
+        .hero-scroll-cue {
+            position: absolute;
+            left: 2rem;
+            bottom: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            opacity: 0.75;
+            animation: heroReveal 0.9s ease both;
+            animation-delay: 0.5s;
+        }
+
+        .hero-scroll-cue svg {
+            animation: scrollBounce 1.8s ease-in-out infinite;
+        }
+
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+        }
+
         @keyframes heroReveal {
             from { opacity: 0; transform: translateY(18px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =========================================
+           APARICIÓN PROGRESIVA AL HACER SCROLL
+           ========================================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal-stagger.is-visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0s; }
+        .reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.08s; }
+        .reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.16s; }
+        .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.24s; }
+        .reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.32s; }
+        .reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.4s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal-stagger > * {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
         }
 
         /* =========================================
@@ -330,8 +398,134 @@
         .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
         .data-card { background: var(--bg-paper); border: 1px solid var(--line-color); padding: 1.5rem; border-radius: 4px; transition: all 0.3s; }
         .data-card:hover { transform: translateY(-3px); border-color: var(--accent-clay); }
+        .data-card .label { color: var(--accent-clay); font-weight: 700; }
+        .data-card .main-value { margin-top: 0.5rem; margin-bottom: 0; }
+        .data-card .sub-value { font-size: 0.9rem; margin: 0; }
+        .data-card .sub-value.tight { font-size: 0.85rem; }
+        .data-grid.two-col { grid-template-columns: 1fr 1fr; }
         .poetry-section { background-color: #0a0a0a !important; color: #f0f0f0; padding: 5rem 0; }
         footer { padding: 3rem 1.5rem; text-align: center; font-family: 'Inter', sans-serif; font-size: 0.85rem; background: var(--bg-white); border-top: 1px solid var(--line-color); }
+
+        /* =========================================
+           RAÍCES
+           ========================================= */
+        .faith-note { font-size: 0.95rem; }
+
+        /* =========================================
+           TIMELINE (FORMACIÓN)
+           ========================================= */
+        .timeline { margin-top: 3rem; border-left: 2px solid var(--accent-clay); padding-left: 1.5rem; }
+        .timeline-item { margin-bottom: 2rem; }
+        .timeline-item h4 { margin-bottom: 0.2rem; }
+        .timeline-item .timeline-tag { font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .timeline-item .timeline-desc { font-size: 0.95rem; }
+        .section-heading-ink { color: var(--accent-ink); }
+        .section-heading-ink.spaced { margin-top: 4rem; margin-bottom: 1.5rem; }
+        .linkedin-cta { margin-top: 2rem; text-align: right; }
+        .linkedin-cta a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--accent-ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-ink);
+        }
+
+        /* =========================================
+           TEOLOGÍA
+           ========================================= */
+        .quote-block {
+            margin: 3.5rem 0;
+            padding: 2.5rem;
+            background: var(--bg-white);
+            border-left: 4px solid var(--accent-clay);
+            box-shadow: 10px 10px 0 var(--line-color);
+        }
+        .quote-block p {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .quote-block p:last-child { margin-bottom: 0; }
+
+        /* =========================================
+           VISIÓN FUTURA (#futuro)
+           ========================================= */
+        .future-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .future-lede { font-size: 1.1rem; line-height: 1.8; }
+        .future-quote {
+            color: #666;
+            border-left: 3px solid var(--accent-clay);
+            padding-left: 1rem;
+            margin-top: 2rem;
+        }
+        .goals-card { background: #f4f6f7; padding: 2rem; border-radius: 8px; border: 1px solid #e0e0e0; }
+        .goals-card h4 { margin-bottom: 1.5rem; color: var(--accent-ink); }
+        .goal-row { margin-bottom: 1.5rem; }
+        .goal-row .goal-label-row { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+        .goal-row .goal-name { font-weight: 600; }
+        .goal-row .goal-status { color: var(--accent-clay); }
+        .goal-bar-track { height: 6px; background: #ddd; border-radius: 3px; }
+        .goal-bar-fill { height: 100%; background: var(--accent-ink); border-radius: 3px; }
+        .goals-horizon {
+            margin-top: 2rem;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 1.5rem;
+        }
+        .goals-horizon .horizon-years {
+            font-family: 'Lora', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-clay);
+        }
+
+        /* =========================================
+           PROPÓSITO / IKIGAI
+           ========================================= */
+        .ikigai-compass {
+            font-size: 1.2rem;
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 4rem;
+        }
+        .ikigai-revelation-tag {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--accent-clay);
+            margin-bottom: 2rem;
+        }
+        .ikigai-revelation-title { font-size: 2rem; line-height: 1.3; margin-bottom: 2rem; border: none; }
+        .ikigai-revelation-text { font-size: 1.1rem; line-height: 1.8; color: var(--accent-ink); }
+        .ikigai-block { margin-bottom: 5rem; }
+        .ikigai-quadrants { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; text-align: left; margin-bottom: 5rem; }
+        .ikigai-quadrants h4 { font-size: 0.75rem; color: #aaa; margin-bottom: 1rem; letter-spacing: 1px; }
+        .ikigai-quadrants h4.spaced { margin-top: 2rem; }
+        .ikigai-quadrants p { font-size: 0.95rem; line-height: 1.6; }
+        .ikigai-closing { padding-top: 3rem; border-top: 1px solid #eee; text-align: center; }
+        .ikigai-closing p { font-size: 1rem; color: #555; max-width: 550px; margin: 0 auto; line-height: 1.7; }
+        .ikigai-signature { margin-top: 3rem; font-weight: 800; color: #eee; font-size: 3rem; user-select: none; }
+
+        /* =========================================
+           FOOTER (CONTENIDO)
+           ========================================= */
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; }
+        .footer-grid h4 { font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-clay); margin-bottom: 1.5rem; }
+        .footer-manifesto-quote { font-size: 1.1rem; line-height: 1.6; color: var(--accent-ink); }
+        .footer-credit { font-size: 0.85rem; color: #888; margin-top: 1rem; }
+        .footer-links { list-style: none; padding: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 2; }
+        .footer-divider { border: 0; border-top: 1px solid #eee; margin: 3rem 0; }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+        .footer-bottom .signature { color: var(--accent-clay); font-weight: 700; }
 
         /* =========================================
            RESPONSIVE
@@ -345,6 +539,7 @@
             .nav-links a { margin: 0; font-size: 0.7rem; }
 
             header.hero { min-height: 82vh; padding-top: 6.4rem; padding-bottom: 2rem; align-items: flex-start; }
+            .hero-scroll-cue { display: none; }
             .hero-layout { grid-template-columns: 1fr; gap: 1.35rem; text-align: left; }
             .hero-img-container { order: -1; max-width: 62%; margin: 0 auto 0.4rem auto; }
             .hero-img-container::before { right: -0.7rem; bottom: 0.7rem; max-width: 11rem; font-size: 0.66rem; }
@@ -362,7 +557,301 @@
             .hero-quote { font-size: 1.15rem; padding-left: 1.2rem; border-left-width: 4px; margin-right: 1rem; }
             .drop-cap::first-letter { font-size: 3.2rem; margin-top: 0.3rem; padding-right: 0.6rem; }
             .narrative-block { padding: 3rem 0; }
-            #futuro > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+            .data-grid.two-col { grid-template-columns: 1fr; }
+            .future-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+            .ikigai-quadrants { grid-template-columns: 1fr; gap: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-links { text-align: center; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
+        /* =========================================
+           SECCIÓN DITOOH (TARJETAS DE TEXTO)
+           ========================================= */
+        .cloud-card {
+            background: #141414;
+            border: 1px solid #333;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease, border-color 0.3s ease;
+            margin-bottom: 2rem;
+            break-inside: avoid; /* Evita cortes en columnas */
+        }
+
+        .cloud-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-clay);
+        }
+
+        /* Estilo ESPECIAL para el Capítulo Uno (Centrado y Ancho) */
+        .featured-card {
+            max-width: 800px; /* Ancho ideal de lectura */
+            margin: 0 auto 4rem auto; /* Centrado horizontal y margen abajo */
+            padding: 3rem; /* Un poco más de aire */
+            border-left: 4px solid var(--accent-clay); /* Detalle visual extra */
+        }
+
+        /* Columnas para los poemas */
+        .masonry-columns {
+            column-count: 2; /* 2 Columnas para los poemas */
+            column-gap: 2rem;
+        }
+
+        .text-content {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: #bbb;
+            line-height: 1.8;
+            white-space: pre-line;
+            font-size: 1rem;
+        }
+
+        .ditooh-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ditooh-intro .ditooh-kicker { color: #666; letter-spacing: 3px; font-size: 0.9rem; }
+        .ditooh-intro h2 { color: #fff; border: none; margin-top: 0.5rem; font-size: 2.5rem; }
+        .ditooh-intro .ditooh-lede { font-size: 1.1rem; color: #ddd; margin-top: 1.5rem; line-height: 1.6; }
+        .ditooh-intro .ditooh-motto { font-size: 1.3rem; color: #bbb; margin: 2rem auto; }
+
+        .ditooh-social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .ditooh-social-links a {
+            color: var(--accent-clay);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .ditooh-social-links a:hover { border-bottom-color: var(--accent-clay); }
+
+        .ditooh-chapter-title {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .poem-title {
+            color: var(--accent-clay);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Botón "Leer más" */
+        details summary {
+            cursor: pointer;
+            color: var(--accent-clay);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            list-style: none;
+            margin-top: 1.5rem;
+            text-align: center; /* Botón centrado */
+            padding-top: 1rem;
+            border-top: 1px solid #333;
+        }
+
+        details summary:hover { text-decoration: underline; }
+
+        /* =========================================
+           MICROINTERACCIONES: PROGRESO Y VOLVER ARRIBA
+           ========================================= */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: var(--accent-clay);
+            z-index: 200;
+            transition: width 0.1s ease-out;
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 1.6rem;
+            bottom: 1.6rem;
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 50%;
+            background: var(--text-primary);
+            color: var(--bg-paper);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            z-index: 150;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, visibility 0.3s ease;
+        }
+
+        .back-to-top.is-visible {
+            opacity: 0.92;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-clay);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top { width: 2.5rem; height: 2.5rem; right: 1.1rem; bottom: 1.1rem; }
+        }
+
+        /* =========================================
+           SECCIÓN IMPACTO
+           ========================================= */
+        .impact-intro { max-width: 42rem; }
+
+        .impact-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .impact-card {
+            background: var(--bg-white);
+            border: 1px solid var(--line-color);
+            border-radius: 4px;
+            transition: border-color 0.25s ease;
+        }
+
+        .impact-card:hover { border-color: var(--accent-clay); }
+
+        .impact-card summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            padding: 1.4rem 1.6rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .impact-card summary::-webkit-details-marker { display: none; }
+
+        .impact-tag {
+            flex-shrink: 0;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-clay);
+            border: 1px solid var(--accent-clay);
+            border-radius: 999px;
+            padding: 0.28rem 0.7rem;
+        }
+
+        .impact-headline {
+            flex: 1;
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+        }
+
+        .impact-icon {
+            flex-shrink: 0;
+            width: 1.6rem;
+            height: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line-color);
+            border-radius: 50%;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        .impact-card[open] .impact-icon {
+            transform: rotate(45deg);
+            border-color: var(--accent-clay);
+            color: var(--accent-clay);
+        }
+
+        .impact-body {
+            padding: 0 1.6rem 1.8rem;
+            border-top: 1px solid var(--line-color);
+        }
+
+        .impact-body h5 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-ink);
+            margin: 1.4rem 0 0.5rem;
+        }
+
+        .impact-body p {
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .impact-body ul {
+            margin: 0 0 0.8rem;
+            padding-left: 1.2rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .impact-body li { margin-bottom: 0.4rem; }
+
+        .impact-learning {
+            margin-top: 1.2rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--line-color);
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 768px) {
+            .impact-card summary { padding: 1.1rem 1.2rem; gap: 0.8rem; }
+            .impact-headline { font-size: 0.95rem; }
+            .impact-body { padding: 0 1.2rem 1.4rem; }
+            .impact-tag { display: none; }
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        @media (max-width: 768px) {
+            footer .container > div:first-child {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+            footer ul { text-align: center; }
+            footer .container > div:last-child {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            .masonry-columns { column-count: 1; }
+            .featured-card { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -372,6 +861,7 @@
     <nav>
         <a href="#inicio" class="nav-brand">Aldoh S. Flores</a>
         <div class="nav-links">
+            <a href="#impacto">Impacto</a>
             <a href="#raices">Raíces</a>
             <a href="#evolucion">Evolución</a>
             <a href="#profesional">Ingeniería</a>
@@ -380,6 +870,11 @@
             <a href="#futuro">Futuro</a>
         </div>
     </nav>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <button class="back-to-top" id="backToTop" aria-label="Volver al inicio">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
 
     <!-- HERO SECTION -->
     <header class="hero container" id="inicio">
@@ -399,16 +894,20 @@
                 </div>
                 <div class="hero-actions">
                     <a href="#raices" class="hero-link primary">Entrar al manifiesto</a>
-                    <a href="#profesional" class="hero-link">Ver impacto</a>
+                    <a href="#impacto" class="hero-link">Ver impacto</a>
                 </div>
             </div>
             <div class="hero-img-container">
                 <img src="aldoh-saul-flores-garcia.jpg" alt="Aldoh Saúl Flores García" width="1200" height="1600" fetchpriority="high" decoding="async">
             </div>
         </div>
+        <a href="#impacto" class="hero-scroll-cue" aria-label="Bajar para seguir explorando">
+            <span>Sigue explorando</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </a>
     </header>
 
-    <section class="container narrative-block">
+    <section class="container narrative-block reveal">
         <h3 class="sans">Umbral</h3>
         <p class="drop-cap">
             No soy una definición cerrada, sino una declaración de presencia. Este espacio no es un currículum, es un archivo vivo de mi construcción consciente. Aquí convergen la razón técnica y la inquietud existencial, el cálculo y el verso.
@@ -418,11 +917,148 @@
         </p>
     </section>
 
+    <div class="full-width" id="impacto">
+        <div class="container reveal">
+            <h3 class="sans">Evidencia</h3>
+            <h2>Impacto</h2>
+            <p class="impact-intro">
+                Algunas historias que han definido mi forma de entender la mejora continua. No son una lista de cargos: son momentos donde observar, entender y mejorar un sistema cambió algo de forma medible.
+            </p>
+
+            <div class="impact-grid">
+
+                <details class="impact-card">
+                    <summary>
+                        <span class="impact-tag">Sistemas</span>
+                        <span class="impact-headline">De 8,000 a 18,000 piezas por día</span>
+                        <span class="impact-icon">+</span>
+                    </summary>
+                    <div class="impact-body">
+                        <h5>El reto</h5>
+                        <p>Al incorporarme al área de Corte y Acabado en Eaton, existía un adeudo acumulado de producción de aproximadamente tres meses. El cuello de botella de la planta se encontraba en un proceso por donde transitaba cerca del 90% de los productos fabricados. Los estándares indicaban tiempos de fabricación significativamente menores a los observados en piso.</p>
+                        <h5>Lo que hice</h5>
+                        <p>Realicé estudios de tiempos y capacidad para comprender el desempeño real del proceso. El análisis mostró que los estándares no reflejaban la operación real y que la capacidad instalada era insuficiente para alcanzar la demanda requerida. Posteriormente participé en la expansión de capacidad, capacitación de personal, estandarización de procesos, metodología ADKAR e implementación de herramientas de aprendizaje.</p>
+                        <h5>Resultado</h5>
+                        <ul>
+                            <li>Productividad incrementada de 8,000 a 18,000 piezas por día</li>
+                            <li>Eliminación del adeudo acumulado de producción</li>
+                            <li>Cumplimiento de la demanda proyectada</li>
+                            <li>Coordinación operativa de hasta 40 colaboradores</li>
+                        </ul>
+                        <p class="impact-learning">Antes de mejorar un proceso, primero hay que entenderlo.</p>
+                    </div>
+                </details>
+
+                <details class="impact-card">
+                    <summary>
+                        <span class="impact-tag">Sistemas</span>
+                        <span class="impact-headline">Reducir más del 50% un cambio de modelo</span>
+                        <span class="impact-icon">+</span>
+                    </summary>
+                    <div class="impact-body">
+                        <h5>El reto</h5>
+                        <p>Los tiempos de preparación en tornos CNC limitaban la disponibilidad de los equipos y reducían la capacidad de respuesta del área.</p>
+                        <h5>Lo que hice</h5>
+                        <p>Participé en un evento Kaizen aplicando la metodología SMED para identificar actividades internas y externas, eliminar desperdicios y estandarizar el proceso de preparación.</p>
+                        <h5>Resultado</h5>
+                        <ul>
+                            <li>Reducción superior al 50% en tiempos de setup</li>
+                            <li>Mayor disponibilidad de equipos</li>
+                            <li>Incremento de capacidad productiva sin inversión adicional</li>
+                        </ul>
+                        <p class="impact-learning">Muchas veces la mejor inversión no es comprar una máquina nueva, sino aprovechar mejor la que ya existe.</p>
+                    </div>
+                </details>
+
+                <details class="impact-card">
+                    <summary>
+                        <span class="impact-tag">Sistemas</span>
+                        <span class="impact-headline">Estandarizar más de 60 modelos de fabricación</span>
+                        <span class="impact-icon">+</span>
+                    </summary>
+                    <div class="impact-body">
+                        <h5>El reto</h5>
+                        <p>Durante mi etapa en ingeniería de manufactura, la información de fabricación se encontraba dispersa y dependía en gran medida de la experiencia de cada operador.</p>
+                        <h5>Lo que hice</h5>
+                        <p>Desarrollé manuales y estándares de fabricación para más de 60 modelos de sofás, documentando corte de madera, ensamble, corte de tela, tapizado, tiempos de fabricación y criterios de calidad.</p>
+                        <h5>Resultado</h5>
+                        <ul>
+                            <li>Mayor consistencia operativa</li>
+                            <li>Base documental para capacitación</li>
+                            <li>Reducción de variabilidad entre operadores</li>
+                        </ul>
+                        <p class="impact-learning">Un proceso no puede mejorar de forma sostenible si el conocimiento vive únicamente en las personas.</p>
+                    </div>
+                </details>
+
+                <details class="impact-card">
+                    <summary>
+                        <span class="impact-tag">Oportunidades</span>
+                        <span class="impact-headline">Cuando una aduana detuvo toda una exportación</span>
+                        <span class="impact-icon">+</span>
+                    </summary>
+                    <div class="impact-body">
+                        <h5>El reto</h5>
+                        <p>Un lote completo fue retenido en aduana por incumplir requisitos específicos de etiquetado. Nadie en la planta dominaba el software necesario para generar la documentación requerida.</p>
+                        <h5>Lo que hice</h5>
+                        <p>Aprendí de forma autodidacta el software mediante manuales, videos y foros técnicos. Posteriormente generé la documentación necesaria y apoyé la coordinación para corregir el embarque detenido.</p>
+                        <h5>Resultado</h5>
+                        <ul>
+                            <li>Liberación del lote en menos de 48 horas</li>
+                            <li>Continuidad de las exportaciones</li>
+                            <li>Prevención de retrasos adicionales</li>
+                        </ul>
+                        <p class="impact-learning">La capacidad de aprender rápido es una ventaja competitiva.</p>
+                    </div>
+                </details>
+
+                <details class="impact-card">
+                    <summary>
+                        <span class="impact-tag">Personas</span>
+                        <span class="impact-headline">Construir confianza antes de graduarse</span>
+                        <span class="impact-icon">+</span>
+                    </summary>
+                    <div class="impact-body">
+                        <h5>El reto</h5>
+                        <p>Muchos estudiantes terminan la universidad con conocimientos técnicos, pero con poca confianza para aportar valor en la industria.</p>
+                        <h5>Lo que hice</h5>
+                        <p>Fui Vicepresidente Fundador del Capítulo 621 del Instituto Tecnológico Superior de Huetamo. Impulsamos actividades, conferencias, concursos y encuentros con profesionales activos para acercar a los estudiantes a la realidad industrial.</p>
+                        <h5>Resultado</h5>
+                        <ul>
+                            <li>Creación de una comunidad estudiantil orientada al desarrollo profesional</li>
+                            <li>Vinculación entre universidad e industria</li>
+                            <li>Participación de estudiantes en actividades de formación complementaria</li>
+                        </ul>
+                        <p class="impact-learning">El talento crece más rápido cuando encuentra referentes que le muestran lo que es posible.</p>
+                    </div>
+                </details>
+
+                <details class="impact-card">
+                    <summary>
+                        <span class="impact-tag">Oportunidades</span>
+                        <span class="impact-headline">Del becario al equipo de Operational Excellence</span>
+                        <span class="impact-icon">+</span>
+                    </summary>
+                    <div class="impact-body">
+                        <h5>El reto</h5>
+                        <p>Ingresé a Eaton como practicante en el área de Excelencia Operacional con el objetivo de aprender cómo se transforman los procesos dentro de una organización global.</p>
+                        <h5>Lo que hice</h5>
+                        <p>Participé en proyectos de productividad, VSM, estudios de capacidad, Lean Manufacturing y mejora continua en distintas áreas de la planta.</p>
+                        <h5>Resultado</h5>
+                        <p>Meses después regresé a la organización, esta vez como Analista Jr. de Operational Excellence.</p>
+                        <p class="impact-learning">Las oportunidades rara vez aparecen por casualidad. Normalmente son el resultado acumulado del trabajo que nadie ve.</p>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </div>
+
     <div class="full-width" id="raices">
-        <div class="container">
+        <div class="container reveal">
             <h3 class="sans">El Origen</h3>
             <h2>Raíces y Valores</h2>
-            <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="data-grid two-col">
                 <div>
                     <p>
                         Broté un jueves de julio de 2001 en "tierra de coyotes": <strong>Coyuca de Catalán</strong>, Guerrero. Mi infancia se divide entre la libertad de <strong>Los Brasiles</strong>, jugando con mis primos, y la formación de mis padres. Aunque la CDMX es mi base operativa actual.
@@ -433,7 +1069,7 @@
                 </div>
                 <div>
                     <p><strong>La Fe como Búsqueda:</strong></p>
-                    <p class="italic" style="font-size: 0.95rem;">
+                    <p class="italic faith-note">
                         No vivo la fe como un dogma cómodo, sino como una investigación constante. Tras alejarme, regresé como el <strong>hijo pródigo</strong>, encontrando en Dios un sentido de orden y propósito que la razón por sí sola no alcanzaba a explicar. Hoy, mi fe es el puente entre lo que calculo como ingeniero y lo que siento como hombre. Si Dios existe, existe todo. Mi teología es racional: creer es también un acto de inteligencia.
                     </p>
                 </div>
@@ -441,7 +1077,7 @@
         </div>
     </div>
 
-    <section class="container narrative-block" id="evolucion">
+    <section class="container narrative-block reveal" id="evolucion">
         <h3 class="sans">Trayectoria Vital</h3>
         <h2>La Alquimia del Carácter</h2>
         <p>
@@ -452,100 +1088,100 @@
         </p>
         <div class="data-grid">
             <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay);">Personalidad</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>ENTP-A</strong> (El Innovador)</p>
-                <p style="font-size: 0.9rem; margin:0;">Eneagrama 7w8</p>
+                <span class="sans small-caps label">Personalidad</span>
+                <p class="main-value"><strong>ENTP-A</strong> (El Innovador)</p>
+                <p class="sub-value">Eneagrama 7w8</p>
             </div>
             <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay);">Motor</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;">Guerrero del Cambio</p>
-                <p style="font-size: 0.9rem; margin:0;">Me frustra la estática y la mediocridad.</p>
+                <span class="sans small-caps label">Motor</span>
+                <p class="main-value">Guerrero del Cambio</p>
+                <p class="sub-value">Me frustra la estática y la mediocridad.</p>
             </div>
             <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay);">Anclas</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;">Deporte & Disciplina</p>
-                <p style="font-size: 0.9rem; margin:0;">Basquetbol, Atletismo, Ajedrez.</p>
+                <span class="sans small-caps label">Anclas</span>
+                <p class="main-value">Deporte & Disciplina</p>
+                <p class="sub-value">Basquetbol, Atletismo, Ajedrez.</p>
             </div>
         </div>
     </section>
 
    <div class="full-width" id="profesional" style="background: #f4f6f7;">
-    <div class="container">
-        <h3 class="sans" style="color: var(--accent-ink);">El Ingeniero</h3>
+    <div class="container reveal">
+        <h3 class="sans section-heading-ink">El Ingeniero</h3>
         <h2>Formación y Trayectoria</h2>
         <p>
             Mi construcción como ingeniero no fue lineal, fue acumulativa. Comencé con el orden de los números y terminé diseñando procesos industriales.
         </p>
         
-        <div style="margin-top: 3rem; border-left: 2px solid var(--accent-clay); padding-left: 1.5rem;">
-            <div style="margin-bottom: 2rem;">
-                <h4 class="sans" style="margin-bottom: 0.2rem;">Tecnológico de Estudios Superiores de Ecatepec</h4>
-                <p class="italic" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Especialidad en CAD/CAM</p>
-                <p style="font-size: 0.95rem;">
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4 class="sans">Tecnológico de Estudios Superiores de Ecatepec</h4>
+                <p class="italic timeline-tag">Especialidad en CAD/CAM</p>
+                <p class="timeline-desc">
                     Donde el <strong>Pugno</strong> tomó forma. Aquí me especialicé en Diseño y Manufactura Asistida por Computadora, consolidando la técnica que hoy me define.
                 </p>
             </div>
             
-            <div style="margin-bottom: 2rem;">
-                <h4 class="sans" style="margin-bottom: 0.2rem;">Instituto Tecnológico Superior de Huetamo</h4>
-                <p class="italic" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Fundamentos Industriales</p>
-                <p style="font-size: 0.95rem;">
+            <div class="timeline-item">
+                <h4 class="sans">Instituto Tecnológico Superior de Huetamo</h4>
+                <p class="italic timeline-tag">Fundamentos Industriales</p>
+                <p class="timeline-desc">
                     Mis cimientos. Aprendí la filosofía del <strong>Toyota Production System</strong> y <strong>Lean Manufacturing</strong>. Entendí que la eficiencia no es suerte, es método.
                 </p>
             </div>
 
-            <div style="margin-bottom: 2rem;">
-                <h4 class="sans" style="margin-bottom: 0.2rem;">Colegio de Bachilleres Plantel 5 (Guerrero)</h4>
-                <p class="italic" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Capacitación: Auxiliar Contable</p>
-                <p style="font-size: 0.95rem;">
+            <div class="timeline-item">
+                <h4 class="sans">Colegio de Bachilleres Plantel 5 (Guerrero)</h4>
+                <p class="italic timeline-tag">Capacitación: Auxiliar Contable</p>
+                <p class="timeline-desc">
                     El inicio del orden. La contabilidad me enseñó que cada recurso cuenta y debe ser registrado.
                 </p>
             </div>
         </div>
 
-        <h3 class="sans" style="color: var(--accent-ink); margin-top: 4rem;">Experiencia Real</h3>
+        <h3 class="sans section-heading-ink spaced">Experiencia Real</h3>
         <div class="data-grid">
 
              <!-- TARJETA 1: EATON (ACTUALIDAD) -->
             <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Actualidad</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>Eaton</strong></p>
-                <p style="font-size: 0.85rem; margin:0;">
+                <span class="sans small-caps label">Actualidad</span>
+                <p class="main-value"><strong>Eaton</strong></p>
+                <p class="sub-value tight">
                     <strong>Ingeniero Analista de Procesos.</strong> Un regreso con propósito. Tras mi etapa inicial como practicante, vuelvo para demostrar la evolución de mi perfil, fusionando el rigor analítico con la ejecución estratégica.
                 </p>
             </div>
             
             <!-- TARJETA 2: 3C METROLOGY (EVOLUCIÓN) -->
             <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Expansión</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>3C Metrology</strong></p>
-                <p style="font-size: 0.85rem; margin:0;">
+                <span class="sans small-caps label">Expansión</span>
+                <p class="main-value"><strong>3C Metrology</strong></p>
+                <p class="sub-value tight">
                     <strong>Técnico Comercial.</strong> El rol que potenció mi extroversión. Aprendí a conectar con el cliente, demostrando que la comunicación, planear y trabajar en equipo son tan vitales como el cálculo.
                 </p>
             </div>
 
             <!-- TARJETA 3: INROADS (FORMACIÓN) -->
             <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Formación de Élite</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>Inroads México</strong></p>
-                <p style="font-size: 0.85rem; margin:0;">
+                <span class="sans small-caps label">Formación de Élite</span>
+                <p class="main-value"><strong>Inroads México</strong></p>
+                <p class="sub-value tight">
                     Formo parte de esta ONG que impulsa talento. Aquí pulí mi liderazgo y visión corporativa.
                 </p>
             </div>
 
             <!-- TARJETA 4: IISE (LIDERAZGO) -->
             <div class="data-card">
-                <span class="sans small-caps" style="color: var(--accent-clay); font-weight: 700;">Liderazgo Fundacional</span>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>IISE - Capítulo 621 ITSH</strong></p>
-                <p style="font-size: 0.85rem; margin:0;">
+                <span class="sans small-caps label">Liderazgo Fundacional</span>
+                <p class="main-value"><strong>IISE - Capítulo 621 ITSH</strong></p>
+                <p class="sub-value tight">
                     <strong>Vicepresidente Fundador.</strong> Miembro del Institute of Industrial and Systems Engineers. Aquí descubrí y forjé mis dotes de liderazgo, sentando las bases para la gestión de equipos y la organización estratégica.
                 </p>
             </div>
 
         </div>
         
-        <div style="margin-top: 2rem; text-align: right;">
-            <a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--accent-ink); text-decoration: none; border-bottom: 1px solid var(--accent-ink);">
+        <div class="linkedin-cta">
+            <a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank">
                 Ver trayectoria completa en LinkedIn →
             </a>
         </div>
@@ -553,8 +1189,8 @@
 </div>
 
     <!-- SECCIÓN: TEOLOGÍA -->
-<section id="teologia" class="narrative-block container" style="border-top: 1px solid var(--line-color);">
-    <h3 class="sans" style="color: var(--accent-ink);">El Teólogo</h3>
+<section id="teologia" class="narrative-block container reveal" style="border-top: 1px solid var(--line-color);">
+    <h3 class="sans section-heading-ink">El Teólogo</h3>
     <h2>Aprender a pensar a Dios</h2>
     
     <p class="drop-cap">
@@ -566,11 +1202,11 @@
     </p>
 
     <!-- CITA DESTACADA -->
-    <div style="margin: 3.5rem 0; padding: 2.5rem; background: var(--bg-white); border-left: 4px solid var(--accent-clay); box-shadow: 10px 10px 0 var(--line-color);">
-        <p style="font-size: 1.15rem; font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7;">
+    <div class="quote-block">
+        <p>
             "No entiendo la teología como un ejercicio de erudición, sino como una búsqueda de sentido. Creo que Dios puede ser amado con el corazón, pero también con la inteligencia."
         </p>
-        <p style="font-size: 1.15rem; font-style: italic; color: var(--text-secondary); margin-bottom: 0; line-height: 1.7;">
+        <p>
             "La teología me enseñó que buscar a Dios con honestidad intelectual también es una forma de amarlo. Las preguntas sinceras pueden ser una forma de oración."
         </p>
     </div>
@@ -579,7 +1215,7 @@
         Mi interés se ha dirigido hacia la relación entre fe y razón, la filosofía clásica, la historia de la Iglesia, la interpretación bíblica y la Doctrina Social. Pero más allá de los conceptos teóricos, la verdadera revelación ha sido entender que toda reflexión teológica debe conducir a una vida más auténtica. La fe no se reduce a normas, sino que implica una relación viva y una responsabilidad concreta hacia los demás.
     </p>
 
-    <h3 class="sans" style="color: var(--accent-ink); margin-top: 4rem; margin-bottom: 1.5rem;">Un Viaje de Regreso</h3>
+    <h3 class="sans section-heading-ink spaced">Un Viaje de Regreso</h3>
     
     <p>
         No estudio teología para convertirme en un experto en Dios. La estudio porque cada vez que intento comprenderlo, descubro algo más sobre quién soy yo. Entre páginas de filosofía, documentos eclesiales, la lectura viva de la Biblia (alimentada por espacios como RUAJ y Hakuna) y largas conversaciones, he llegado a una convicción sencilla: <strong>si Dios existe, existe todo.</strong>
@@ -592,29 +1228,29 @@
 
     
     <section class="poetry-section" id="ditooh" style="background-color: #0a0a0a; color: #eaeaea; padding: 6rem 0;">
-        <div class="container">
+        <div class="container reveal">
             
-            <div style="text-align: center; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <h3 class="sans" style="color: #666; letter-spacing: 3px; font-size: 0.9rem;">LA VOZ INTERNA</h3>
-                <h2 style="color: #fff; border: none; margin-top: 0.5rem; font-size: 2.5rem;">Yo soy Ditooh</h2>
+            <div class="ditooh-intro">
+                <h3 class="sans ditooh-kicker">LA VOZ INTERNA</h3>
+                <h2>Yo soy Ditooh</h2>
                 
-                <p style="font-size: 1.1rem; color: #ddd; margin-top: 1.5rem; line-height: 1.6;">
+                <p class="ditooh-lede">
                     Ditooh es el seudónimo que protege y libera mi voz interna. Si Aldoh estructura la realidad, Ditooh la siente.
                 </p>
     
-                <p class="serif italic" style="font-size: 1.3rem; color: #bbb; margin: 2rem auto;">
+                <p class="serif italic ditooh-motto">
                     “Escribo cuando hablar no alcanza.”
                 </p>
     
-                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; font-family: 'Inter', sans-serif; font-size: 0.9rem;">
-                    <a href="https://substack.com/@asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Substack</a>
-                    <a href="https://www.instagram.com/ditooh.m4ldito" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Instagram</a>
-                    <a href="https://www.wattpad.com/user/asaulflores" target="_blank" style="color: var(--accent-clay); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;">Wattpad</a>
+                <div class="ditooh-social-links">
+                    <a href="https://substack.com/@asaulflores" target="_blank">Substack</a>
+                    <a href="https://www.instagram.com/ditooh.m4ldito" target="_blank">Instagram</a>
+                    <a href="https://www.wattpad.com/user/asaulflores" target="_blank">Wattpad</a>
                 </div>
             </div>
 
             <article class="cloud-card featured-card">
-                <h3 class="serif" style="color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">Capítulo uno: Número no registrado</h3>
+                <h3 class="serif ditooh-chapter-title">Capítulo uno: Número no registrado</h3>
                 <div class="text-content">
                     <p>Doce dígitos aparecían en la pantalla de mi celular.
 Un número no registrado.
@@ -662,10 +1298,10 @@ Felicidades.
                 </div>
             </article>
     
-            <div class="masonry-columns">
+            <div class="masonry-columns reveal-stagger">
                 
                 <article class="cloud-card">
-                    <h3 class="serif" style="color: var(--accent-clay); font-size: 1.2rem; margin-bottom: 1rem;">Poema I – Coincidencia</h3>
+                    <h3 class="serif poem-title">Poema I – Coincidencia</h3>
                     <div class="text-content">
 Justo cuando mi vida parecía en calma…
 llegaste.
@@ -683,7 +1319,7 @@ la oportunidad de descubrirlo.
                 </article>
     
                 <article class="cloud-card">
-                    <h3 class="serif" style="color: var(--accent-clay); font-size: 1.2rem; margin-bottom: 1rem;">Poema II – Difícil de Amar</h3>
+                    <h3 class="serif poem-title">Poema II – Difícil de Amar</h3>
                     <div class="text-content">
 Soy un romántico empalagoso
 Y lo digo muy gozoso,
@@ -712,7 +1348,7 @@ Viajes al mar,
                 </article>
 
                 <article class="cloud-card">
-                    <h3 class="serif" style="color: var(--accent-clay); font-size: 1.2rem; margin-bottom: 1rem;">Poema III – Fuego que no se apaga</h3>
+                    <h3 class="serif poem-title">Poema III – Fuego que no se apaga</h3>
                     <div class="text-content">
 La piel arde.
 El corazón delira.
@@ -766,252 +1402,113 @@ Pero dime,
     
             </div>
         </div>
-        
-        <style>
-            /* Estilos generales de las tarjetas nube */
-            .cloud-card {
-                background: #141414;
-                border: 1px solid #333;
-                padding: 2.5rem;
-                border-radius: 8px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                transition: transform 0.4s ease, border-color 0.3s ease;
-                margin-bottom: 2rem;
-                break-inside: avoid; /* Evita cortes en columnas */
-            }
-    
-            .cloud-card:hover {
-                transform: translateY(-5px);
-                border-color: var(--accent-clay);
-            }
-    
-            /* Estilo ESPECIAL para el Capítulo Uno (Centrado y Ancho) */
-            .featured-card {
-                max-width: 800px; /* Ancho ideal de lectura */
-                margin: 0 auto 4rem auto; /* Centrado horizontal y margen abajo */
-                padding: 3rem; /* Un poco más de aire */
-                border-left: 4px solid var(--accent-clay); /* Detalle visual extra */
-            }
-    
-            /* Columnas para los poemas */
-            .masonry-columns {
-                column-count: 2; /* 2 Columnas para los poemas */
-                column-gap: 2rem;
-            }
-    
-            .text-content {
-                font-family: 'Lora', serif;
-                font-style: italic;
-                color: #bbb;
-                line-height: 1.8;
-                white-space: pre-line;
-                font-size: 1rem;
-            }
-    
-            /* Botón Leer más */
-            details summary {
-                cursor: pointer;
-                color: var(--accent-clay);
-                font-family: 'Inter', sans-serif;
-                font-size: 0.8rem;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                list-style: none;
-                margin-top: 1.5rem;
-                text-align: center; /* Botón centrado */
-                padding-top: 1rem;
-                border-top: 1px solid #333;
-            }
-            
-            details summary:hover { text-decoration: underline; }
-    
-            /* Móvil */
-            @media (max-width: 768px) {
-                .masonry-columns { column-count: 1; }
-                .featured-card { padding: 1.5rem; }
-            }
-        </style>
     </section>
 
-    <section class="container narrative-block" id="futuro" style="padding-bottom: 6rem;">
+    <section class="container narrative-block reveal" id="futuro" style="padding-bottom: 6rem;">
     <h3 class="sans" style="color: var(--accent-clay);">Visión 2037</h3>
     <h2>La Conquista de la Libertad</h2>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+    <div class="future-grid">
         
         <div>
-            <p style="font-size: 1.1rem; line-height: 1.8;">
+            <p class="future-lede">
                 Si el presente es disciplina, el futuro es libertad. Mi regreso a la industria replanteó mis tiempos, pero magnificó mi destino. He decidido aplazar mi gran proyecto una década para construir primero una carrera profesional impecable y sin fisuras. 
             </p>
             <p>
                 No llegaré a <strong>Australia</strong> a ver qué sucede ni a improvisar; llegaré convertido en mi mejor versión, dominando el inglés como una segunda piel. Aunque el plan definitivo para estudiar mi <strong>maestría (MBA)</strong> y aprender a surfear está fijado para 2037, sé que esa no será la primera vez que pise Brisbane. Estaré ahí en los <strong>Juegos Olímpicos de 2032</strong>, viendo a la selección francesa colgarse la medalla de oro con Wembanyama como MVP.
             </p>
-            <p class="italic" style="color: #666; border-left: 3px solid var(--accent-clay); padding-left: 1rem; margin-top: 2rem;">
+            <p class="italic future-quote">
                 "Ser libre es poder elegir a voluntad, sin presión externa. Es correr sin parar sobre un campo abierto."
             </p>
         </div>
 
-        <div style="background: #f4f6f7; padding: 2rem; border-radius: 8px; border: 1px solid #e0e0e0;">
-            <h4 class="sans" style="margin-bottom: 1.5rem; color: var(--accent-ink);">Objetivos Estratégicos</h4>
+        <div class="goals-card">
+            <h4 class="sans">Objetivos Estratégicos</h4>
             
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600;">Consolidación Profesional</span>
-                    <span style="color: var(--accent-clay);">Foco Actual</span>
+            <div class="goal-row">
+                <div class="goal-label-row">
+                    <span class="goal-name">Consolidación Profesional</span>
+                    <span class="goal-status">Foco Actual</span>
                 </div>
-                <div style="height: 6px; background: #ddd; border-radius: 3px;">
-                    <div style="height: 100%; width: 60%; background: var(--accent-ink); border-radius: 3px;"></div>
-                </div>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600;">Idioma (Inglés C1)</span>
-                    <span style="color: var(--accent-clay);">Prioridad Alta</span>
-                </div>
-                <div style="height: 6px; background: #ddd; border-radius: 3px;">
-                    <div style="height: 100%; width: 45%; background: var(--accent-ink); border-radius: 3px;"></div>
+                <div class="goal-bar-track">
+                    <div class="goal-bar-fill" style="width: 60%;"></div>
                 </div>
             </div>
 
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600;">Brisbane 2032, MBA & Surf</span>
-                    <span style="color: var(--accent-clay);">Proyección</span>
+            <div class="goal-row">
+                <div class="goal-label-row">
+                    <span class="goal-name">Idioma (Inglés C1)</span>
+                    <span class="goal-status">Prioridad Alta</span>
                 </div>
-                <div style="height: 6px; background: #ddd; border-radius: 3px;">
-                    <div style="height: 100%; width: 20%; background: var(--accent-ink); border-radius: 3px;"></div>
+                <div class="goal-bar-track">
+                    <div class="goal-bar-fill" style="width: 45%;"></div>
                 </div>
             </div>
 
-            <div style="margin-top: 2rem; text-align: center; border-top: 1px solid #ddd; padding-top: 1.5rem;">
+            <div class="goal-row">
+                <div class="goal-label-row">
+                    <span class="goal-name">Brisbane 2032, MBA & Surf</span>
+                    <span class="goal-status">Proyección</span>
+                </div>
+                <div class="goal-bar-track">
+                    <div class="goal-bar-fill" style="width: 20%;"></div>
+                </div>
+            </div>
+
+            <div class="goals-horizon">
                 <p class="sans small-caps" style="margin-bottom: 0;">Horizonte Temporal</p>
-                <span style="font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 700; color: var(--accent-clay);">2032 – 2037</span>
+                <span class="horizon-years">2032 – 2037</span>
             </div>
         </div>
 
     </div>
-    
-    <style>
-        @media (max-width: 768px) {
-            #futuro > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
-        }
-    </style>
 </section>
     
     <section id="proposito-ikigai" style="background-color: #fff; padding: 8rem 0; border-top: 1px solid #f0f0f0; position: relative;">
-        <div class="container" style="max-width: 750px;">
+        <div class="container reveal" style="max-width: 750px;">
             
-            <div style="margin-bottom: 4rem; text-align: left;">
-                <p class="serif italic" style="font-size: 1.2rem; color: #888; line-height: 1.6;">
+            <div>
+                <p class="serif italic ikigai-compass">
                     El propósito no es una meta que se alcanza de golpe, sino una brújula que se calibra caminando, fallando y corrigiendo en cada paso.
                 </p>
             </div>
     
-            <div style="margin-bottom: 5rem;">
-                <h3 class="sans" style="font-size: 0.8rem; letter-spacing: 3px; color: var(--accent-clay); margin-bottom: 2rem;">REVELACIÓN</h3>
-                <h2 style="font-size: 2rem; line-height: 1.3; margin-bottom: 2rem; border: none;">Mi propósito no es definitivo, es una voluntad viva.</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--accent-ink);">
-                    Camino para <strong>conectar</strong>: ideas que parecen distantes, personas que buscan rumbo y procesos que necesitan fluidez. Lo hago desde la <strong>justicia</strong> y la <strong>estrategia</strong>, pero siempre con el <strong>alma</strong> puesta en la ejecución. Mi labor es crear orden donde el caos impera y devolver el sentido donde solo queda ruido.
-                </p>
-            </div>
-
-                        </p>
-        </div>
-
-        <div style="background: #f4f6f7; padding: 2rem; border-radius: 8px; border: 1px solid #e0e0e0;">
-            <h4 class="sans" style="margin-bottom: 1.5rem; color: var(--accent-ink);">Objetivos Estratégicos</h4>
-            
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600;">Consolidación Profesional</span>
-                    <span style="color: var(--accent-clay);">Foco Actual</span>
-                </div>
-                <div style="height: 6px; background: #ddd; border-radius: 3px;">
-                    <div style="height: 100%; width: 60%; background: var(--accent-ink); border-radius: 3px;"></div>
-                </div>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600;">Idioma (Inglés C1)</span>
-                    <span style="color: var(--accent-clay);">Prioridad Alta</span>
-                </div>
-                <div style="height: 6px; background: #ddd; border-radius: 3px;">
-                    <div style="height: 100%; width: 45%; background: var(--accent-ink); border-radius: 3px;"></div>
-                </div>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600;">Brisbane 2032, MBA & Surf</span>
-                    <span style="color: var(--accent-clay);">Proyección</span>
-                </div>
-                <div style="height: 6px; background: #ddd; border-radius: 3px;">
-                    <div style="height: 100%; width: 20%; background: var(--accent-ink); border-radius: 3px;"></div>
-                </div>
-            </div>
-
-            <div style="margin-top: 2rem; text-align: center; border-top: 1px solid #ddd; padding-top: 1.5rem;">
-                <p class="sans small-caps" style="margin-bottom: 0;">Horizonte Temporal</p>
-                <span style="font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 700; color: var(--accent-clay);">2032 – 2037</span>
-            </div>
-        </div>
-
-    </div>
-    
-    <style>
-        @media (max-width: 768px) {
-            #futuro > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
-        }
-    </style>
-</section>
-    
-    <section id="proposito-ikigai" style="background-color: #fff; padding: 8rem 0; border-top: 1px solid #f0f0f0; position: relative;">
-        <div class="container" style="max-width: 750px;">
-            
-            <div style="margin-bottom: 4rem; text-align: left;">
-                <p class="serif italic" style="font-size: 1.2rem; color: #888; line-height: 1.6;">
-                    El propósito no es una meta que se alcanza de golpe, sino una brújula que se calibra caminando, fallando y corrigiendo en cada paso.
-                </p>
-            </div>
-    
-            <div style="margin-bottom: 5rem;">
-                <h3 class="sans" style="font-size: 0.8rem; letter-spacing: 3px; color: var(--accent-clay); margin-bottom: 2rem;">REVELACIÓN</h3>
-                <h2 style="font-size: 2rem; line-height: 1.3; margin-bottom: 2rem; border: none;">Mi propósito no es definitivo, es una voluntad viva.</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--accent-ink);">
+            <div class="ikigai-block">
+                <h3 class="sans ikigai-revelation-tag">REVELACIÓN</h3>
+                <h2 class="ikigai-revelation-title">Mi propósito no es definitivo, es una voluntad viva.</h2>
+                <p class="ikigai-revelation-text">
                     Camino para <strong>conectar</strong>: ideas que parecen distantes, personas que buscan rumbo y procesos que necesitan fluidez. Lo hago desde la <strong>justicia</strong> y la <strong>estrategia</strong>, pero siempre con el <strong>alma</strong> puesta en la ejecución. Mi labor es crear orden donde el caos impera y devolver el sentido donde solo queda ruido.
                 </p>
             </div>
     
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; text-align: left; margin-bottom: 5rem;">
+            <div class="ikigai-quadrants">
                 <div>
-                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-bottom: 1rem; letter-spacing: 1px;">LO QUE ME MUEVE</h4>
-                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                    <h4 class="sans">LO QUE ME MUEVE</h4>
+                    <p>
                         Amo el pensamiento profundo y la libertad que otorga la escritura. Me muevo por una espiritualidad inquieta y la necesidad constante de movimiento, tanto físico como intelectual.
                     </p>
-                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-top: 2rem; margin-bottom: 1rem; letter-spacing: 1px;">EL VALOR QUE APORTO</h4>
-                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                    <h4 class="sans spaced">EL VALOR QUE APORTO</h4>
+                    <p>
                         Desde la ingeniería y la mejora de procesos, ofrezco una visión de conjunto que prioriza la eficiencia sin ignorar la estrategia humana.
                     </p>
                 </div>
                 <div>
-                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-bottom: 1rem; letter-spacing: 1px;">MI FORTALEZA</h4>
-                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                    <h4 class="sans">MI FORTALEZA</h4>
+                    <p>
                         Soy capaz de ver el todo donde otros ven piezas sueltas. Mi habilidad reside en liderar a través de la comunicación clara y la priorización lógica.
                     </p>
-                    <h4 class="sans" style="font-size: 0.75rem; color: #aaa; margin-top: 2rem; margin-bottom: 1rem; letter-spacing: 1px;">LA NECESIDAD</h4>
-                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                    <h4 class="sans spaced">LA NECESIDAD</h4>
+                    <p>
                         Creo firmemente que el mundo necesita personas con principios innegociables y cambios que, aunque audaces, posean una estructura sólida para perdurar.
                     </p>
                 </div>
             </div>
     
-            <div style="padding-top: 3rem; border-top: 1px solid #eee; text-align: center;">
-                <p class="serif" style="font-size: 1rem; color: #555; max-width: 550px; margin: 0 auto; line-height: 1.7;">
+            <div class="ikigai-closing">
+                <p class="serif">
                     Este mapa no está terminado. Se ajusta con el tiempo, con los aciertos y, sobre todo, con las heridas. Pero hoy, con la mirada puesta en el horizonte, este es el rumbo que elijo seguir.
                 </p>
-                <div style="margin-top: 3rem; font-weight: 800; color: #eee; font-size: 3rem; user-select: none;">
+                <div class="ikigai-signature">
                     PUGNO
                 </div>
             </div>
@@ -1021,21 +1518,22 @@ Pero dime,
     
 <footer style="background-color: #fdfbf7; padding: 4rem 0; border-top: 1px solid #e0e0e0; margin-top: 4rem;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem;">
+            <div class="footer-grid">
                 
                 <div>
-                    <h4 class="sans" style="font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-clay); margin-bottom: 1.5rem;">MANIFESTO</h4>
-                    <p style="font-size: 1.1rem; line-height: 1.6; color: var(--accent-ink);">
+                    <h4 class="sans">MANIFESTO</h4>
+                    <p class="footer-manifesto-quote">
                         "Organizo el caos para encontrar la estructura; escribo versos para no olvidar el alma."
                     </p>
-                    <p style="font-size: 0.85rem; color: #888; margin-top: 1rem;">
+                    <p class="footer-credit">
                         Agradecido con el linaje que me dio nombre y la fe que me dio rumbo. 
                     </p>
                 </div>
     
                 <div>
-                    <h4 class="sans" style="font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-clay); margin-bottom: 1.5rem;">MAPA</h4>
-                    <ul style="list-style: none; padding: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 2;">
+                    <h4 class="sans">MAPA</h4>
+                    <ul class="footer-links">
+                        <li><a href="#impacto">Impacto</a></li>
                         <li><a href="#raices">Raíces</a></li>
                         <li><a href="#profesional">Ingeniería</a></li>
                         <li><a href="#ditooh">Poesía (Ditooh)</a></li>
@@ -1044,8 +1542,8 @@ Pero dime,
                 </div>
     
                 <div>
-                    <h4 class="sans" style="font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-clay); margin-bottom: 1.5rem;">CONEXIÓN</h4>
-                    <ul style="list-style: none; padding: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 2;">
+                    <h4 class="sans">CONEXIÓN</h4>
+                    <ul class="footer-links">
                         <li><a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank">LinkedIn</a></li>
                         <li><a href="https://www.instagram.com/ditooh.m4ldito" target="_blank">Instagram</a></li>
                         <li><a href="mailto:aldohflores@gmail.com">Contacto Directo</a></li>
@@ -1053,30 +1551,59 @@ Pero dime,
                 </div>
             </div>
     
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 3rem 0;">
+            <hr class="footer-divider">
     
-            <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #aaa; letter-spacing: 1px;">
+            <div class="footer-bottom">
                 <span>© Aldoh Saul Flores — Ciudad de México</span>
                 <span>ESTE SITIO EVOLUCIONA CONFORME YO EVOLUCIONO</span>
-                <span style="color: var(--accent-clay); font-weight: 700;">H</span>
+                <span class="signature">H</span>
             </div>
         </div>
     
-        <style>
-            @media (max-width: 768px) {
-                footer .container > div:first-child {
-                    grid-template-columns: 1fr !important;
-                    text-align: center;
-                }
-                footer ul { text-align: center; }
-                footer .container > div:last-child {
-                    flex-direction: column;
-                    gap: 1rem;
-                    text-align: center;
-                }
-            }
-        </style>
     </footer>
 
+    <script>
+        // Aparición progresiva de secciones al hacer scroll
+        const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+            revealEls.forEach(el => revealObserver.observe(el));
+        } else {
+            revealEls.forEach(el => el.classList.add('is-visible'));
+        }
+
+        // Barra de progreso de scroll
+        const scrollProgress = document.getElementById('scrollProgress');
+        const backToTop = document.getElementById('backToTop');
+
+        function updateScrollUI() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            scrollProgress.style.width = progress + '%';
+
+            if (scrollTop > 480) {
+                backToTop.classList.add('is-visible');
+            } else {
+                backToTop.classList.remove('is-visible');
+            }
+        }
+
+        window.addEventListener('scroll', updateScrollUI, { passive: true });
+        updateScrollUI();
+
+        // Botón volver arriba
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
