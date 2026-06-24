@@ -507,6 +507,115 @@
         .ikigai-closing p { font-size: 1rem; color: #555; max-width: 550px; margin: 0 auto; line-height: 1.7; }
         .ikigai-signature { margin-top: 3rem; font-weight: 800; color: #eee; font-size: 3rem; user-select: none; }
 
+        .ikigai-epilogue {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.2rem;
+        }
+
+        .ikigai-epilogue .qr-icon { color: var(--accent-ink); opacity: 0.85; }
+
+        .ikigai-epilogue p {
+            font-size: 0.95rem;
+            color: #888;
+            max-width: 420px;
+            line-height: 1.7;
+        }
+
+        /* =========================================
+           CURIOSIDADES (DATOS SUELTOS)
+           ========================================= */
+        .curiosities-intro { max-width: 42rem; }
+
+        .curiosities-words { margin: 2rem 0 3rem; }
+
+        .word-tag-label {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-clay);
+            margin-bottom: 0.8rem;
+        }
+
+        .curiosities-words-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .curiosity-word {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 0.5rem 1.1rem;
+            border: 1px solid var(--line-color);
+            border-radius: 999px;
+            color: var(--accent-ink);
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .curiosity-word:hover {
+            border-color: var(--accent-clay);
+            transform: translateY(-2px);
+        }
+
+        .name-meaning {
+            background: var(--bg-paper);
+            border-left: 4px solid var(--accent-clay);
+            padding: 1.6rem 2rem;
+            margin-bottom: 3rem;
+            border-radius: 4px;
+        }
+
+        .name-meaning p { font-size: 0.98rem; margin-bottom: 0; }
+
+        .curiosities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .curiosity-card {
+            background: var(--bg-paper);
+            border: 1px solid var(--line-color);
+            border-radius: 4px;
+            padding: 1.3rem 1.5rem;
+            transition: border-color 0.25s ease;
+        }
+
+        .curiosity-card:hover { border-color: var(--accent-clay); }
+
+        .curiosity-card .label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-clay);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .curiosity-card .value {
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .curiosities-grid { grid-template-columns: 1fr 1fr; }
+            .curiosity-card { padding: 1rem 1.1rem; }
+        }
+
         /* =========================================
            FOOTER (CONTENIDO)
            ========================================= */
@@ -1105,6 +1214,56 @@
         </div>
     </section>
 
+    <section class="container narrative-block reveal" id="curiosidades">
+        <h3 class="sans">Datos Sueltos</h3>
+        <h2>Curiosidades</h2>
+        <p class="curiosities-intro">
+            Hay cosas que no caben en un currículum ni en un manifiesto, pero que dicen tanto de mí como cualquier logro. Un pequeño inventario de lo que me compone.
+        </p>
+
+        <div class="name-meaning">
+            <p>
+                <strong>Aldoh</strong> viene del alto alemán antiguo <em>"ald"</em>, que significa "viejo", y puede interpretarse como "de linaje antiguo" o "noble". La <strong>h</strong> la agregaron mis padres a propósito, para diferenciarme del resto. <strong>Saúl</strong> es el único nombre de mi padre.
+            </p>
+        </div>
+
+        <div class="curiosities-words">
+            <span class="word-tag-label">Tres palabras que me definen</span>
+            <div class="curiosities-words-row">
+                <span class="curiosity-word">Curioso</span>
+                <span class="curiosity-word">Truhán</span>
+                <span class="curiosity-word">Pugno</span>
+            </div>
+        </div>
+
+        <div class="curiosities-grid">
+            <div class="curiosity-card">
+                <span class="label">Comida favorita</span>
+                <p class="value">Albóndigas en chipotle, enchiladas suizas y pastas. No como cerdo.</p>
+            </div>
+            <div class="curiosity-card">
+                <span class="label">Libro</span>
+                <p class="value"><em>El médico</em>, de Noah Gordon.</p>
+            </div>
+            <div class="curiosity-card">
+                <span class="label">Película</span>
+                <p class="value"><em>La vida de Pi</em>.</p>
+            </div>
+            <div class="curiosity-card">
+                <span class="label">Canción</span>
+                <p class="value">"Kilómetros" de Los Caligaris.</p>
+            </div>
+            <div class="curiosity-card">
+                <span class="label">Bebida</span>
+                <p class="value">Latte frío, sabor fuerte, grano de Brasil.</p>
+            </div>
+            <div class="curiosity-card">
+                <span class="label">Colores</span>
+                <p class="value">Blanco y añil.</p>
+            </div>
+        </div>
+    </section>
+
    <div class="full-width" id="profesional" style="background: #f4f6f7;">
     <div class="container reveal">
         <h3 class="sans section-heading-ink">El Ingeniero</h3>
@@ -1198,7 +1357,7 @@
     </p>
     
     <p>
-        Durante años viví mi fe principalmente desde la práctica, formado dentro de la Iglesia Católica. Sin embargo, con el tiempo descubrí que creer no era suficiente para mí. <strong>Necesitaba comprender.</strong> Esa necesidad me llevó a estudiar teología de manera formal y a descubrir que la fe cristiana no teme a la razón; por el contrario, la invita a caminar junto a ella.
+        Durante años viví mi fe principalmente desde la práctica, formado dentro de la Iglesia Católica. Sin embargo, con el tiempo descubrí que creer no era suficiente para mí. <strong>Necesitaba comprender.</strong> En agosto de 2025 esa necesidad tomó forma concreta: comencé un diplomado en teología y, casi al mismo tiempo, me integré a RUAJ, el grupo juvenil de mi parroquia. Descubrí que la fe cristiana no teme a la razón; por el contrario, la invita a caminar junto a ella.
     </p>
 
     <!-- CITA DESTACADA -->
@@ -1224,6 +1383,10 @@
     <p>
         Considero que el aprendizaje teológico es un camino permanente, porque comprender el misterio supera toda una vida. Y si conocer a Dios es el fin último del ser humano, entonces cada pregunta sincera, cada acto de servicio y cada búsqueda honesta de la verdad son también, inevitablemente, parte del camino de regreso hacia Él.
     </p>
+
+    <p>
+        Si tuviera que ponerle un nombre histórico a mi forma de buscar a Dios, sería <strong>dominico</strong>: la convicción de que la verdad se contempla primero y se comparte después, sin que eso le reste intensidad a la búsqueda. Con matices benedictinos en el silencio y jesuitas en la acción con propósito. No me basta saber; necesito que lo verdadero transforme la vida, empezando por la mía.
+    </p>
 </section> 
 
     
@@ -1235,11 +1398,15 @@
                 <h2>Yo soy Ditooh</h2>
                 
                 <p class="ditooh-lede">
-                    Ditooh es el seudónimo que protege y libera mi voz interna. Si Aldoh estructura la realidad, Ditooh la siente.
+                    Ditooh es el seudónimo que protege y libera mi voz interna. Si Aldoh estructura la realidad, Ditooh la siente. Lo que empezó en el papel ya tiene escenario: subo al micrófono abierto en los Martes de Poesía para recitar en voz alta lo que antes solo se quedaba escrito.
                 </p>
     
                 <p class="serif italic ditooh-motto">
                     “Escribo cuando hablar no alcanza.”
+                </p>
+
+                <p class="ditooh-lede">
+                    Aquí abajo encontrarás tres poemas y una historia: la que marcó mi vida. Son una muestra, no todo lo que escribo; el resto de mis proyectos, en proceso constante, vive en los siguientes enlaces.
                 </p>
     
                 <div class="ditooh-social-links">
@@ -1511,6 +1678,30 @@ Pero dime,
                 <div class="ikigai-signature">
                     PUGNO
                 </div>
+
+                <div class="ikigai-epilogue">
+                    <svg class="qr-icon" width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+                        <rect x="2" y="2" width="16" height="16" rx="1" stroke="currentColor" stroke-width="2"/>
+                        <rect x="38" y="2" width="16" height="16" rx="1" stroke="currentColor" stroke-width="2"/>
+                        <rect x="2" y="38" width="16" height="16" rx="1" stroke="currentColor" stroke-width="2"/>
+                        <rect x="7" y="7" width="6" height="6" fill="currentColor"/>
+                        <rect x="43" y="7" width="6" height="6" fill="currentColor"/>
+                        <rect x="7" y="43" width="6" height="6" fill="currentColor"/>
+                        <rect x="24" y="2" width="6" height="6" fill="currentColor"/>
+                        <rect x="24" y="14" width="6" height="6" fill="currentColor"/>
+                        <rect x="38" y="24" width="6" height="6" fill="currentColor"/>
+                        <rect x="48" y="24" width="6" height="6" fill="currentColor"/>
+                        <rect x="24" y="24" width="6" height="6" fill="currentColor"/>
+                        <rect x="24" y="38" width="6" height="6" fill="currentColor"/>
+                        <rect x="32" y="32" width="6" height="6" fill="currentColor"/>
+                        <rect x="44" y="44" width="10" height="10" fill="currentColor"/>
+                        <rect x="2" y="24" width="6" height="6" fill="currentColor"/>
+                        <rect x="14" y="32" width="6" height="6" fill="currentColor"/>
+                    </svg>
+                    <p>
+                        Algún día, en una lápida, quizá exista un código como este. No para mostrar un currículum, sino para dejar un rastro humano: que quien lo escanee pueda conocer, en esta pequeña luz que llamamos vida, quién fue Aldoh Saúl.
+                    </p>
+                </div>
             </div>
     
         </div>
@@ -1535,6 +1726,7 @@ Pero dime,
                     <ul class="footer-links">
                         <li><a href="#impacto">Impacto</a></li>
                         <li><a href="#raices">Raíces</a></li>
+                        <li><a href="#curiosidades">Curiosidades</a></li>
                         <li><a href="#profesional">Ingeniería</a></li>
                         <li><a href="#ditooh">Poesía (Ditooh)</a></li>
                         <li><a href="#futuro">Australia 2037</a></li>
