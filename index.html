@@ -16,11 +16,11 @@
     <meta property="og:url" content="https://aldohflores-ditooh.github.io/">
     <meta property="og:image" content="https://aldohflores-ditooh.github.io/img/preview.jpg">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23b85d38%22>A</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23254C82%22>A</text></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
     {
@@ -29,7 +29,7 @@
       "name": "Aldoh Saúl Flores García",
       "alternateName": ["Aldoh Flores", "Ditooh"],
       "url": "https://aldohflores-ditooh.github.io/",
-      "jobTitle": ["Ingeniero Industrial", "Escritor", "Analista de Procesos"],
+      "jobTitle": ["Ingeniero Industrial", "Escritor", "Analista Jr. de OPEX"],
       "worksFor": {
         "@type": "Organization",
         "name": "Eaton"
@@ -55,13 +55,27 @@
            VARIABLES DE DISEÑO
            ========================================= */
         :root {
-            --bg-paper: #fdfbf7; 
+            --bg-paper: #F5F3EF; /* Marfil */
             --bg-white: #ffffff;
-            --text-primary: #111111;
+            --text-primary: #252525; /* Carbón */
             --text-secondary: #4a4a4a;
-            --accent-clay: #b85d38; 
-            --accent-ink: #2c3e50;  
+            --accent-clay: var(--brand-anil); /* alias heredado: acento principal */
+            --accent-ink: var(--brand-anil); /* alias heredado */
             --line-color: #e5e5e5;
+            --bg-soft: #EEEBE4;
+
+            /* Identidad Aldoh 1.0 */
+            --brand-anil: #254C82;
+            --dim-mejorar: #254C82;
+            --dim-aprender: #B58A42;
+            --dim-crear: #744B7D;
+            --dim-trascender: #63846A;
+            /* Variantes accesibles para texto (contraste >= 4.5:1) */
+            --dim-aprender-text: #8A6420;
+            --dim-trascender-text: #3F6148;
+            /* Variantes para fondo oscuro (Ditooh) */
+            --dim-mejorar-on-dark: #8FB0E0;
+            --dim-crear-on-dark: #B895C4;
         }
 
         /* =========================================
@@ -86,6 +100,7 @@
            TIPOGRAFÍA
            ========================================= */
         h1, h2, h3, h4 { font-weight: 600; line-height: 1.3; margin-bottom: 1.5rem; letter-spacing: 0; color: var(--text-primary); }
+        h1, h2, .nav-brand { font-family: 'Manrope', 'Inter', sans-serif; }
         h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
         h2 { font-size: 1.8rem; border-left: 4px solid var(--accent-clay); padding-left: 1rem; margin-top: 3rem; }
         h3 { font-family: 'Inter', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 1rem; }
@@ -268,14 +283,14 @@
         }
 
         .hero-img-container::before {
-            content: "Ingeniero durante el día. Artista durante la noche.";
+            content: "Profesional durante el día. Artista durante la noche.";
             position: absolute;
             right: -1.2rem;
             bottom: 1.2rem;
             z-index: 2;
             max-width: 13rem;
             background: #111111;
-            color: #fdfbf7;
+            color: var(--bg-paper);
             padding: 0.9rem 1rem;
             font-family: 'Inter', sans-serif;
             font-size: 0.75rem;
@@ -404,6 +419,8 @@
         .data-card .sub-value.tight { font-size: 0.85rem; }
         .data-grid.two-col { grid-template-columns: 1fr 1fr; }
         .poetry-section { background-color: #0a0a0a !important; color: #f0f0f0; padding: 5rem 0; }
+        .poetry-section { --accent-clay: var(--dim-crear-on-dark); }
+        .poetry-section h2 { font-family: 'Lora', serif; }
         footer { padding: 3rem 1.5rem; text-align: center; font-family: 'Inter', sans-serif; font-size: 0.85rem; background: var(--bg-white); border-top: 1px solid var(--line-color); }
 
         /* =========================================
@@ -460,7 +477,7 @@
             padding-left: 1rem;
             margin-top: 2rem;
         }
-        .goals-card { background: #f4f6f7; padding: 2rem; border-radius: 8px; border: 1px solid #e0e0e0; }
+        .goals-card { background: var(--bg-soft); padding: 2rem; border-radius: 8px; border: 1px solid #e0e0e0; }
         .goals-card h4 { margin-bottom: 1.5rem; color: var(--accent-ink); }
         .goal-row { margin-bottom: 1.5rem; }
         .goal-row .goal-label-row { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
@@ -1124,14 +1141,14 @@
                 <details class="impact-card">
                     <summary>
                         <span class="impact-tag">Personas</span>
-                        <span class="impact-headline">Construí mi confianza antes de graduarme</span>
+                        <span class="impact-headline">Construir confianza antes de graduarse</span>
                         <span class="impact-icon">+</span>
                     </summary>
                     <div class="impact-body">
                         <h5>El reto</h5>
                         <p>Muchos estudiantes terminan la universidad con conocimientos técnicos, pero con poca confianza para aportar valor en la industria.</p>
                         <h5>Lo que hice</h5>
-                        <p>No me quede con lo enseñado en la universidad, Fui Vicepresidente Fundador del Capítulo 621 del Instituto Tecnológico Superior de Huetamo. Impulsamos actividades, conferencias, concursos y encuentros con profesionales activos para acercar a los estudiantes a la realidad industrial.</p>
+                        <p>Fui Vicepresidente Fundador del Capítulo 621 del Instituto Tecnológico Superior de Huetamo. Impulsamos actividades, conferencias, concursos y encuentros con profesionales activos para acercar a los estudiantes a la realidad industrial.</p>
                         <h5>Resultado</h5>
                         <ul>
                             <li>Creación de una comunidad estudiantil orientada al desarrollo profesional</li>
@@ -1264,7 +1281,7 @@
         </div>
     </section>
 
-   <div class="full-width" id="profesional" style="background: #f4f6f7;">
+   <div class="full-width" id="profesional" style="background: var(--bg-soft);">
     <div class="container reveal">
         <h3 class="sans section-heading-ink">El Ingeniero</h3>
         <h2>Formación y Trayectoria</h2>
@@ -1306,7 +1323,7 @@
                 <span class="sans small-caps label">Actualidad</span>
                 <p class="main-value"><strong>Eaton</strong></p>
                 <p class="sub-value tight">
-                    <strong>Ingeniero Analista de Procesos.</strong> Un regreso con propósito. Tras mi etapa inicial como practicante, vuelvo para demostrar la evolución de mi perfil, fusionando el rigor analítico con la ejecución estratégica.
+                    <strong>Analista Jr. de OPEX.</strong> Un regreso con propósito. Tras mi etapa inicial como practicante, vuelvo para demostrar la evolución de mi perfil, fusionando el rigor analítico con la ejecución estratégica.
                 </p>
             </div>
             
@@ -1707,7 +1724,7 @@ Pero dime,
         </div>
     </section>
     
-<footer style="background-color: #fdfbf7; padding: 4rem 0; border-top: 1px solid #e0e0e0; margin-top: 4rem;">
+<footer style="background-color: var(--bg-paper); padding: 4rem 0; border-top: 1px solid #e0e0e0; margin-top: 4rem;">
         <div class="container">
             <div class="footer-grid">
                 
