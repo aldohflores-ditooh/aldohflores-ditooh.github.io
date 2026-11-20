@@ -40,7 +40,7 @@
         {"@type": "Organization", "name": "Inroads México"}
       ],
       "knowsAbout": ["Toyota Production System", "Lean Manufacturing", "CAD/CAM", "Metrología", "Poesía", "Estrategia", "Teología"],
-      "sameAs": [
+      "sameAs": ["https://youtube.com/@asaulflores", "https://open.spotify.com/show/033G8rYjXYlNFJ29rIlzMh", 
         "https://www.linkedin.com/in/a-saul-flores-garcia",
         "https://www.instagram.com/ditooh.m4ldito",
         "https://substack.com/@asaulflores",
@@ -979,6 +979,48 @@
             .masonry-columns { column-count: 1; }
             .featured-card { padding: 1.5rem; }
         }
+    
+        /* =========================================
+           DIMENSIONES (MEJORAR · APRENDER · CREAR · TRASCENDER)
+           ========================================= */
+        .dim-mejorar { --dim: var(--dim-mejorar); --dim-text: var(--dim-mejorar); }
+        .dim-aprender { --dim: var(--dim-aprender); --dim-text: var(--dim-aprender-text); }
+        .dim-crear { --dim: var(--dim-crear); --dim-text: var(--dim-crear); }
+        .dim-trascender { --dim: var(--dim-trascender); --dim-text: var(--dim-trascender-text); }
+
+        .dimension-band { padding-top: 5rem; padding-bottom: 0; }
+        .dimension-band .dim-label {
+            display: flex; align-items: center; gap: 0.8rem;
+            font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim-text); margin: 0;
+        }
+        .dimension-band .dim-label::after { content: ""; flex: 1; height: 2px; background: var(--dim); opacity: 0.55; }
+        .dimension-band .dim-tagline {
+            font-family: 'Manrope', 'Inter', sans-serif; font-size: 1.6rem; font-weight: 600;
+            color: var(--text-primary); margin: 0.6rem 0 0;
+        }
+
+        .nav-links a[href="#aprender"]:hover { color: var(--dim-aprender-text); }
+        .nav-links a[href="#crear"]:hover { color: var(--dim-crear); }
+        .nav-links a[href="#trascender"]:hover { color: var(--dim-trascender-text); }
+
+        .chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.9rem; }
+        .chip {
+            font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600;
+            padding: 0.25rem 0.65rem; border: 1px solid var(--line-color);
+            border-radius: 999px; color: var(--accent-ink); transition: border-color 0.25s ease;
+        }
+        .chip:hover { border-color: var(--accent-clay); }
+
+        .project-intro { max-width: 42rem; }
+        .project-tagline { font-size: 1.15rem; color: var(--text-secondary); margin: 1.2rem 0 0; }
+        .project-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.8rem; }
+        .project-btn {
+            font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600;
+            padding: 0.65rem 1.2rem; border: 1px solid var(--dim-crear); color: var(--dim-crear);
+            border-radius: 999px; text-decoration: none; transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+        }
+        .project-btn:hover { background: var(--dim-crear); color: #fff; transform: translateY(-2px); }
     </style>
 </head>
 <body>
@@ -987,13 +1029,11 @@
     <nav>
         <a href="#inicio" class="nav-brand">Aldoh S. Flores</a>
         <div class="nav-links">
-            <a href="#impacto">Impacto</a>
-            <a href="#raices">Raíces</a>
-            <a href="#evolucion">Evolución</a>
-            <a href="#profesional">Ingeniería</a>
-            <a href="#teologia">Teología</a>
-            <a href="#ditooh">Ditooh</a>
-            <a href="#futuro">Futuro</a>
+            <a href="#mejorar">Mejorar</a>
+            <a href="#aprender">Aprender</a>
+            <a href="#crear">Crear</a>
+            <a href="#trascender">Trascender</a>
+            <a href="#conectar">Conectar</a>
         </div>
     </nav>
 
@@ -1020,14 +1060,14 @@
                 </div>
                 <div class="hero-actions">
                     <a href="#raices" class="hero-link primary">Entrar al manifiesto</a>
-                    <a href="#impacto" class="hero-link">Ver impacto</a>
+                    <a href="#mejorar" class="hero-link">Ver impacto</a>
                 </div>
             </div>
             <div class="hero-img-container">
                 <img src="aldoh-saul-flores-garcia.jpg" alt="Aldoh Saúl Flores García" width="1200" height="1600" fetchpriority="high" decoding="async">
             </div>
         </div>
-        <a href="#impacto" class="hero-scroll-cue" aria-label="Bajar para seguir explorando">
+        <a href="#mejorar" class="hero-scroll-cue" aria-label="Bajar para seguir explorando">
             <span>Sigue explorando</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
         </a>
@@ -1041,6 +1081,112 @@
         <p>
             Me defino por la integración. Rechazo la idea de que debemos elegir entre ser analíticos o emocionales. Soy <strong>Ingeniero</strong> porque amo los sistemas que funcionan, y soy <strong>Poeta</strong> (Ditooh) porque necesito nombrar lo que siento.
         </p>
+    </section>
+
+    <div class="full-width" id="raices">
+        <div class="container reveal">
+            <h3 class="sans">El Origen</h3>
+            <h2>Raíces y Valores</h2>
+            <div class="data-grid two-col">
+                <div>
+                    <p>
+                        Broté un jueves de julio de 2001 en "tierra de coyotes": <strong>Coyuca de Catalán</strong>, Guerrero. Mi infancia se divide entre la libertad de <strong>Los Brasiles</strong>, jugando con mis primos, y la formación de mis padres. Aunque la CDMX es mi base operativa actual.
+                    </p>
+                    <p>
+                        De mi madre heredé la constancia y una sensibilidad profunda; de mi padre, la disciplina del taller y el pensamiento crítico del profesor. Como <strong>hermano mayor</strong>, aprendí temprano que la responsabilidad no es una carga, sino un privilegio de servicio.
+                    </p>
+                </div>
+                <div>
+                    <p><strong>La Fe como Búsqueda:</strong></p>
+                    <p class="italic faith-note">
+                        No vivo la fe como un dogma cómodo, sino como una investigación constante. Tras alejarme, regresé como el <strong>hijo pródigo</strong>, encontrando en Dios un sentido de orden y propósito que la razón por sí sola no alcanzaba a explicar. Hoy, mi fe es el puente entre lo que calculo como ingeniero y lo que siento como hombre. Si Dios existe, existe todo. Mi teología es racional: creer es también un acto de inteligencia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container narrative-block reveal" id="evolucion">
+        <h3 class="sans">Trayectoria Vital</h3>
+        <h2>La Alquimia del Carácter</h2>
+        <p>
+            Durante años, mi identidad se refugió en el arquetipo del <strong>Truhán</strong>. Entre los 15 y los 23, el humor fue mi escudo y la risa mi forma de no rendirme ante el dolor. Sin embargo, la vida me exigió una transición forzosa.
+        </p>
+        <p>
+            Pero la vida exige verdad. Una fuerte caída académica me obligó a reconstruirme. De las cenizas de la reprobación nació "Pugno". Cambié de universidad, pero me traje conmigo que el más cocho sobrevivé. Entendí que <strong>el liderazgo sin estructura se quiebra</strong>.
+        </p>
+        <div class="data-grid">
+            <div class="data-card">
+                <span class="sans small-caps label">Personalidad</span>
+                <p class="main-value"><strong>ENTP-A</strong> (El Innovador)</p>
+                <p class="sub-value">Eneagrama 7w8</p>
+            </div>
+            <div class="data-card">
+                <span class="sans small-caps label">Motor</span>
+                <p class="main-value">Guerrero del Cambio</p>
+                <p class="sub-value">Me frustra la estática y la mediocridad.</p>
+            </div>
+            <div class="data-card">
+                <span class="sans small-caps label">Anclas</span>
+                <p class="main-value">Deporte & Disciplina</p>
+                <p class="sub-value">Basquetbol, Atletismo, Ajedrez.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container narrative-block reveal" id="curiosidades">
+        <h3 class="sans">Datos Sueltos</h3>
+        <h2>Curiosidades</h2>
+        <p class="curiosities-intro">
+            Hay cosas que no caben en un currículum ni en un manifiesto, pero que dicen tanto de mí como cualquier logro. Un pequeño inventario de lo que me compone.
+        </p>
+
+        <div class="name-meaning">
+            <p>
+                <strong>Aldoh</strong> viene del alto alemán antiguo <em>"ald"</em>, que significa "viejo", y puede interpretarse como "de linaje antiguo" o "noble". La <strong>h</strong> la agregaron mis padres a propósito, para diferenciarme del resto. <strong>Saúl</strong> es el único nombre de mi padre.
+            </p>
+        </div>
+
+        <div class="curiosities-words">
+            <span class="word-tag-label">Tres palabras que me definen</span>
+            <div class="curiosities-words-row">
+                <span class="curiosity-word">Curioso</span>
+                <span class="curiosity-word">Truhán</span>
+                <span class="curiosity-word">Pugno</span>
+            </div>
+        </div>
+
+        <div class="curiosities-grid">
+            <div class="curiosity-card">
+                <span class="label">Comida favorita</span>
+                <p class="value">Albóndigas en chipotle, enchiladas suizas y pastas. No como cerdo.</p>
+            </div>
+            <div class="curiosity-card">
+                <span class="label">Libro</span>
+                <p class="value"><em>El médico</em>, de Noah Gordon.</p>
+            </div>
+            <div class="curiosity-card">
+                <span class="label">Película</span>
+                <p class="value"><em>La vida de Pi</em>.</p>
+            </div>
+            <div class="curiosity-card">
+                <span class="label">Canción</span>
+                <p class="value">"Kilómetros" de Los Caligaris.</p>
+            </div>
+            <div class="curiosity-card">
+                <span class="label">Bebida</span>
+                <p class="value">Latte frío, sabor fuerte, grano de Brasil.</p>
+            </div>
+            <div class="curiosity-card">
+                <span class="label">Colores</span>
+                <p class="value">Blanco y añil.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container dimension-band dim-mejorar reveal" id="mejorar">
+        <p class="dim-label">01 · Mejorar</p>
+        <p class="dim-tagline">Comprender los sistemas.</p>
     </section>
 
     <div class="full-width" id="impacto">
@@ -1180,142 +1326,10 @@
         </div>
     </div>
 
-    <div class="full-width" id="raices">
-        <div class="container reveal">
-            <h3 class="sans">El Origen</h3>
-            <h2>Raíces y Valores</h2>
-            <div class="data-grid two-col">
-                <div>
-                    <p>
-                        Broté un jueves de julio de 2001 en "tierra de coyotes": <strong>Coyuca de Catalán</strong>, Guerrero. Mi infancia se divide entre la libertad de <strong>Los Brasiles</strong>, jugando con mis primos, y la formación de mis padres. Aunque la CDMX es mi base operativa actual.
-                    </p>
-                    <p>
-                        De mi madre heredé la constancia y una sensibilidad profunda; de mi padre, la disciplina del taller y el pensamiento crítico del profesor. Como <strong>hermano mayor</strong>, aprendí temprano que la responsabilidad no es una carga, sino un privilegio de servicio.
-                    </p>
-                </div>
-                <div>
-                    <p><strong>La Fe como Búsqueda:</strong></p>
-                    <p class="italic faith-note">
-                        No vivo la fe como un dogma cómodo, sino como una investigación constante. Tras alejarme, regresé como el <strong>hijo pródigo</strong>, encontrando en Dios un sentido de orden y propósito que la razón por sí sola no alcanzaba a explicar. Hoy, mi fe es el puente entre lo que calculo como ingeniero y lo que siento como hombre. Si Dios existe, existe todo. Mi teología es racional: creer es también un acto de inteligencia.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="container narrative-block reveal" id="evolucion">
-        <h3 class="sans">Trayectoria Vital</h3>
-        <h2>La Alquimia del Carácter</h2>
-        <p>
-            Durante años, mi identidad se refugió en el arquetipo del <strong>Truhán</strong>. Entre los 15 y los 23, el humor fue mi escudo y la risa mi forma de no rendirme ante el dolor. Sin embargo, la vida me exigió una transición forzosa.
-        </p>
-        <p>
-            Pero la vida exige verdad. Una fuerte caída académica me obligó a reconstruirme. De las cenizas de la reprobación nació "Pugno". Cambié de universidad, pero me traje conmigo que el más cocho sobrevivé. Entendí que <strong>el liderazgo sin estructura se quiebra</strong>.
-        </p>
-        <div class="data-grid">
-            <div class="data-card">
-                <span class="sans small-caps label">Personalidad</span>
-                <p class="main-value"><strong>ENTP-A</strong> (El Innovador)</p>
-                <p class="sub-value">Eneagrama 7w8</p>
-            </div>
-            <div class="data-card">
-                <span class="sans small-caps label">Motor</span>
-                <p class="main-value">Guerrero del Cambio</p>
-                <p class="sub-value">Me frustra la estática y la mediocridad.</p>
-            </div>
-            <div class="data-card">
-                <span class="sans small-caps label">Anclas</span>
-                <p class="main-value">Deporte & Disciplina</p>
-                <p class="sub-value">Basquetbol, Atletismo, Ajedrez.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="container narrative-block reveal" id="curiosidades">
-        <h3 class="sans">Datos Sueltos</h3>
-        <h2>Curiosidades</h2>
-        <p class="curiosities-intro">
-            Hay cosas que no caben en un currículum ni en un manifiesto, pero que dicen tanto de mí como cualquier logro. Un pequeño inventario de lo que me compone.
-        </p>
-
-        <div class="name-meaning">
-            <p>
-                <strong>Aldoh</strong> viene del alto alemán antiguo <em>"ald"</em>, que significa "viejo", y puede interpretarse como "de linaje antiguo" o "noble". La <strong>h</strong> la agregaron mis padres a propósito, para diferenciarme del resto. <strong>Saúl</strong> es el único nombre de mi padre.
-            </p>
-        </div>
-
-        <div class="curiosities-words">
-            <span class="word-tag-label">Tres palabras que me definen</span>
-            <div class="curiosities-words-row">
-                <span class="curiosity-word">Curioso</span>
-                <span class="curiosity-word">Truhán</span>
-                <span class="curiosity-word">Pugno</span>
-            </div>
-        </div>
-
-        <div class="curiosities-grid">
-            <div class="curiosity-card">
-                <span class="label">Comida favorita</span>
-                <p class="value">Albóndigas en chipotle, enchiladas suizas y pastas. No como cerdo.</p>
-            </div>
-            <div class="curiosity-card">
-                <span class="label">Libro</span>
-                <p class="value"><em>El médico</em>, de Noah Gordon.</p>
-            </div>
-            <div class="curiosity-card">
-                <span class="label">Película</span>
-                <p class="value"><em>La vida de Pi</em>.</p>
-            </div>
-            <div class="curiosity-card">
-                <span class="label">Canción</span>
-                <p class="value">"Kilómetros" de Los Caligaris.</p>
-            </div>
-            <div class="curiosity-card">
-                <span class="label">Bebida</span>
-                <p class="value">Latte frío, sabor fuerte, grano de Brasil.</p>
-            </div>
-            <div class="curiosity-card">
-                <span class="label">Colores</span>
-                <p class="value">Blanco y añil.</p>
-            </div>
-        </div>
-    </section>
-
-   <div class="full-width" id="profesional" style="background: var(--bg-soft);">
+    <div class="full-width" id="profesional" style="background: var(--bg-soft);">
     <div class="container reveal">
-        <h3 class="sans section-heading-ink">El Ingeniero</h3>
-        <h2>Formación y Trayectoria</h2>
-        <p>
-            Mi construcción como ingeniero no fue lineal, fue acumulativa. Comencé con el orden de los números y terminé diseñando procesos industriales.
-        </p>
-        
-        <div class="timeline">
-            <div class="timeline-item">
-                <h4 class="sans">Tecnológico de Estudios Superiores de Ecatepec</h4>
-                <p class="italic timeline-tag">Especialidad en CAD/CAM</p>
-                <p class="timeline-desc">
-                    Donde el <strong>Pugno</strong> tomó forma. Aquí me especialicé en Diseño y Manufactura Asistida por Computadora, consolidando la técnica que hoy me define.
-                </p>
-            </div>
-            
-            <div class="timeline-item">
-                <h4 class="sans">Instituto Tecnológico Superior de Huetamo</h4>
-                <p class="italic timeline-tag">Fundamentos Industriales</p>
-                <p class="timeline-desc">
-                    Mis cimientos. Aprendí la filosofía del <strong>Toyota Production System</strong> y <strong>Lean Manufacturing</strong>. Entendí que la eficiencia no es suerte, es método.
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h4 class="sans">Colegio de Bachilleres Plantel 5 (Guerrero)</h4>
-                <p class="italic timeline-tag">Capacitación: Auxiliar Contable</p>
-                <p class="timeline-desc">
-                    El inicio del orden. La contabilidad me enseñó que cada recurso cuenta y debe ser registrado.
-                </p>
-            </div>
-        </div>
-
-        <h3 class="sans section-heading-ink spaced">Experiencia Real</h3>
+        <h3 class="sans section-heading-ink">En la práctica</h3>
+        <h2>Experiencia Real</h2>
         <div class="data-grid">
 
              <!-- TARJETA 1: EATON (ACTUALIDAD) -->
@@ -1325,6 +1339,12 @@
                 <p class="sub-value tight">
                     <strong>Analista Jr. de OPEX.</strong> Un regreso con propósito. Tras mi etapa inicial como practicante, vuelvo para demostrar la evolución de mi perfil, fusionando el rigor analítico con la ejecución estratégica.
                 </p>
+                <div class="chip-row">
+                    <span class="chip">Programa de Ideas</span>
+                    <span class="chip">Process Check</span>
+                    <span class="chip">Problem Solving</span>
+                    <span class="chip">Eventos Kaizen</span>
+                </div>
             </div>
             
             <!-- TARJETA 2: 3C METROLOGY (EVOLUCIÓN) -->
@@ -1364,49 +1384,127 @@
     </div>
 </div>
 
-    <!-- SECCIÓN: TEOLOGÍA -->
-<section id="teologia" class="narrative-block container reveal" style="border-top: 1px solid var(--line-color);">
-    <h3 class="sans section-heading-ink">El Teólogo</h3>
-    <h2>Aprender a pensar a Dios</h2>
-    
-    <p class="drop-cap">
-        Mi identidad teológica no comenzó al terminar un diplomado; el rigor académico solo le puso nombre y estructura a algo que ya existía. Nació mucho antes: en los sábados de catecismo, en mi paso por el preseminario, y en el instante preciso en que comencé a preguntarme quién es Dios cuando nadie me ve.
-    </p>
-    
-    <p>
-        Durante años viví mi fe principalmente desde la práctica, formado dentro de la Iglesia Católica. Sin embargo, con el tiempo descubrí que creer no era suficiente para mí. <strong>Necesitaba comprender.</strong> En agosto de 2025 esa necesidad tomó forma concreta: comencé un diplomado en teología y, casi al mismo tiempo, me integré a RUAJ, el grupo juvenil de mi parroquia. Descubrí que la fe cristiana no teme a la razón; por el contrario, la invita a caminar junto a ella.
-    </p>
+    <section class="container dimension-band dim-aprender reveal" id="aprender">
+        <p class="dim-label">02 · Aprender</p>
+        <p class="dim-tagline">Expandir posibilidades.</p>
+    </section>
 
-    <!-- CITA DESTACADA -->
-    <div class="quote-block">
+    <div class="full-width" id="formacion" style="background: var(--bg-soft);">
+    <div class="container reveal">
+        <h3 class="sans section-heading-ink">El Ingeniero</h3>
+        <h2>Formación y Trayectoria</h2>
         <p>
-            "No entiendo la teología como un ejercicio de erudición, sino como una búsqueda de sentido. Creo que Dios puede ser amado con el corazón, pero también con la inteligencia."
+            Mi construcción como ingeniero no fue lineal, fue acumulativa. Comencé con el orden de los números y terminé diseñando procesos industriales.
         </p>
-        <p>
-            "La teología me enseñó que buscar a Dios con honestidad intelectual también es una forma de amarlo. Las preguntas sinceras pueden ser una forma de oración."
-        </p>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4 class="sans">Tecnológico de Estudios Superiores de Ecatepec</h4>
+                <p class="italic timeline-tag">Especialidad en CAD/CAM</p>
+                <p class="timeline-desc">
+                    Donde el <strong>Pugno</strong> tomó forma. Aquí me especialicé en Diseño y Manufactura Asistida por Computadora, consolidando la técnica que hoy me define.
+                </p>
+            </div>
+            
+            <div class="timeline-item">
+                <h4 class="sans">Instituto Tecnológico Superior de Huetamo</h4>
+                <p class="italic timeline-tag">Fundamentos Industriales</p>
+                <p class="timeline-desc">
+                    Mis cimientos. Aprendí la filosofía del <strong>Toyota Production System</strong> y <strong>Lean Manufacturing</strong>. Entendí que la eficiencia no es suerte, es método.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h4 class="sans">Colegio de Bachilleres Plantel 5 (Guerrero)</h4>
+                <p class="italic timeline-tag">Capacitación: Auxiliar Contable</p>
+                <p class="timeline-desc">
+                    El inicio del orden. La contabilidad me enseñó que cada recurso cuenta y debe ser registrado.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="container narrative-block reveal" id="futuro" style="padding-bottom: 6rem;">
+    <h3 class="sans" style="color: var(--accent-clay);">Visión 2037</h3>
+    <h2>La Conquista de la Libertad</h2>
+    
+    <div class="future-grid">
+        
+        <div>
+            <p class="future-lede">
+                Si el presente es disciplina, el futuro es libertad. Mi regreso a la industria replanteó mis tiempos, pero magnificó mi destino. He decidido aplazar mi gran proyecto una década para construir primero una carrera profesional impecable y sin fisuras. 
+            </p>
+            <p>
+                No llegaré a <strong>Australia</strong> a ver qué sucede ni a improvisar; llegaré convertido en mi mejor versión, dominando el inglés como una segunda piel. Aunque el plan definitivo para estudiar mi <strong>maestría (MBA)</strong> y aprender a surfear está fijado para 2037, sé que esa no será la primera vez que pise Brisbane. Estaré ahí en los <strong>Juegos Olímpicos de 2032</strong>, viendo a la selección francesa colgarse la medalla de oro con Wembanyama como MVP.
+            </p>
+            <p class="italic future-quote">
+                "Ser libre es poder elegir a voluntad, sin presión externa. Es correr sin parar sobre un campo abierto."
+            </p>
+        </div>
+
+        <div class="goals-card">
+            <h4 class="sans">Objetivos Estratégicos</h4>
+            
+            <div class="goal-row">
+                <div class="goal-label-row">
+                    <span class="goal-name">Consolidación Profesional</span>
+                    <span class="goal-status">Foco Actual</span>
+                </div>
+                <div class="goal-bar-track">
+                    <div class="goal-bar-fill" style="width: 60%;"></div>
+                </div>
+            </div>
+
+            <div class="goal-row">
+                <div class="goal-label-row">
+                    <span class="goal-name">Idioma (Inglés C1)</span>
+                    <span class="goal-status">Prioridad Alta</span>
+                </div>
+                <div class="goal-bar-track">
+                    <div class="goal-bar-fill" style="width: 45%;"></div>
+                </div>
+            </div>
+
+            <div class="goal-row">
+                <div class="goal-label-row">
+                    <span class="goal-name">Brisbane 2032, MBA & Surf</span>
+                    <span class="goal-status">Proyección</span>
+                </div>
+                <div class="goal-bar-track">
+                    <div class="goal-bar-fill" style="width: 20%;"></div>
+                </div>
+            </div>
+
+            <div class="goals-horizon">
+                <p class="sans small-caps" style="margin-bottom: 0;">Horizonte Temporal</p>
+                <span class="horizon-years">2032 – 2037</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+    
+    <section class="container dimension-band dim-crear reveal" id="crear">
+        <p class="dim-label">03 · Crear</p>
+        <p class="dim-tagline">Dar forma a las ideas.</p>
+    </section>
+
+    <div class="full-width" id="codigo-humano">
+        <div class="container reveal">
+            <h3 class="sans">Voz y pensamiento</h3>
+            <h2>Código Humano</h2>
+            <p class="project-intro">
+                Mi podcast en español: monólogos breves donde cruzo tecnología, filosofía y pensamiento cristiano para preguntarme qué nos hace humanos en la era digital. Mi principio al escribirlo: no explicar, traducir.
+            </p>
+            <p class="italic project-tagline">“Pensar la vida en la era digital.”</p>
+            <div class="project-links">
+                <a class="project-btn" href="https://open.spotify.com/show/033G8rYjXYlNFJ29rIlzMh" target="_blank" rel="noopener">Escuchar en Spotify</a>
+                <a class="project-btn" href="https://youtube.com/@asaulflores" target="_blank" rel="noopener">Canal de YouTube</a>
+            </div>
+        </div>
     </div>
 
-    <p>
-        Mi interés se ha dirigido hacia la relación entre fe y razón, la filosofía clásica, la historia de la Iglesia, la interpretación bíblica y la Doctrina Social. Pero más allá de los conceptos teóricos, la verdadera revelación ha sido entender que toda reflexión teológica debe conducir a una vida más auténtica. La fe no se reduce a normas, sino que implica una relación viva y una responsabilidad concreta hacia los demás.
-    </p>
-
-    <h3 class="sans section-heading-ink spaced">Un Viaje de Regreso</h3>
-    
-    <p>
-        No estudio teología para convertirme en un experto en Dios. La estudio porque cada vez que intento comprenderlo, descubro algo más sobre quién soy yo. Entre páginas de filosofía, documentos eclesiales, la lectura viva de la Biblia (alimentada por espacios como RUAJ y Hakuna) y largas conversaciones, he llegado a una convicción sencilla: <strong>si Dios existe, existe todo.</strong>
-    </p>
-
-    <p>
-        Considero que el aprendizaje teológico es un camino permanente, porque comprender el misterio supera toda una vida. Y si conocer a Dios es el fin último del ser humano, entonces cada pregunta sincera, cada acto de servicio y cada búsqueda honesta de la verdad son también, inevitablemente, parte del camino de regreso hacia Él.
-    </p>
-
-    <p>
-        Si tuviera que ponerle un nombre histórico a mi forma de buscar a Dios, sería <strong>dominico</strong>: la convicción de que la verdad se contempla primero y se comparte después, sin que eso le reste intensidad a la búsqueda. Con matices benedictinos en el silencio y jesuitas en la acción con propósito. No me basta saber; necesito que lo verdadero transforme la vida, empezando por la mía.
-    </p>
-</section> 
-
-    
     <section class="poetry-section" id="ditooh" style="background-color: #0a0a0a; color: #eaeaea; padding: 6rem 0;">
         <div class="container reveal">
             
@@ -1588,65 +1686,53 @@ Pero dime,
         </div>
     </section>
 
-    <section class="container narrative-block reveal" id="futuro" style="padding-bottom: 6rem;">
-    <h3 class="sans" style="color: var(--accent-clay);">Visión 2037</h3>
-    <h2>La Conquista de la Libertad</h2>
+    <section class="container dimension-band dim-trascender reveal" id="trascender">
+        <p class="dim-label">04 · Trascender</p>
+        <p class="dim-tagline">Conectar con algo más grande.</p>
+    </section>
+
+    <!-- SECCIÓN: TEOLOGÍA -->
+<section id="teologia" class="narrative-block container reveal" style="border-top: 1px solid var(--line-color);">
+    <h3 class="sans section-heading-ink">El Teólogo</h3>
+    <h2>Aprender a pensar a Dios</h2>
     
-    <div class="future-grid">
-        
-        <div>
-            <p class="future-lede">
-                Si el presente es disciplina, el futuro es libertad. Mi regreso a la industria replanteó mis tiempos, pero magnificó mi destino. He decidido aplazar mi gran proyecto una década para construir primero una carrera profesional impecable y sin fisuras. 
-            </p>
-            <p>
-                No llegaré a <strong>Australia</strong> a ver qué sucede ni a improvisar; llegaré convertido en mi mejor versión, dominando el inglés como una segunda piel. Aunque el plan definitivo para estudiar mi <strong>maestría (MBA)</strong> y aprender a surfear está fijado para 2037, sé que esa no será la primera vez que pise Brisbane. Estaré ahí en los <strong>Juegos Olímpicos de 2032</strong>, viendo a la selección francesa colgarse la medalla de oro con Wembanyama como MVP.
-            </p>
-            <p class="italic future-quote">
-                "Ser libre es poder elegir a voluntad, sin presión externa. Es correr sin parar sobre un campo abierto."
-            </p>
-        </div>
+    <p class="drop-cap">
+        Mi identidad teológica no comenzó al terminar un diplomado; el rigor académico solo le puso nombre y estructura a algo que ya existía. Nació mucho antes: en los sábados de catecismo, en mi paso por el preseminario, y en el instante preciso en que comencé a preguntarme quién es Dios cuando nadie me ve.
+    </p>
+    
+    <p>
+        Durante años viví mi fe principalmente desde la práctica, formado dentro de la Iglesia Católica. Sin embargo, con el tiempo descubrí que creer no era suficiente para mí. <strong>Necesitaba comprender.</strong> En agosto de 2025 esa necesidad tomó forma concreta: comencé un diplomado en teología y, casi al mismo tiempo, me integré a RUAJ, el grupo juvenil de mi parroquia. Descubrí que la fe cristiana no teme a la razón; por el contrario, la invita a caminar junto a ella.
+    </p>
 
-        <div class="goals-card">
-            <h4 class="sans">Objetivos Estratégicos</h4>
-            
-            <div class="goal-row">
-                <div class="goal-label-row">
-                    <span class="goal-name">Consolidación Profesional</span>
-                    <span class="goal-status">Foco Actual</span>
-                </div>
-                <div class="goal-bar-track">
-                    <div class="goal-bar-fill" style="width: 60%;"></div>
-                </div>
-            </div>
-
-            <div class="goal-row">
-                <div class="goal-label-row">
-                    <span class="goal-name">Idioma (Inglés C1)</span>
-                    <span class="goal-status">Prioridad Alta</span>
-                </div>
-                <div class="goal-bar-track">
-                    <div class="goal-bar-fill" style="width: 45%;"></div>
-                </div>
-            </div>
-
-            <div class="goal-row">
-                <div class="goal-label-row">
-                    <span class="goal-name">Brisbane 2032, MBA & Surf</span>
-                    <span class="goal-status">Proyección</span>
-                </div>
-                <div class="goal-bar-track">
-                    <div class="goal-bar-fill" style="width: 20%;"></div>
-                </div>
-            </div>
-
-            <div class="goals-horizon">
-                <p class="sans small-caps" style="margin-bottom: 0;">Horizonte Temporal</p>
-                <span class="horizon-years">2032 – 2037</span>
-            </div>
-        </div>
-
+    <!-- CITA DESTACADA -->
+    <div class="quote-block">
+        <p>
+            "No entiendo la teología como un ejercicio de erudición, sino como una búsqueda de sentido. Creo que Dios puede ser amado con el corazón, pero también con la inteligencia."
+        </p>
+        <p>
+            "La teología me enseñó que buscar a Dios con honestidad intelectual también es una forma de amarlo. Las preguntas sinceras pueden ser una forma de oración."
+        </p>
     </div>
-</section>
+
+    <p>
+        Mi interés se ha dirigido hacia la relación entre fe y razón, la filosofía clásica, la historia de la Iglesia, la interpretación bíblica y la Doctrina Social. Pero más allá de los conceptos teóricos, la verdadera revelación ha sido entender que toda reflexión teológica debe conducir a una vida más auténtica. La fe no se reduce a normas, sino que implica una relación viva y una responsabilidad concreta hacia los demás.
+    </p>
+
+    <h3 class="sans section-heading-ink spaced">Un Viaje de Regreso</h3>
+    
+    <p>
+        No estudio teología para convertirme en un experto en Dios. La estudio porque cada vez que intento comprenderlo, descubro algo más sobre quién soy yo. Entre páginas de filosofía, documentos eclesiales, la lectura viva de la Biblia (alimentada por espacios como RUAJ y Hakuna) y largas conversaciones, he llegado a una convicción sencilla: <strong>si Dios existe, existe todo.</strong>
+    </p>
+
+    <p>
+        Considero que el aprendizaje teológico es un camino permanente, porque comprender el misterio supera toda una vida. Y si conocer a Dios es el fin último del ser humano, entonces cada pregunta sincera, cada acto de servicio y cada búsqueda honesta de la verdad son también, inevitablemente, parte del camino de regreso hacia Él.
+    </p>
+
+    <p>
+        Si tuviera que ponerle un nombre histórico a mi forma de buscar a Dios, sería <strong>dominico</strong>: la convicción de que la verdad se contempla primero y se comparte después, sin que eso le reste intensidad a la búsqueda. Con matices benedictinos en el silencio y jesuitas en la acción con propósito. No me basta saber; necesito que lo verdadero transforme la vida, empezando por la mía.
+    </p>
+</section> 
+
     
     <section id="proposito-ikigai" style="background-color: #fff; padding: 8rem 0; border-top: 1px solid #f0f0f0; position: relative;">
         <div class="container reveal" style="max-width: 750px;">
@@ -1724,7 +1810,7 @@ Pero dime,
         </div>
     </section>
     
-<footer style="background-color: var(--bg-paper); padding: 4rem 0; border-top: 1px solid #e0e0e0; margin-top: 4rem;">
+<footer id="conectar" style="background-color: var(--bg-paper); padding: 4rem 0; border-top: 1px solid #e0e0e0; margin-top: 4rem;">
         <div class="container">
             <div class="footer-grid">
                 
@@ -1755,6 +1841,9 @@ Pero dime,
                     <ul class="footer-links">
                         <li><a href="https://www.linkedin.com/in/a-saul-flores-garcia" target="_blank">LinkedIn</a></li>
                         <li><a href="https://www.instagram.com/ditooh.m4ldito" target="_blank">Instagram</a></li>
+                        <li><a href="https://youtube.com/@asaulflores" target="_blank" rel="noopener">YouTube</a></li>
+                        <li><a href="https://open.spotify.com/show/033G8rYjXYlNFJ29rIlzMh" target="_blank" rel="noopener">Código Humano (Spotify)</a></li>
+                        <li><a href="https://substack.com/@asaulflores" target="_blank" rel="noopener">Substack</a></li>
                         <li><a href="mailto:aldohflores@gmail.com">Contacto Directo</a></li>
                     </ul>
                 </div>
